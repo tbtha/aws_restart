@@ -3,11 +3,7 @@ IDE -> Entorno de desarrollo integrado (IDE)
 Software personalizado que permite trabajar con lenguajes de programacion 
 IDE de AWS  es Cloud9
 
-*ejecutamos condigo con RUN o python filename.py
-
-TIPOS DE D
-
-
+Instalar python
 
 ___        ______     ____ _                 _  ___  
         / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
@@ -17,9 +13,16 @@ ___        ______     ____ _                 _  ___
  ----------------------------------------------------------------- 
 
 
-## Funciones integradas
+## Funciones integradas/nativas
+### Una funcion le indica a la computadora que realice una tarea especifica 
 
-+ len() devulve la longitud de la variable 
++ print() 
+##### print("Hola mundo")
+
++ input() nos permite recibir una entrada por parte de un usuario 
+##### input("Ingresa un numero")
+
++ len() devuelve la longitud de la variable 
 ##### ejemplo = "abcdefghijk"
 ##### print(len(ejemplo))
 ##### print(ejemplo[0:3]) -> devuelve porcion de la variable
@@ -33,3 +36,7 @@ ___        ______     ____ _                 _  ___
 ##### print(ejemplo.strip()) #devuelve "estos es una cadena"
 
 + replace 
+
+## Funciones creadas 
+
+
