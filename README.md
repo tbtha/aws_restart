@@ -7,7 +7,10 @@
 
 
 
-split ? divide toda una variable de texto dependiendo del 
-ejemplo = "pera,mañana,platano,piña"
-print(ejemplo.split(",") #devuelve una lista con esos datos : ["pera","mañana","platano","piña"]
+split ? divide toda una variable de tipo texto, quiero que la variable se divida cada ves que encuntres un guion (-) o cualquier caracter que queramos 
+ejemplo = "pera-mañana-platano-piña"
+print(ejemplo.split("-") #devuelve una lista con esos datos : ["pera","mañana","platano","piña"]
 
+strip ? elimina los espacios al comienzo y al final del archivo
+ejemplo= "          estos es una cadena    "
+print(ejemplo.strip()) #devuelve "estos es una cadena"
