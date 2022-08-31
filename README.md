@@ -13,16 +13,7 @@ or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
 
 Happy coding!
 
-Guia!
 
-
-IDE -> Entorno de desarrollo integrado (IDE)
-Software personalizado que permite trabajar con lenguajes de programacion 
-IDE de AWS  es Cloud9
-
-*ejecutamos condigo con RUN o python filename.py
-
-TIPOS DE D
 
 
 
