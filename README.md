@@ -6,14 +6,8 @@
  ----------------------------------------------------------------- 
 
 
-Hi there! Welcome to AWS Cloud9!
 
-To get started, create some files, play with the terminal,
-or visit https://docs.aws.amazon.com/console/cloud9/ for our documentation.
-
-Happy coding!
-
-
-
-
+split ? divide toda una variable de texto dependiendo del 
+ejemplo = "pera,mañana,platano,piña"
+print(ejemplo.split(",") #devuelve una lista con esos datos : ["pera","mañana","platano","piña"]
 
