@@ -60,35 +60,43 @@ de numero a string str()
 ## Funciones integradas/nativas
 #### Una funcion le indica a la computadora que realice una tarea especifica 
 ~~~
-·· type() nos permite reconocer que tipo de datos es 
+/ type() nos permite reconocer que tipo de datos es 
 
-·· print() 
+/ print() 
         print("Hola mundo")
 
-·· input() nos permite recibir una entrada por parte de un usuario (siempre ingresan como cadena de texto)
+/ input() nos permite recibir una entrada por parte de un usuario (siempre ingresan como cadena de texto)
         input("Ingresa un numero")
    
-·· .format() / f' nos permite devolver variables en string
+/ .format() / f' nos permite devolver variables en string
         name = "Roberto"
         print("Hola {}, como estas?" .format(name))
         print(f'"Hola {name}, como estas?")
    
-·· len() devuelve la longitud de la variable 
+/ .len() devuelve la longitud de la variable 
         ejemplo = "abcdefghijk"
         print(len(ejemplo))
         print(ejemplo[0:3]) -> devuelve porcion de la variable
         
-··capitalize() cambia a mayuscula
+/ .capitalize() convierte el primer carácter de una cadena en una letra mayúscula y todos los demás alfabetos en minúsculas
 
-·· split() divide toda una variable de tipo texto, quiero que la variable se divida cada ves que encuntres un guion (-) o cualquier caracter que queramos 
+/ .upper() convierte todas las minusculas a mayusculas
+
+/ .count() para ir contando catidades de  ...
+/  sum()  suma los valores 
+
+/ .values()  obtener valores de un diccionario
+/ .keys() obtener claves de un diccionario
+
+/ .split() divide toda una variable de tipo texto, quiero que la variable se divida cada ves que encuntres un guion (-) o cualquier caracter que queramos 
         ejemplo = "pera-mañana-platano-piña"
         print(ejemplo.split("-") #devuelve una lista con esos datos : ["pera","mañana","platano","piña"]
 
-·· strip() elimina los espacios al comienzo y al final del archivo
+/ .strip() elimina los espacios al comienzo y al final del archivo
         ejemplo= "          estos es una cadena    "
         print(ejemplo.strip()) #devuelve "estos es una cadena"
 
-·· replace() reemplaza una palabra con otra
+/ .replace() reemplaza una palabra con otra
         origen = "Esto es una cadena"
         print(origen.replace("una", "otra")) # imprime "Esto es otra cadena"
 ~~~
@@ -117,10 +125,11 @@ SINTAXIS
         frutas = ["manzana","pera","uva"]
         for fruta in frutas:
                 print("la fruta es:" , fruta)
-
-#List comprehension             -> sintaxis newList = [expresion for item in items if condition=True]
-(algo que se va a iterar y una condicion que se va a cumplir)
-
+~~~
+## List comprehension             
+#### sintaxis newList = [expresion for item in items if condition=True]
+#### (algo que se va a iterar y una condicion que se va a cumplir)
+~~~
         #manera original
 frutas = ["manzanaa","kiwi","piña","mango"]
 nuevaLista = []
@@ -129,11 +138,9 @@ for fruta in frutas:
                 nuevaLista.append(fruta)
 
         #list comprehension    
-nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]
+nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]  #tercer argumento es opcinal
 
-
-
-
+~~~
 
 ~~~
 
