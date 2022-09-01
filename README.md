@@ -85,9 +85,14 @@ de numero a string str()
         print(origen.replace("una", "otra")) # imprime "Esto es otra cadena"
 ~~~
 ## Funciones creadas 
-namefunction() -> forma de invocar una funcion 
+#### () -> forma de invocar una funcion 
 ~~~
-
+SINTAXIS        
+        def sumar_uno(x):
+        return x + 1            -> return devuelve algo de la funcion 
+        
+        resultado = sumar_uno(5)
+        print(resultado) #imprime 6 
 ~~~
 
 ## Condicionales 
@@ -99,6 +104,7 @@ namefunction() -> forma de invocar una funcion
                 print("n1 es mayor que n2")
         else:
                 print("n2 es mayor que n1"
+                
 ··FOR           -> for i in lista (i por cada valor en lista)
         frutas = ["manzana","pera","uva"]
         for fruta in frutas:
