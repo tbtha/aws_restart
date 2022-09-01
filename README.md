@@ -4,6 +4,12 @@
 #### Entorno de desarrollo integrado / Integrated Development Environment
 #### Es una aplicación informática (Software) que proporciona servicios integrales para facilitarle al desarrollador o programador el desarrollo de software  
 #### IDE de AWS  es Cloud9
+_____
+### Estandar PEP8 (flake8) -> valida que el codigo este bien escrito
+~~~
+La barra diagonal invertida final (\) en el valor de la variable del paso anterior se utiliza para mantener el cumplimiento de la guía de estilo Propuestas de Mejora de Python (PEP) 
+~~~
+_____
 ___        ______     ____ _                 _  ___  
         / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
        / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
@@ -87,7 +93,7 @@ de numero a string str()
         print(origen.replace("una", "otra")) # imprime "Esto es otra cadena"
 ~~~
 ## Funciones creadas 
-#### () -> forma de invocar una funcion 
+#### namefunction() -> forma de invocar una funcion 
 ~~~
 SINTAXIS        
         def sumar_uno(x):
@@ -111,7 +117,24 @@ SINTAXIS
         frutas = ["manzana","pera","uva"]
         for fruta in frutas:
                 print("la fruta es:" , fruta)
-        
+
+#List comprehension             -> sintaxis newList = [expresion for item in items if condition=True]
+(algo que se va a iterar y una condicion que se va a cumplir)
+
+        #manera original
+frutas = ["manzanaa","kiwi","piña","mango"]
+nuevaLista = []
+for fruta in frutas:
+        if "a" in fruta:
+                nuevaLista.append(fruta)
+
+        #list comprehension    
+nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]
+
+
+
+
+
 ~~~
 
 ## Import
