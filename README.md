@@ -85,6 +85,8 @@ de numero a string str()
 / .count() para ir contando catidades de  ...
 /  sum()  suma los valores 
 
+/ range(10,14) da una numero menos el 14
+
 / .values()  obtener valores de un diccionario
 / .keys() obtener claves de un diccionario
 
@@ -118,8 +120,10 @@ SINTAXIS
         numero2 = 7
         if numero1 > numero2:
                 print("n1 es mayor que n2")
+        elif numero1 = 0:
+                print(n1 es igual a 0"=
         else:
-                print("n2 es mayor que n1"
+                print("n2 es mayor que n1")
                 
 ··FOR           -> for i in lista (i por cada valor en lista)
         frutas = ["manzana","pera","uva"]
@@ -128,7 +132,8 @@ SINTAXIS
 ~~~
 ## List comprehension             
 #### sintaxis newList = [expresion for item in items if condition=True]
-#### (algo que se va a iterar y una condicion que se va a cumplir)
+#### algo que se va a iterar y una condicion que se va a cumplir / tercer argumento es opcinal ?
+
 ~~~
         #manera original
 frutas = ["manzanaa","kiwi","piña","mango"]
@@ -138,8 +143,7 @@ for fruta in frutas:
                 nuevaLista.append(fruta)
 
         #list comprehension    
-nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]  #tercer argumento es opcinal
-
+nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]  
 ~~~
 
 ~~~
