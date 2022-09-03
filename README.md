@@ -210,7 +210,8 @@ https://docs.python.org/3/library/math.html
 #### excepciones 
 ~~~
 atrapar y controlar los errores para que el codigo no se detenga
-·· except 
+·· except IOError: -> cuando el archivo no existe
+        print("el archivo no existe")
 
 ·· SO : modulo del sistema operativo
         os.system("adduser newuser")
@@ -218,3 +219,17 @@ atrapar y controlar los errores para que el codigo no se detenga
         os.system("ls")
 
 ~~~
+
+##JSON 
+#### notacion de objetos JavaScripts
+#### import json 
+~~~
+tecnicas especialmente util cuando hay mas de un tipos de dato en un conjunto de datos 
+json.dumps/dump convierten varios tipos de datos en una cadena
+load/loads vuelven a convertir una cadena de datos estructurados
+dump/load trabajan directamente con archivos
+dumps/loas 
+~~~
+
+##PIP -> manejador de paquetes, para instalar codigo de 3ros que puedne contener librerias 
+#### se llama a pip desde la linea de comando 
