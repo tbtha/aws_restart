@@ -59,6 +59,7 @@ de numero a string str()
 
 ## Funciones integradas/nativas
 #### Una funcion le indica a la computadora que realice una tarea especifica 
+/n salto de linea ->slash invertido 
 ~~~
 / type() nos permite reconocer que tipo de datos es 
 
@@ -87,8 +88,12 @@ de numero a string str()
 
 / range(10,14) da una numero menos el 14
 
+/ .get() trae informacion
+
 / .values()  obtener valores de un diccionario
 / .keys() obtener claves de un diccionario
+/ .items() prar recorrer y tomar cada item del diccionario 
+/ .del() para eliminar del diccionario 
 
 / .split() divide toda una variable de tipo texto, quiero que la variable se divida cada ves que encuntres un guion (-) o cualquier caracter que queramos 
         ejemplo = "pera-mañana-platano-piña"
@@ -111,6 +116,11 @@ SINTAXIS
         
         resultado = sumar_uno(5)
         print(resultado) #imprime 6 
+        
+* funcion fuctrifera 
+        def getDoubleAlphabet(alphabet):
+            doubleAlphabet = alphabet + alphabet
+            return doubleAlphabet
 ~~~
 
 ## Condicionales 
@@ -162,7 +172,23 @@ nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]
        opc2
                  from operaciones import sumar,restar
                  reusltado = sumar(5)
-                 
+~~~
+##  MODULO import
+~~~
+ **puede utilizar funciones proporcionadas por otros desarrolladores a través de la instrucción import
+ 
+ sintaxis->
+        opc1 -> from modulo import function
+        opc2 -> import modulo 
+                modulo.funtion()
+ 
+·· from math import pi -> importar una funcion en especifica en este caso pi 
+https://docs.python.org/3/library/math.html
+·· import math -> importar todas las funciones que tiene match 
+        math.fabs() covertir de un valor negattivo a un valor positivo
+        math.floor() toma el valor flotante y devuelve el valor entero
+        
+        
 ·· import random
         random.ranont(1,10) #devuelve un numero randon del 1 al 10 
         
@@ -180,4 +206,15 @@ nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]
         pattern2= r'[as]' (para buscar coincidenias de patrones de mas letras)
         pattern3= r'cadena' (busca la palabra completa)
 ~~~
+##Control de flujo
+#### excepciones 
+~~~
+atrapar y controlar los errores para que el codigo no se detenga
+·· except 
 
+·· SO : modulo del sistema operativo
+        os.system("adduser newuser")
+        os.system("whoami")
+        os.system("ls")
+
+~~~
