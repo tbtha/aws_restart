@@ -256,3 +256,10 @@ dumps/loas
 
 ## PIP -> manejador de paquetes, para instalar codigo de 3ros que puedne contener librerias 
 #### se llama a pip desde la linea de comando 
+
+## Depuracion                   -> pdb
+#### se realiza para identificar defectos en el propio codigo (logs)
+~~~
+python -m pdb <filename>
+
+~~~
