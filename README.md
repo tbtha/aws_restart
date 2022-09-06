@@ -156,8 +156,6 @@ for fruta in frutas:
 nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]  
 ~~~
 
-~~~
-
 ## Import
 ~~~ 
 
@@ -206,7 +204,7 @@ https://docs.python.org/3/library/math.html
         pattern2= r'[as]' (para buscar coincidenias de patrones de mas letras)
         pattern3= r'cadena' (busca la palabra completa)
 ~~~
-##Control de flujo
+## Control de flujo
 #### excepciones 
 ~~~
 atrapar y controlar los errores para que el codigo no se detenga
@@ -231,7 +229,7 @@ try/except -> manejar posibles errores para que el programa no se rompa
         os.system("ls")
 )
 ~~~
-##JSON 
+## JSON 
 #### notacion de objetos JavaScripts
 #### import json 
 ~~~
@@ -256,5 +254,5 @@ dumps/loas
                 print(readJsonFile("insulin.json"))             -> ejecuta funcion con el arcchivo json que queramos 
 ~~~
 
-##PIP -> manejador de paquetes, para instalar codigo de 3ros que puedne contener librerias 
+## PIP -> manejador de paquetes, para instalar codigo de 3ros que puedne contener librerias 
 #### se llama a pip desde la linea de comando 
