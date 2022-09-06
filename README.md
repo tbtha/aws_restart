@@ -170,7 +170,7 @@ nuevaLista2 = [fruta for fruta in frutas if "a" in fruta]
                  import operaciones 
                  resultado = operaciones.sumar(5)
        opc2
-                 from operaciones import sumar,restar
+                 from operaciones.operacion import sumar,restar    -> ir ingresando a carpertas con operacion.newfiles.operaciones y asi 
                  reusltado = sumar(5)
 ~~~
 ##  MODULO import
@@ -213,13 +213,24 @@ atrapar y controlar los errores para que el codigo no se detenga
 ·· except IOError: -> cuando el archivo no existe
         print("el archivo no existe")
 
-·· SO : modulo del sistema operativo
+try/except -> manejar posibles errores para que el programa no se rompa 
+
+ try:                                   -> si lo que esta en este bloque no se logra hacer, ingresar a except para ocuparse del error 
+        with open(fileName) as json_file:
+            data = json.load(json_file)
+    except IOError:
+        print("Could not read file")
+
+
+~~~
+~~~
+
+(·· SO : modulo del sistema operativo
         os.system("adduser newuser")
         os.system("whoami")
         os.system("ls")
-
+)
 ~~~
-
 ##JSON 
 #### notacion de objetos JavaScripts
 #### import json 
@@ -229,6 +240,20 @@ json.dumps/dump convierten varios tipos de datos en una cadena
 load/loads vuelven a convertir una cadena de datos estructurados
 dump/load trabajan directamente con archivos
 dumps/loas 
+
+·· trabajando/leyendo archivos json
+                import json                                     -> importar biblioteca json
+
+                def readJsonFile(fileName):                     -> crear funcion para leer archivos json
+                    data = ""
+                    try:                                                
+                        with open(fileName) as json_file:       -> leyendo archivo externo     
+                            data = json.load(json_file)         -> convierte el archivo json una cadena de datos estructurados
+                    except IOError:                             -> except para error (especificamente error de no leer archivos)        
+                        print("Could not read file")            -> imprime para dar una respuesta en caso de error 
+                    return data                                 -> devuelve respuesta de datos de json a un diccionario 
+
+                print(readJsonFile("insulin.json"))             -> ejecuta funcion con el arcchivo json que queramos 
 ~~~
 
 ##PIP -> manejador de paquetes, para instalar codigo de 3ros que puedne contener librerias 
