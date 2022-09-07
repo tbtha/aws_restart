@@ -27,6 +27,6 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 #### Software como servicio (SaaS ): el proveedor de la nube  ejecuta y administra todo , desde el hardware hasta la aplicación. Solo necesita suscribirse a la aplicación para usarla
 
 ## Tres modelos de implementación en la nube
-### All-in cloud :Todo en la nube : todas sus aplicaciones se implementan completamente en la nube.
-### Hybrid : Híbrido : algunas de sus aplicaciones se implementan en la nube, pero otras permanecen en las instalaciones. Las aplicaciones aún pueden conectarse entre sí.
-### Privete cloud : (on-premises) : Nube privada ( instalaciones) : todas sus aplicaciones se implementan completamente en una infraestructura de nube que se ejecuta en su propio centro de datos.
+#### All-in cloud :Todo en la nube : todas sus aplicaciones se implementan completamente en la nube.
+#### Hybrid : Híbrido : algunas de sus aplicaciones se implementan en la nube, pero otras permanecen en las instalaciones. Las aplicaciones aún pueden conectarse entre sí.
+#### Privete cloud : (on-premises) : Nube privada ( instalaciones) : todas sus aplicaciones se implementan completamente en una infraestructura de nube que se ejecuta en su propio centro de datos.
