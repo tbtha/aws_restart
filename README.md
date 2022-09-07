@@ -139,6 +139,8 @@ SINTAXIS
         frutas = ["manzana","pera","uva"]
         for fruta in frutas:
                 print("la fruta es:" , fruta)
+                
+
 ~~~
 ## List comprehension             
 #### sintaxis newList = [expresion for item in items if condition=True]
@@ -221,13 +223,21 @@ try/except -> manejar posibles errores para que el programa no se rompa
 
 
 ~~~
-~~~
 
-(·· SO : modulo del sistema operativo
+## SO 
+#### Python proporciona varios módulos que también puede utilizar para ejecutar comandos en la línea de comandos
+
+~~~
+·· SO : modulo del sistema operativo
+        import os
         os.system("adduser newuser")
         os.system("whoami")
         os.system("ls")
-)
+   
+·· SUBPROCESS           
+        import subprocess
+        subprocess.run(["ls"])
+        subprocess.run(["ls","-l","README.md"])
 ~~~
 ## JSON 
 #### notacion de objetos JavaScripts
@@ -261,5 +271,10 @@ dumps/loas
 #### se realiza para identificar defectos en el propio codigo (logs)
 ~~~
 python -m pdb <filename>
-
+         *** aserciones
+        afimacion, que permite validar, se cumple o no ? si se cumple devulve esto
+        def loguserage(age):
+                assert age <= 0, "Invalid age was supplied"
 ~~~
+## LOGS         -> guarda regitros en python
+#### monitoreo de registro 
