@@ -30,3 +30,36 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 #### All-in cloud :Todo en la nube : todas sus aplicaciones se implementan completamente en la nube.
 #### Hybrid : Híbrido : algunas de sus aplicaciones se implementan en la nube, pero otras permanecen en las instalaciones. Las aplicaciones aún pueden conectarse entre sí.
 #### Privete cloud : (on-premises) : Nube privada ( instalaciones) : todas sus aplicaciones se implementan completamente en una infraestructura de nube que se ejecuta en su propio centro de datos.
+
+## Ventajas:
++ Gasto de capital a gasto variable : no es necesario pagar por adelantado los activos físicos que necesita. En su lugar, paga sobre la marcha por los recursos que utiliza.
++ Economías de escala : obtenga un costo variable más bajo para los recursos que el que puede obtener por su cuenta. Por ejemplo, como proveedor de servicios en la nube, AWS le transfiere ahorros a medida que crece.
++ Planificación de la capacidad : reduzca las conjeturas sobre sus necesidades de capacidad.
++ Velocidad y agilidad : aprovisione recursos de forma rápida y bajo demanda.
++ Gaste estratégicamente : gaste dinero en sus proyectos comerciales en lugar de administrar centros de datos
++ Facilidad de implementación : Globalícese en minutos.
+
+### El modelo de precios de AWS se basa en el principio de que paga por lo que usa .
+
+## Acceso a los servicios:
+##### Consola de administración de AWS : una aplicación basada en web o móvil para administrar sus servicios de AWS
+##### Interfaz de línea de comandos de AWS (AWS CLI) : una herramienta de línea de comandos para administrar sus servicios de AWS
+##### Kits de desarrollo de software (SDK) : un conjunto de herramientas de software (como bibliotecas, recursos y muestras) que un desarrollador puede usar en un programa para acceder a los servicios de AWS.
+
+## Términos clave de la infraestructura de AWS
+
+- Región : un área geográfica que se compone de dos o más zonas de disponibilidad
+- Zona de disponibilidad : uno o más centros de datos discretos que están diseñados para el aislamiento de fallas
+- Ubicación de borde  :  donde los usuarios finales pueden acceder a los servicios de AWS
+
+
+# AMAZON EC2
+#### Amazon EC2 proporciona servidores virtuales, también llamados instancias , que pueden hacer casi todo lo que puede hacer un servidor local. Cuando lanza una instancia EC2, dos parámetros que debe especificar son:
+1. Un tipo de instancia : este parámetro especifica las características de rendimiento de la CPU, la memoria, el almacenamiento y la red de la instancia. El tipo de instancia a menudo se denomina tamaño  de la instancia.
+2. Una imagen de máquina de Amazon (AMI) : este parámetro define el software inicial y el sistema operativo (SO) para la instancia. Hay muchas opciones disponibles para sistemas operativos y software preinstalado.
+** Si inicialmente elige un tipo de instancia que tiene poca o demasiada potencia para su aplicación, puede cambiar el tipo de instancia más fácilmente que cambiar un servidor local.
+###### Una instancia EC2 se puede comprar de cuatro maneras:
+1. Instancias bajo demanda : pague solo por lo que usa, sin compromisos.
+2. Instancias al contado: puje por instancias EC2 no utilizadas, sin compromisos. Puede ahorrar hasta un 90 por ciento en costos en comparación con las instancias bajo demanda.
+3. Instancias reservadas : Reserve una instancia EC2 por 1 año o 3 años, con varios niveles de ahorro. (Nota: si planea usar un servidor durante mucho tiempo, es decir, más de 1 año, este tipo de compra es la mejor opción).
+4. Host dedicado : ejecute instancias EC2 en hardware dedicado a un solo cliente
