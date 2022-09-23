@@ -63,3 +63,22 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 2. Instancias al contado: puje por instancias EC2 no utilizadas, sin compromisos. Puede ahorrar hasta un 90 por ciento en costos en comparación con las instancias bajo demanda.
 3. Instancias reservadas : Reserve una instancia EC2 por 1 año o 3 años, con varios niveles de ahorro. (Nota: si planea usar un servidor durante mucho tiempo, es decir, más de 1 año, este tipo de compra es la mejor opción).
 4. Host dedicado : ejecute instancias EC2 en hardware dedicado a un solo cliente
+
+
+#### Cloud adoption framework (AWS CAF)ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
+##### actores para definir los objetivos 
+**se organiza en 6 perspectivas y son capacidades /
+##### enfoque empresarial(orientado a la e/arquitectos empresariales )1.empresa -> con que contamos para soportar la tecnologia de la e 2.personas-> priorizar capacitacion para desarrollar organizacion agil  3.gobernanza -> darle continuidad a cualquir proyecto / riesgos empresariales (prince2, SaFe, OKRs)
+##### enfoque tecnico(arquitectos y administradores TI) 1.plataforma -> entender y comunicar las naturaleza de los sitemas informaticos 2.seguridad -> como aseguramos las platafoormas/asegurarque la org cumpla obj de seguridad  3.operaciones -> cuales son la operaciones/acciones que se ejecutan para que las plataformas/negocio puedan seguir funcionando, definimos como se llevaran a cabo os negocios diarios 
+
+#### AWS Well-Architected Framework
+
+
+
+CREATE TABLE restart,database-2(
+        studentID INT,
+        student VARCHAR(20),
+        restartCity VARCHAR(20),
+        graduationDate DATE
+)
+
