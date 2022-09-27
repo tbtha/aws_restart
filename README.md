@@ -75,10 +75,9 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 
 
 
-CREATE TABLE restart,database-2(
-        studentID INT,
-        student VARCHAR(20),
-        restartCity VARCHAR(20),
-        graduationDate DATE
-)
+ aws iam list-policies --scope Local --output json
+
+Putty
+ip publica cuando te conectas desde afuera 
+ingresar con ec2-user
 
