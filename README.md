@@ -75,9 +75,17 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 
 
 
- aws iam list-policies --scope Local --output json
+ aws iam list-policies --scope Local 
 
 Putty
 ip publica cuando te conectas desde afuera 
 ingresar con ec2-user
 
+
+#### AWS systems Manager:  
+##### session manager: administracion/gestion de instancias, queda registrado en cloud trail, no hay que establecer puerto ni concecciones de grupos 
+#### patch manager: 
+#### maintenance windows : programar periodos para ejecutar tareas administrativas y de mantenimiento en las instancias
+#### state manager : administrador de estados -> mantener una configuracion uniforme d elas instacias de amazon EC2 (documento json con acciones que esten definidas para controlar las inslacias , pasos y parametros definidos )
+##### inventory : recopila informacion acerca de las instancias y del software instalado en ellas 
+##### insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
