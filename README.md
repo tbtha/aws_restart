@@ -98,3 +98,27 @@ ingresar con ec2-user
 #### state manager : administrador de estados -> mantener una configuracion uniforme d elas instacias de amazon EC2 (documento json con acciones que esten definidas para controlar las inslacias , pasos y parametros definidos )
 ##### inventory : recopila informacion acerca de las instancias y del software instalado en ellas 
 ##### insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
+
+
+
+
+
+AÑADIR Que tomar en cuenta para elegir una region ?
+requirimientos legales/Restriciones geograficas para almacenas datos, impedimentos que requiera desplegar los recursos en cierta region (si los datos requieren estar en latinoamerica, lo mejor seria la region de sao paulo)
+cercania con tus clientes : donde estan tus bases de cliente ? conviene estar en una region cercana a los clientes para reducir la latencia que existiria entre las peticiones y los recursos
+servicios disponibles : no hay los mismo servicios en todas las regiones al mismo tiempo, los servios nuevo generalmente estan disponibles en la region de virginia (para pruebas virginia es la region que selccionaria )
+precios : por la forma de estuctura fiscal en brasil por ej. es mas caro,
+
+*regiones : areas geograficas aisladas,atraves de las regiones podemos acceder a los servicios de aws, una region  se compone de dos o más zonas de disponibilidad
+
+#### zonas de disponibilidad: uno o mas centros de datos discretos que que están diseñados para el aislamiento de fallas suficientemente cerca para una latencia baja( tiempo de solicitud y recepcion del contenido) y suficientemente lejos para reducir los riegos de desastres en un conjunto de zonas de disponibilidad,
+se recomienda dejar nuestros recursos en dos zonas de disponibilidad, para garantizar la alta disponibilidad 
+
+#### Ubicacion de borde / ubicacion periferica : para poder crear copias de la informacion para tenerlas mas cercnas a os clientes y asi reducir la latencia, aws para no crear regiones en absolutamente todo elmunod, crea pequeñas
+infraestructuras, las "ubicaciones pefirericas" (cloudfront, red de entrega de contenido que permite hacer la copia de la info que esta en una region hacia estas ubicaciones perifericas ) 
+
+ 
+
+### Redes :
+##### Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
+##### CIDR   
