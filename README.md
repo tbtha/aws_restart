@@ -47,10 +47,19 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 ##### Kits de desarrollo de software (SDK) : un conjunto de herramientas de software (como bibliotecas, recursos y muestras) que un desarrollador puede usar en un programa para acceder a los servicios de AWS.
 
 ## Términos clave de la infraestructura de AWS
+#### 
 
-- Región : un área geográfica que se compone de dos o más zonas de disponibilidad
+- Región : un área geográfica que se compone de dos o más zonas de disponibilidad (26 por ahora )
 - Zona de disponibilidad : uno o más centros de datos discretos que están diseñados para el aislamiento de fallas
 - Ubicación de borde  :  donde los usuarios finales pueden acceder a los servicios de AWS
+
+### Que tomar en cuenta para elegir una region ? 
+#### requirimientos legales/Restriciones geograficas para almacenas datos, impedimentos que requiera desplegar los recursos en cierta region (si los datos requieren estar en latinoamerica, lo mejor seria la region de sao paulo)
+#### cercania con tus clientes : donde estan tus bases de cliente ? conviene estar en una region cercana a los clientes para reducir la latencia que existiria entre las peticiones y los recursos 
+#### servicios disponibles : no hay los mismo servicios en todas las regiones al mismo tiempo, los servios nuevo generalmente estan disponibles en la region de virginia (para pruebas virginia es la region que selccionaria )
+#### precios : por la forma de estuctura fiscal en brasil por ej. es mas caro, 
+
+##### *latencia -> 
 
 
 # AMAZON EC2
