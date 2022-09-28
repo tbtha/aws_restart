@@ -123,6 +123,7 @@ infraestructuras, las "ubicaciones pefirericas" (cloudfront, red de entrega de c
 ##### Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
 ##### CIDR   
 
-
+CLI comandos 
+https://docs.aws.amazon.com/cli/latest/reference/index.html
 
 cafe S3 y sitio webe statico http://tgamboa987.s3-website-us-west-2.amazonaws.com/
