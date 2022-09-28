@@ -59,7 +59,7 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 #### servicios disponibles : no hay los mismo servicios en todas las regiones al mismo tiempo, los servios nuevo generalmente estan disponibles en la region de virginia (para pruebas virginia es la region que selccionaria )
 #### precios : por la forma de estuctura fiscal en brasil por ej. es mas caro, 
 
-##### *latencia -> 
+##### *latencia -> si
 
 
 # AMAZON EC2
