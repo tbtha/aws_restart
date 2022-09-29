@@ -96,6 +96,21 @@ ej. curl http://169.254.169.254/latest/mata-data/public-hostname
 
 ### actualizacion de ejecuacion de EC2, Sistem manager permite manejar muchas instancias a la vez, ocupamos un solo comando para podr actualizar todas la instancias  
 
+
+###bastion host, como medida de "seguridad", sirve para que por ahi pase la info, y tenga salida a internet 
+
+
+Qué método debería usar?
+
+Lanzar desde la Management Console cuando necesite lanzar con rapidez una instancia temporal o única.
+Lanzar con un script cuando deba automatizar la creación de una instancia de forma repetida y confiable.
+Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
+
+
+
+
+
+
 #### Cloud adoption framework (AWS CAF)ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
 ##### actores para definir los objetivos 
 **se organiza en 6 perspectivas y son capacidades /
