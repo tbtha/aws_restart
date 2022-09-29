@@ -108,7 +108,7 @@ Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
 
 
 
-
+#### ** CONEXIONES, si no puede hacer la conexion por ssh verfique que el grupo de seguridad tenga habilitada una regla de entrada el puerto 22 , lo mismo si quiere sacarlo a la web, debe habilitar el puerto 80 
 
 
 #### Cloud adoption framework (AWS CAF)ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
