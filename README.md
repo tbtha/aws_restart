@@ -77,7 +77,24 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 aws e2 decribe-instances  --instances-id $INSTANCE_ID
 ej. curl http://169.254.169.254/latest/mata-data/public-hostname
 
+#### si la intsnacia se reincia no cambia la ip, cuando apagamos y prendemos si 
+#### tipos de almacenamiento 
+##### EBS -> persiste esta info , si se apaga y prende una instancia 
+##### intance store -> se pierde la info si se apaga y prende una instancia 
 
+##### las ip siempre son dinamicas 
+##### cuando ocupamos una ip elastica(estatica)?, cuando queremos apagar y prender una instancia y no queremos que se cambie la ip 
+
+#### hibernacion de una instancia, el sistema op guarda toda la info en memoria (asignamos ip elastica), por la instanci ahibernada no pagamos pero todo lo que almacena en el disco ebs si se cobra, requisistos para hibernar una instancia, 1.habilitar la hibernacion en el moemnto del lanzamiento / tipo de instancia compatible3.
+
+### RE LANZAMIENTO DE UNA INSTANCIA
+#### cuando hay muhco trafico en la red, cuando necesitamos una instancia mas pequeña, cuando el hadware necesita algun cambio,(para tamaño/ parches) vamos a necesitar lanzar una instancia desde 0, es imaportante diseñar instancias, todo lo que ira dentro en los user-script y la ami y asi no se pierde nignuna configuracion
+
+#### cuando transicionamos a un nuevo tamaño de instancia , primero tenemos que apagarla para cambiar el tamaño
+
+### AMI, y su obsolencia, amazon mantiene las que ya estan activas, pero ya no se puede crear mas instancias con esta ami (como buena practica se recomienda tener una misma ami para todas la instancias y asi tener la misma configuracion )
+
+### actualizacion de ejecuacion de EC2, Sistem manager permite manejar muchas instancias a la vez, ocupamos un solo comando para podr actualizar todas la instancias  
 
 #### Cloud adoption framework (AWS CAF)ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
 ##### actores para definir los objetivos 
@@ -85,11 +102,20 @@ ej. curl http://169.254.169.254/latest/mata-data/public-hostname
 ##### enfoque empresarial(orientado a la e/arquitectos empresariales )1.empresa -> con que contamos para soportar la tecnologia de la e 2.personas-> priorizar capacitacion para desarrollar organizacion agil  3.gobernanza -> darle continuidad a cualquir proyecto / riesgos empresariales (prince2, SaFe, OKRs)
 ##### enfoque tecnico(arquitectos y administradores TI) 1.plataforma -> entender y comunicar las naturaleza de los sitemas informaticos 2.seguridad -> como aseguramos las platafoormas/asegurarque la org cumpla obj de seguridad  3.operaciones -> cuales son la operaciones/acciones que se ejecutan para que las plataformas/negocio puedan seguir funcionando, definimos como se llevaran a cabo os negocios diarios 
 
+
+
+
+
+
+
+
+
+
+
 #### AWS Well-Architected Framework
 
 
 
- aws iam list-policies --scope Local 
 
 Putty
 ip publica cuando te conectas desde afuera 
