@@ -173,3 +173,7 @@ CLI comandos
 https://docs.aws.amazon.com/cli/latest/reference/index.html
 
 cafe S3 y sitio webe statico http://tgamboa987.s3-website-us-west-2.amazonaws.com/
+
+
+curl 169.254.169.254/latest/user-data
+
