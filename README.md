@@ -73,6 +73,11 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 3. Instancias reservadas : Reserve una instancia EC2 por 1 año o 3 años, con varios niveles de ahorro. (Nota: si planea usar un servidor durante mucho tiempo, es decir, más de 1 año, este tipo de compra es la mejor opción).
 4. Host dedicado : ejecute instancias EC2 en hardware dedicado a un solo cliente
 
+**169.254.169.254 -> para cada instancia se brinda un servicio de matadas en la sig direccion ip  169.254.169.254
+aws e2 decribe-instances  --instances-id $INSTANCE_ID
+ej. curl http://169.254.169.254/latest/mata-data/public-hostname
+
+
 
 #### Cloud adoption framework (AWS CAF)ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
 ##### actores para definir los objetivos 
