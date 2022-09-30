@@ -177,3 +177,13 @@ cafe S3 y sitio webe statico http://tgamboa987.s3-website-us-west-2.amazonaws.co
 
 curl 169.254.169.254/latest/user-data
 
+
+
+
+
+
+#### Elastic Beanstalk Servicio de computo (PaaS)
+##### permite implemetar, escalar y administrar aplicaciones web con rapidez, tomar codigo, cargarlo y elastic se encarga de desplegar el codigo, mantiene el control de todos los recursos de mi app
+#### compatible con go, java SE, node js, php, python y demases
+#### elastic es gratuito, solo se paga por lo servicios subyacentes como ec2, rds, balanceador de carga, etc
+
