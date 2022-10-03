@@ -187,3 +187,12 @@ curl 169.254.169.254/latest/user-data
 #### compatible con go, java SE, node js, php, python y demases
 #### elastic es gratuito, solo se paga por lo servicios subyacentes como ec2, rds, balanceador de carga, etc
 
+
+
+#### Escalamiento VERTICAL/HORIZONTAL
+##### vetical, aumento de hadware / horizontal, misma caracteristicas mas aumento de instancia 
+#### Grupo de Amazon EC2 auto scaling, (escalamiento horizontal)permite crecer o aumentar la cantidad de instancias, y cuando no se necesite (cuando no hay tanta demanda quiero 2 instancias pero para un cyber necesito 15 instancias, cuando una instancia esta cargada, automaticamente se crean mas instancias ), si no ocupo auto scaling tendria que hacerlo manual , (en base a reglas por ej si se esta al 70% de la instancia, se crea otra instancia y asi sucesivamente )
+##### como sabemos cuando hay que aumentar?, de eso se ocupa el elastic load balancing, puedo distribuir el trafico por paginas/tags(? en diferentes intancias /home / contacts /orders (se paga por el balanceador de carga dependiendo el tipo y por las instancias ocupadas )
+#### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre" (elb-mybalancer.aws.com), el balanceador de carga pongo la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
+
+
