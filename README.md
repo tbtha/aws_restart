@@ -193,6 +193,26 @@ curl 169.254.169.254/latest/user-data
 ##### vetical, aumento de hadware / horizontal, misma caracteristicas mas aumento de instancia 
 #### Grupo de Amazon EC2 auto scaling, (escalamiento horizontal)permite crecer o aumentar la cantidad de instancias, y cuando no se necesite (cuando no hay tanta demanda quiero 2 instancias pero para un cyber necesito 15 instancias, cuando una instancia esta cargada, automaticamente se crean mas instancias ), si no ocupo auto scaling tendria que hacerlo manual , (en base a reglas por ej si se esta al 70% de la instancia, se crea otra instancia y asi sucesivamente )
 ##### como sabemos cuando hay que aumentar?, de eso se ocupa el elastic load balancing, puedo distribuir el trafico por paginas/tags(? en diferentes intancias /home / contacts /orders (se paga por el balanceador de carga dependiendo el tipo y por las instancias ocupadas )
-#### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre" (elb-mybalancer.aws.com), el balanceador de carga pongo la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
+#### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre"/endpoint (elb-mybalancer.aws.com), el balanceador de carga pongo la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
 
+** ELB (elastic load balancing/Balanceador de carga) distribuye solicitudes entre intancias y aumenta la disponibilidad 
+#### casos de uso ? SEGURO, DESACOPLE , TOLERANCIA A ERRORES trabaja a nivel de la app en general( se encarga que las instancias estan "bien", si hay algun error en la instancias la elimina y crea otra igual, que me permite trabajar), EXPANSIVO aumenta la elasticidad y escalabilidad 
 
+#### balanceador de carga de red, protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
+** si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
+
+#### balanceador de carga de aplicaciones, protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta(? que el de red 
+** direccionamiento basado en rutas y host /home / contact ( en un balanceador de carga hay agentes de escucha que clasifica grupos de destino  y  en esos grupos hay comprobacion de status  )
+#### balancador de carga clasico, esta deprecado 
+** habilitamos sesiones pegajosas(? para que el usuario que se le cayo en net, y queremos que vulva a conectarse a la misma instancia para que su carrito vuelva a tener la misma info
+
+#### Receptores/AGENTES DE ESCUCHA/listener dentro del balanceador de carga 
+##### proceso que define el puerto y protocolo con el que escucha el balanceador de carga 
+##### cada balanceador necesita al menos un agente de escucha para aceptar el trafico y hasta 50 
+##### las REGLAS de direccionamiento se definen en los agentes de escucha (una regla como minimo)
+
+##### crear balanceador de carga CLI :aws elbv2 create-load-balancer 
+##### crear grupo de destino para el balanceador de carga: aws elbv2 create-target-group
+##### registrar las instancias en el grupo de destino : aws elbv2 registre-target
+##### crear un agente de escucha y sus reglas: aws elbv2 create-listener 
+##### comprobar el estado : aws elbv2 describe-target-health
