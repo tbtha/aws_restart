@@ -197,6 +197,7 @@ curl 169.254.169.254/latest/user-data
 
 ** ELB (elastic load balancing/Balanceador de carga) distribuye solicitudes entre intancias y aumenta la disponibilidad 
 #### casos de uso ? SEGURO, DESACOPLE , TOLERANCIA A ERRORES trabaja a nivel de la app en general( se encarga que las instancias estan "bien", si hay algun error en la instancias la elimina y crea otra igual, que me permite trabajar), EXPANSIVO aumenta la elasticidad y escalabilidad 
+#### Elastic Load Balancing distribuye automáticamente el tráfico entrante de aplicaciones entre varias instancias de Amazon EC2. Le permite lograr tolerancia a fallos en sus aplicaciones al proporcionar sin problemas la cantidad necesaria de capacidad de equilibrio de carga necesaria para enrutar el tráfico de aplicaciones.
 
 #### balanceador de carga de red, protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
 ** si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
@@ -220,6 +221,7 @@ curl 169.254.169.254/latest/user-data
 
 #### AMAZON EC2 Auto Scaling
 ##### lanza o termina las inatncias de amazon Elastic Compute CLoud (amazon EC2) automaticamente, necesita una plantilla de lanzamiento(AMI, tipo de intancia,VPC, grupo de seguridad,almacenamiento, par de claves,datos de usuario ,tags), permite la configuracion de las politicas de escalado y tamao del grupo de instancias Ec2, no escala de forma infinita, hay que establecer el limite 
+##### Auto Scaling le ayuda a mantener la disponibilidad de las aplicaciones y le permite escalar su capacidad de Amazon EC2 hacia fuera o en función de las condiciones que defina. Puede utilizar Auto Scaling para asegurarse de que está ejecutando el número deseado de instancias de Amazon EC2. Auto Scaling también puede aumentar automáticamente el número de instancias de Amazon EC2 durante los picos de demanda para mantener el rendimiento y disminuir la capacidad durante las paradas para reducir los costes. Auto Scaling es adecuado para aplicaciones que tienen patrones de demanda estables o que experimentan variabilidad horaria, diaria o semanal en el uso.
 ** Hay que establecer la misma VPC par autoScaling y las intancias 
 **Integracion con Elastic Load Balancing 
 ##### politicas: como activar politicas? puedo configurar alarmas en CLoudWatch 
