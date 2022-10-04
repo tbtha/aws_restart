@@ -216,3 +216,16 @@ curl 169.254.169.254/latest/user-data
 ##### registrar las instancias en el grupo de destino : aws elbv2 registre-target
 ##### crear un agente de escucha y sus reglas: aws elbv2 create-listener 
 ##### comprobar el estado : aws elbv2 describe-target-health
+
+
+#### AMAZON EC2 Auto Scaling
+##### lanza o termina las inatncias de amazon Elastic Compute CLoud (amazon EC2) automaticamente, necesita una plantilla de lanzamiento(AMI, tipo de intancia,VPC, grupo de seguridad,almacenamiento, par de claves,datos de usuario ,tags), permite la configuracion de las politicas de escalado y tamao del grupo de instancias Ec2, no escala de forma infinita, hay que establecer el limite 
+** Hay que establecer la misma VPC par autoScaling y las intancias 
+**Integracion con Elastic Load Balancing 
+##### politicas: como activar politicas? puedo configurar alarmas en CLoudWatch 
+##### como validamos que las instancias esten sanas ?, es saber si las intancias funcionan como corresponde  aws autoscaling set-intance-health 
+##### politicas de terminacion : define qe instancia se termina con el escalado descendentes /1.valancear las zonas de disponibilidad y lugo ya hay diferentes opciones 
+##### Creacion de un grupo de estado estable : configurar unn grupo de amazon Ec2 autoscaling con los mismos valores minimos, maximos y deseados 
+##### ** Escalado dinamico : Amazon EC2 /escalado de siguimiento de objetivo(aumenta o reduxca la capacidad en funcion de un valor en base a una metrica )/ escalado por pasos(aumenta o reduce la capacidad segun ciertos pasos if/else)/ escalado simple(aumente o reduzca la capacidad en funcion de un unico ajuste de escalado) 
+##### ** Escalado predictivo : Amazon EC2 / escala de forma automatica en base a predicciones de Ec2, tambien se establece un maximo de escalamiento 
+****** ALGO QUE FALLA UNICAMENTE AL CREAR UNA INTANCIA ES LA AMI, SI SE CREA Y FALLA DEBE SER OTRA COSA ******
