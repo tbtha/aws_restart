@@ -231,3 +231,7 @@ curl 169.254.169.254/latest/user-data
 ##### ** Escalado dinamico : Amazon EC2 /escalado de siguimiento de objetivo(aumenta o reduxca la capacidad en funcion de un valor en base a una metrica )/ escalado por pasos(aumenta o reduce la capacidad segun ciertos pasos if/else)/ escalado simple(aumente o reduzca la capacidad en funcion de un unico ajuste de escalado) 
 ##### ** Escalado predictivo : Amazon EC2 / escala de forma automatica en base a predicciones de Ec2, tambien se establece un maximo de escalamiento 
 ****** ALGO QUE FALLA UNICAMENTE AL CREAR UNA INTANCIA ES LA AMI, SI SE CREA Y FALLA DEBE SER OTRA COSA ******
+
+
+**region :curl http://169.254.169.254/latest/dynamic/instance-identity/document |     grep region
+**
