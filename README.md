@@ -235,3 +235,15 @@ curl 169.254.169.254/latest/user-data
 
 **region :curl http://169.254.169.254/latest/dynamic/instance-identity/document |     grep region
 **
+
+
+##### AMAZON ROUTE 53
+###### convertir el ip/dns podemos obtener un nombre de dominio ,route 53 cobra por el 
+
+##### Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
+###### ECS, EKS, Fargate -> contenedores en AWS
+
+##### Lambda AWS(para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta )/ servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
+#### Lambda le permite al codigo ejecutarse sin approvisionamiento (tiene  de invocaciones gratuitas)
+*** TODO LO SERVERLESS SE PAGA POR LO QUE SE USA SOLAMENTE
+#### Capas d elamba son bibliotecas que permiten 
