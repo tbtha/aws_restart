@@ -248,15 +248,20 @@ curl 169.254.169.254/latest/user-data
 
 ##### Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
 ###### ECS, EKS, Fargate -> contenedores en AWS
+
 #### Como crear contenedores: 
-#### Docker es  una plataforma que nos permite crear , orbar, implementar,ejecutar contenedores
+#### Docker es  una plataforma que nos permite crear (sofware empaquetado) , probar, implementar,ejecutar contenedores
+
 #### como se ve docker en AWS Amazon:
-#### Elastic Container Registry (Amazon  ECR) : registro de contenedores administrado que facilita (creacion de imagenes)
+#### Elastic Container Registry (Amazon  ECR) : registro de contenedores administrado que facilita (creacion de imagenes)()
 #### Elasticc Container Service (Amazon ECS) : servicio de contenedores altamanete escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
+** tareas son epecificas de ECS 
 #### kubernetes : software de codigo abierto para el aprovisionamiento y la administracion de contenedores  
 #### Amazon Elastic Kubernetes (amazon EKS) : (orquestador que contenedores) aprovisiona un cluster, tiene nodos de trabajo,
 #### AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
 
+** contenedor es un pedazo del sitema operativo, podemos transportar a 
+** maquina virutal es harward y tiene el sitema operativo completo visrtualizado. dentro de una intancia pueden haber varios contenedores 
 
 ** cluster : conjunto de contendores
 
@@ -268,3 +273,23 @@ curl 169.254.169.254/latest/user-data
 
 #### APIS
 
+### BASES DE DATOS
+
+#### dependiendo de lo que quiero es el servicio que elijo
+#### RDS (transacionales) para lecura y escritura (JOIN para hacer relaciones entre tablas )
+#### DinamoDB (transacioales)
+#### Redshif analizar datos de forma masiva / analisis de grandes volumenes de informacion 
+#### Elastic Cahche ()
+#### Neptune : determinar relacion entre dos nodos que quieren conectarse (grafos)
+#### Aurora: 
+
+
+#### Redshif : es una servicion de almacenamiento de datos administrado 
+~~~
+que es una almacen de datos? 
+como funciona ? puede contener varias bases de datos, y se pueden eoganizar las tablas en esquemas
+como esta compueto ? la arquitetcura esta compuesta por 3 niveles base de datos en si, analisis, y frontend que presenta los resultados
+que es Redshif ? nos permite hacer analisis de grandes voluemntes de info, es administrado por aws
+como procesa los datos ? el procesamiento es paralelo, dos o mas microprocesadores separan programas y ejecutan tareas en forma simultanea
+cuando lo ocupamos ? situacione empresariales, big data, softare como servicio,
+~~~ 
