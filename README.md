@@ -248,8 +248,23 @@ curl 169.254.169.254/latest/user-data
 
 ##### Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
 ###### ECS, EKS, Fargate -> contenedores en AWS
+#### Como crear contenedores: 
+#### Docker es  una plataforma que nos permite crear , orbar, implementar,ejecutar contenedores
+#### como se ve docker en AWS Amazon:
+#### Elastic Container Registry (Amazon  ECR) : registro de contenedores administrado que facilita (creacion de imagenes)
+#### Elasticc Container Service (Amazon ECS) : servicio de contenedores altamanete escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
+#### kubernetes : software de codigo abierto para el aprovisionamiento y la administracion de contenedores  
+#### Amazon Elastic Kubernetes (amazon EKS) : (orquestador que contenedores) aprovisiona un cluster, tiene nodos de trabajo,
+#### AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
+
+
+** cluster : conjunto de contendores
+
 
 ##### Lambda AWS(para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta )/ servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
 #### Lambda le permite al codigo ejecutarse sin approvisionamiento (tiene  de invocaciones gratuitas)
 *** TODO LO SERVERLESS SE PAGA POR LO QUE SE USA SOLAMENTE
 #### Capas d elamba son bibliotecas que permiten 
+
+#### APIS
+
