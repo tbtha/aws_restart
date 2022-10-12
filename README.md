@@ -63,6 +63,7 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 
 
 # AMAZON EC2
+~~~
 #### Amazon EC2 proporciona servidores virtuales, también llamados instancias , que pueden hacer casi todo lo que puede hacer un servidor local. Cuando lanza una instancia EC2, dos parámetros que debe especificar son:
 1. Un tipo de instancia : este parámetro especifica las características de rendimiento de la CPU, la memoria, el almacenamiento y la red de la instancia. El tipo de instancia a menudo se denomina tamaño  de la instancia.
 2. Una imagen de máquina de Amazon (AMI) : este parámetro define el software inicial y el sistema operativo (SO) para la instancia. Hay muchas opciones disponibles para sistemas operativos y software preinstalado.
@@ -72,6 +73,7 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 2. Instancias al contado: puje por instancias EC2 no utilizadas, sin compromisos. Puede ahorrar hasta un 90 por ciento en costos en comparación con las instancias bajo demanda.
 3. Instancias reservadas : Reserve una instancia EC2 por 1 año o 3 años, con varios niveles de ahorro. (Nota: si planea usar un servidor durante mucho tiempo, es decir, más de 1 año, este tipo de compra es la mejor opción).
 4. Host dedicado : ejecute instancias EC2 en hardware dedicado a un solo cliente
+~~~
 
 **169.254.169.254 -> para cada instancia se brinda un servicio de matadas en la sig direccion ip  169.254.169.254
 aws e2 decribe-instances  --instances-id $INSTANCE_ID
@@ -108,33 +110,29 @@ Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
 
 
 
-#### ** CONEXIONES, si no puede hacer la conexion por ssh verfique que el grupo de seguridad tenga habilitada una regla de entrada el puerto 22 , lo mismo si quiere sacarlo a la web, debe habilitar el puerto 80 
+#### 
 
 
-#### Cloud adoption framework (AWS CAF)ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
-##### actores para definir los objetivos 
-**se organiza en 6 perspectivas y son capacidades /
-##### enfoque empresarial(orientado a la e/arquitectos empresariales )1.empresa -> con que contamos para soportar la tecnologia de la e 2.personas-> priorizar capacitacion para desarrollar organizacion agil  3.gobernanza -> darle continuidad a cualquir proyecto / riesgos empresariales (prince2, SaFe, OKRs)
-##### enfoque tecnico(arquitectos y administradores TI) 1.plataforma -> entender y comunicar las naturaleza de los sitemas informaticos 2.seguridad -> como aseguramos las platafoormas/asegurarque la org cumpla obj de seguridad  3.operaciones -> cuales son la operaciones/acciones que se ejecutan para que las plataformas/negocio puedan seguir funcionando, definimos como se llevaran a cabo os negocios diarios 
-
-
-
-
-
-
-
+#### Cloud adoption framework (AWS CAF)
+~~~
+ayuda a las organizaciones a desarollar planes eficiente  y eficaces,tambien orientar y dar buena practicas para crear un buen enfoque en la nube y su proceso de 
+actores para definir los objetivos 
+**se organiza en 6 perspectivas y son capacidades 
+	enfoque empresarial(orientado a la e/arquitectos empresariales )
+		1.empresa -> con que contamos para soportar la tecnologia de la e 
+		2.personas-> priorizar capacitacion para desarrollar organizacion agil  
+		3.gobernanza -> darle continuidad a cualquir proyecto / riesgos empresariales (prince2, SaFe, OKRs)
+		
+	enfoque tecnico(arquitectos y administradores TI)
+	1.plataforma -> entender y comunicar las naturaleza de los sitemas informaticos 
+	2.seguridad -> como aseguramos las platafoormas/asegurarque la org cumpla obj de seguridad  
+	3.operaciones -> cuales son la operaciones/acciones que se ejecutan para que las plataformas/negocio puedan seguir funcionando, definimos como se llevaran a cabo os negocios diarios 
+~~~
 
 
 
 
 #### AWS Well-Architected Framework
-
-
-
-
-Putty
-ip publica cuando te conectas desde afuera 
-ingresar con ec2-user
 
 
 #### AWS systems Manager:  
@@ -176,7 +174,15 @@ CIDR
 
 #### BIBLIA CLI comandos 
 https://docs.aws.amazon.com/cli/latest/reference/index.html
+~~~
+Para acceder desde la CLI 
+Putty 
+par de claves de acceso 
+ip publica cuando te conectas desde afuera 
+ingresar con ec2-user
 
+** CONEXIONES, si no puede hacer la conexion por ssh verfique que el grupo de seguridad tenga habilitada una regla de entrada el puerto 22 (ssh) , lo mismo si quiere sacarlo a la web, debe habilitar el puerto 80 (htttp)
+~~~
 
 curl 169.254.169.254/latest/user-data
 
