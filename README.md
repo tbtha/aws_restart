@@ -1,5 +1,7 @@
-# APUNTES
+* apuntes pablo 
+* https://pablo-dev.notion.site/pablo-dev/c483bcdd69194cec9b7619596844be98?v=cad8574c8ae3499286c9d27097b038f5
 
+# MIS APUNTES 
 #### IDE
 ~~~
 Entorno de desarrollo integrado / Integrated Development Environment
@@ -58,17 +60,40 @@ precios : por la forma de estuctura fiscal en brasil por ej. es mas caro
 
 ~~~
 
-#### Amazon Simple Storage Service (AWS S3)
-~~~
-Solucion administrada de almacenamiento en la nube
-Los datos se almacena como objetos en buckets
-diponibilidad y durabilidad
 
-Costos dependen de:
-	tipo de clase de almacenamiento
-	cantidad de almacenamiento (cantidad y tamaño de los objetos)
-	solicitudes (numero y tipo de solicitudes )
-	transferencia de datos (se cobran cargos por los datos salientes )	
+### AMAZON VP 
+~~~
+Amazon Virtual Private Cloud (Amazon VPC) es un servicio que puede utilizar para aprovisionar una sección de la nube de AWS aislada lógicamente, que sedenomina nube virtual privada o VPC
+podemos crear una red definida de forma personalizada en la nube de AWS 
+Amazon VPC es un servicio básico de AWS comprender e implementar permitira hacer uso con muchos servicios de AWS.
+Una VPC:
+	Está dedicada a una cuenta de AWS
+	Pertenece a una sola región de AWS
+	Puede abarcan varias zonas de disponibilidad
+	Está aislada lógicamente de otras VPC
+Puede crear varias VPC en una cuenta de AWS para separar los entornos de redes
+Puede crear subredes en una VPC
+EL intervalos de direccion IP de un VPC se define mediante un bloque CIDR
+SUBRED 
+	Una subred es un segmento de un intervalo de direcciones de VPC. Puede lanzar servicios de AWS en una subred
+	*Se puede acceder a una subred pública desde la VPC y desde Internet.
+	*Solo se puede acceder a una subred privada desde la VPC y no se puede acceder a ella desde Internet
+~~~
+
+##### Tabla de enrutamiento
+~~~
+Una tabla de enrutamiento contiene una serie de reglas, llamadas rutas, que se utilizan para determinar la dirección del tráfico de red. Cada subred de una VPC debe estar asociada a una tabla de enrutamiento. La tabla controla el enrutamiento de la subred. La subred solo puede asociarse a una tabla de enrutamiento; 
+*no obstante, puede asociar varias subredes a la misma tabla de enrutamiento.
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
+~~~
+##### Grupos de seguridad 
+~~~
+Un grupo de seguridad es un firewall virtual con estado que controla el tráfico de red entrante y saliente hacia los recursos de AWS y las instancias EC2.
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
+~~~
+##### Lista de control de acceso de red (ACL de red )
+~~~
+Una lista de control de acceso de red (ACL de red) es una capa de seguridad opcional para una VPC. Actúa como un firewall sin estado para controlar el tráfico entrante y saliente de una o más subredes.
 ~~~
 
 
@@ -118,7 +143,23 @@ Lanzar con un script cuando deba automatizar la creación de una instancia de fo
 Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
 ~~~
 
+
+#### Amazon Simple Storage Service (AWS S3)
+~~~
+Solucion administrada de almacenamiento en la nube
+Los datos se almacena como objetos en buckets
+diponibilidad y durabilidad
+
+Costos dependen de:
+	tipo de clase de almacenamiento
+	cantidad de almacenamiento (cantidad y tamaño de los objetos)
+	solicitudes (numero y tipo de solicitudes )
+	transferencia de datos (se cobran cargos por los datos salientes )	
+~~~
+
 #### AWS Identify and Acess Management (IAM)
+
+##### GuardDuty: se puede utilizar para detectar actividades maliciosas y ayuda a proteger la cuenta 
 
 
 #### Cloud adoption framework (AWS CAF)
@@ -155,11 +196,6 @@ insights : panel de informacion es una muestra de datosoperativos para cada recu
 
 ~~~
 
-
-
-
-
-
  
 
 ### Redes :
@@ -169,6 +205,19 @@ CIDR
 
 
 **Subnet publica sale a internet atraves de Internet Gateway
+~~~
+
+#### PROTOCOLOS networking
+~~~~
+Protocolo Secure Shell (SSH) es un protocolo que abre una interfaz de línea de comandos (CLI) segura en una computadora remota Linux o Unix.
+Protocolo de transferencia de hipertexto HTTP es el protocolo que se utiliza para llegar a las páginas web. Una dirección HTTP completa se expresa como un localizador uniforme de recursos (URL).
+TCP/IP es un protocolo orientado a la conexión. Define cómo establecer y mantener las comunicaciones de red donde los programas de las aplicaciones pueden intercambiar datos. Los datos que se envían a través de este protocolo se dividen en fragmentos más pequeños denominados paquetes.
+HTTP:80
+HTTPS:443
+FTP:21
+SSH:22
+DNS:52
+*protocolo de transporte TCP
 ~~~
 
 #### BIBLIA CLI comandos 
