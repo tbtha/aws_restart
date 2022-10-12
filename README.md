@@ -62,8 +62,21 @@ precios : por la forma de estuctura fiscal en brasil por ej. es mas caro
 ###  Amazon Elastic Compute Cloud (AWS EC2) 
 ~~~
 Amazon EC2 proporciona servidores virtuales, también llamados instancias , que pueden hacer casi todo lo que puede hacer un servidor local. Cuando lanza una instancia EC2, dos parámetros que debe especificar son:
-1. Un tipo de instancia : este parámetro especifica las características de rendimiento de la CPU, la memoria, el almacenamiento y la red de la instancia. El tipo de instancia a menudo se denomina tamaño de la instancia.
-2. Una imagen de máquina de Amazon (AMI) : este parámetro define el software inicial y el sistema operativo (SO) para la instancia. Hay muchas opciones disponibles para sistemas operativos y software preinstalado.
+	1. Un tipo de instancia : este parámetro especifica las características de rendimiento de la CPU, la memoria, el almacenamiento y la red de la instancia. El tipo de instancia a menudo se denomina tamaño de la instancia.
+	2. Una imagen de máquina de Amazon (AMI) : este parámetro define el software inicial y el sistema operativo (SO) para la instancia. Hay muchas opciones disponibles para sistemas operativos y software preinstalado.
+		Beneficios : capacidad de repeticion/reutilizacion/recuperacion
+	3.Especificar la configuracion de red : Identificar VPC y/o subred donde se implementara y asigne IP publica si necesita acceso a internet
+	4.Rol IAM (opcional): necesita adjuntar un rol de iam adecuado si va a interactur con otros servicios de aws(por ej rol que concede permisos de acceso a un bucket de S3)
+	5.script de datos de usuario (opcional): utilice para personalizar el entorno en tiempo de jecucion de la instacias
+	6.Especificar almacenamiento : volumen raiz y volumenes de almacenamiento adicionales
+		opciones de almacenamiento:
+			Amazon Elastic Block Store (AWS EBS) -> persiste esta info , si se apaga y prende una instancia (EBS es un servicio de almacenamiento en bloque fácil de usar, escalable y de alto rendimiento)
+	Intance store -> se pierde la info si se apaga y prende una instancia (Instance store son ideales para almacenar datos temporales, especialmente si estos cambian frecuentemente)
+		
+	7.Etiquetas/tags
+	8.Grupo de seguridad : conjunto de reglas de firewall que controlan el trafico a la instancia , creacion de reglas de entrada y salida especificando el puerto y el protocolo 
+	9. par de claves: en el lanzamiento se especifica o se crea , consite en una clave publica que almacena aws y un archivo de clave privada que uno almacena y estas permiten la CONEXION segura a la instancia 
+	
 ** Si inicialmente elige un tipo de instancia que tiene poca o demasiada potencia para su aplicación, puede cambiar el tipo de instancia más fácilmente que cambiar un servidor local.
 Una instancia EC2 se puede comprar de cuatro maneras:
 	1. Instancias bajo demanda : pague solo por lo que usa, sin compromisos.
@@ -73,9 +86,7 @@ Una instancia EC2 se puede comprar de cuatro maneras:
 	
 ** 169.254.169.254 -> para cada instancia se brinda un servicio de meta data en la sig direccion ip  169.254.169.254
 ** si la intsnacia se reincia no cambia la ip, cuando apagamos y prendemos si 
-** almacenamiento de Ec2
-	Amazon Elastic Block Store (AWS EBS) -> persiste esta info , si se apaga y prende una instancia (EBS es un servicio de almacenamiento en bloque fácil de usar, escalable y de alto rendimiento)
-	Intance store -> se pierde la info si se apaga y prende una instancia (Instance store son ideales para almacenar datos temporales, especialmente si estos cambian frecuentemente)
+
 ** las ip siempre son dinamicas, cuando ocupamos una ip elastica(estatica)?, cuando queremos apagar y prender una instancia y no queremos que se cambie la ip 
 * hibernacion de una instancia, el sistema op guarda toda la info en memoria (asignamos ip elastica), por la instancia hibernada no pagamos pero todo lo que almacena en el disco ebs si se cobra, requisistos para hibernar una instancia
 	1.habilitar la hibernacion en el moemnto del lanzamiento / tipo de instancia compatible3.
@@ -94,7 +105,7 @@ Lanzar con un script cuando deba automatizar la creación de una instancia de fo
 Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
 ~~~
 
-
+#### AWS Identify and Acess Management (IAM)
 
 
 #### Cloud adoption framework (AWS CAF)
