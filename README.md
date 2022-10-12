@@ -270,10 +270,14 @@ AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administ
 ~~~
 
 
-##### Lambda AWS(para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta )/ servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
-#### Lambda le permite al codigo ejecutarse sin approvisionamiento (tiene  de invocaciones gratuitas)
+#### Lambda AWS
+~~~
+para que utilizamos lamba? para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta 
+servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
+Lambda le permite al codigo ejecutarse sin aprovisionamiento (tiene  de invocaciones gratuitas)
 *** TODO LO SERVERLESS SE PAGA POR LO QUE SE USA SOLAMENTE
-#### Capas d elamba son bibliotecas que permiten 
+~~~
+
 
 #### APIS
 
