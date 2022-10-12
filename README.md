@@ -246,6 +246,8 @@ curl 169.254.169.254/latest/user-data
 #### blue/green deploy : cuando tenemos 2 versiones de un sistema que queremos probar que la segunda version funcione bien , debemos implementar blue(version1) y green(version2) / ROUTE 53 balancea de apoco, enviando el 100% del trafico al sistema blue y gradualmente empieza a enviarlo al sistema greend
 #### Pruebas 
 
+#### Contenedores 
+~~~
 ##### Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
 ###### ECS, EKS, Fargate -> contenedores en AWS
 
@@ -264,6 +266,7 @@ curl 169.254.169.254/latest/user-data
 ** maquina virutal es harward y tiene el sitema operativo completo visrtualizado. dentro de una intancia pueden haber varios contenedores 
 
 ** cluster : conjunto de contendores
+~~~
 
 
 ##### Lambda AWS(para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta )/ servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
@@ -274,15 +277,15 @@ curl 169.254.169.254/latest/user-data
 #### APIS
 
 ### BASES DE DATOS
-
-#### dependiendo de lo que quiero es el servicio que elijo
-#### RDS (transacionales) para lecura y escritura (JOIN para hacer relaciones entre tablas )
-#### DinamoDB (transacioales)
-#### Redshif analizar datos de forma masiva / analisis de grandes volumenes de informacion 
-#### Elastic Cahche ()
-#### Neptune : determinar relacion entre dos nodos que quieren conectarse (grafos)
-#### Aurora: 
-
+~~~
+dependiendo de lo que quiero es el servicio que elijo
+RDS (transacionales) para lecura y escritura (JOIN para hacer relaciones entre tablas )
+DinamoDB (transacioales)
+Redshif analizar datos de forma masiva / analisis de grandes volumenes de informacion 
+Elastic Cahche ()
+Neptune : determinar relacion entre dos nodos que quieren conectarse (grafos)
+Aurora: 
+~~~
 
 #### Redshif : es una servicion de almacenamiento de datos administrado 
 ~~~
@@ -324,6 +327,7 @@ Casos de uso ? aurora podria reducir en un 90% ala vez mejora la fiabilidad y di
 ~~~
 
 #### AWS Database Migration Service (AWS DMS)
+##### AWS SCT(AWS Schema Conversion Tool
 ~~~
 Permite migrar las bases de datos a AWS de manera rapida y segura 
 Con DMS  minimiza el tiempo de inactividad (con sct la migracion es mas acelerada) de la app que dependen de la base de datos , ya que su bd de origen funciona todo el tiempo 
