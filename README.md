@@ -138,13 +138,16 @@ ingresar con ec2-user
 
 
 #### AWS systems Manager:  
-##### session manager: administracion/gestion de instancias, queda registrado en cloud trail, no hay que establecer puerto ni concecciones de grupos 
+~~~
+Es un conjunto de capacidades que ayudan a administrar las aplicaciones y la infraestructura que se ejecutan en la Nube
+session manager: administracion/gestion de instancias, queda registrado en cloud trail, no hay que establecer puerto ni concecciones de grupos 
 #### patch manager: 
-#### maintenance windows : programar periodos para ejecutar tareas administrativas y de mantenimiento en las instancias
-#### state manager : administrador de estados -> mantener una configuracion uniforme d elas instacias de amazon EC2 (documento json con acciones que esten definidas para controlar las inslacias , pasos y parametros definidos )
-##### inventory : recopila informacion acerca de las instancias y del software instalado en ellas 
-##### insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
+maintenance windows : programar periodos para ejecutar tareas administrativas y de mantenimiento en las instancias
+state manager : administrador de estados -> mantener una configuracion uniforme d elas instacias de amazon EC2 (documento json con acciones que esten definidas para controlar las inslacias , pasos y parametros definidos )
+inventory : recopila informacion acerca de las instancias y del software instalado en ellas 
+insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
 
+~~~
 
 
 
@@ -166,13 +169,13 @@ infraestructuras, las "ubicaciones pefirericas" (cloudfront, red de entrega de c
  
 
 ### Redes :
-##### Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
-##### CIDR   
+~~~
+Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
+CIDR   
+~~~
 
-CLI comandos 
+#### BIBLIA CLI comandos 
 https://docs.aws.amazon.com/cli/latest/reference/index.html
-
-cafe S3 y sitio webe statico http://tgamboa987.s3-website-us-west-2.amazonaws.com/
 
 
 curl 169.254.169.254/latest/user-data
@@ -182,10 +185,13 @@ curl 169.254.169.254/latest/user-data
 
 
 
-#### Elastic Beanstalk Servicio de computo (PaaS)
-##### permite implemetar, escalar y administrar aplicaciones web con rapidez, tomar codigo, cargarlo y elastic se encarga de desplegar el codigo, mantiene el control de todos los recursos de mi app
-#### compatible con go, java SE, node js, php, python y demases
-#### elastic es gratuito, solo se paga por lo servicios subyacentes como ec2, rds, balanceador de carga, etc
+#### Elastic Beanstalk (Servicio de computo (PaaS)) ???
+~~~
+Permite implemetar, escalar y administrar aplicaciones web con rapidez, tomar codigo, cargarlo y elastic se encarga de desplegar el codigo, mantiene el control de todos los recursos de mi app
+compatible con go, java SE, node js, php, python y demases
+elastic es gratuito, solo se paga por lo servicios subyacentes como ec2, rds, balanceador de carga, etc
+~~~
+
 
 
 
@@ -195,10 +201,6 @@ ESCALABILIDAD:  los sistemas exitoso y en crecimiento a menudo ven un aumento en
 ESCALABILIDAD VERTICAL : la capacidad de uns sitema para crecer aumentando rendimiento (hadware: RAM/CPU) a un servidor
 ESCALABILIDAD HORIZONTAL : la capacidad de un sistema para crecer agregando computadoras adicionales con las mismas caracteristicas 
 ELASTICIDAD : capacidad de adquirir recurso cuando los necesite y liberarlos cuando ya no los necesite , *automatizacion 
-
-
-####
-##### como sabemos cuando hay que aumentar?, de eso se ocupa el elastic load balancing, puedo distribuir el trafico por paginas/tags(? en diferentes intancias /home / contacts /orders (se paga por el balanceador de carga dependiendo el tipo y por las instancias ocupadas )
 ~~~
 
 
