@@ -157,9 +157,9 @@ Costos dependen de:
 	transferencia de datos (se cobran cargos por los datos salientes )	
 ~~~
 
-#### AWS Identify and Acess Management (IAM)
+#### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
 
-##### GuardDuty: se puede utilizar para detectar actividades maliciosas y ayuda a proteger la cuenta 
+
 
 
 #### Cloud adoption framework (AWS CAF)
@@ -239,7 +239,7 @@ curl 169.254.169.254/latest/user-data
 
 
 
-#### Elastic Beanstalk (Servicio de computo (PaaS)) ???
+#### Elastic Beanstalk (Servicio de computo (PaaS)) (computo)
 ~~~
 Permite implemetar, escalar y administrar aplicaciones web con rapidez, tomar codigo, cargarlo y elastic se encarga de desplegar el codigo, mantiene el control de todos los recursos de mi app
 compatible con go, java SE, node js, php, python y demases
@@ -350,7 +350,7 @@ AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administ
 ~~~
 
 
-#### Lambda AWS
+#### Lambda AWS(computo)
 ~~~
 para que utilizamos lamba? para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta 
 servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
@@ -448,4 +448,34 @@ COmponenes de AWS DMs : Intancia de replicacion (instancias ec2 que contiene las
 
 Con la implementacion Multi-AZ, una intancia de replicacion de AWS DMS tien un alta disponibilidad y admite la conmutacion por error(si falla la instancia principal, se remplaza) 
 aprovisiona y conserva de forma automatica una replica en espera sincronica de la instancias 
+~~~
+
+##### STORAGE
+~~~
++S3
++EBS
++EFS
+backup
+storage gateway
+~~~
+##### SECURITY,IDENTIFY & COMPLIANCE
+~~~
+AWS Identity and Access Management (IAM)
+AWS Artifact
+AWS Audit Manager
+Amazon Cognito
+Amazon Detective
+AWS Directory Service
+AWS Firewall Manager
+Amazon Cloud Directory
+Amazon GuardDuty: se puede utilizar para detectar actividades maliciosas y ayuda a proteger la cuenta 
+AWS IAM Identity Center (successor to AWS Single Sign-On)
+Amazon Inspector
+Amazon Macie
+AWS Network Firewall
+AWS Resource Access Manager (AWS RAM)
+AWS Secrets Manager
+AWS Security Hub
+AWS Shield
+AWS WAF
 ~~~
