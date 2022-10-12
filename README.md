@@ -237,14 +237,17 @@ curl 169.254.169.254/latest/user-data
 **
 
 
-##### AMAZON ROUTE 53 (SERVICIO GLOBAL(AL IGUAL QUE IAM))
-###### convertir el ip a un nombre de dominio ,route 53 cobra por el 
-###### cree un registro CNAME que apunto al balanceador de carga 
-###### Politicas de direccionamiento ->  es el primer punto de contacto/entrada cuando queramos acceder a un recurso  / direccionamiento ponderado / de latencia / conmutaccion de error 
+#### AMAZON ROUTE 53 
+##### (SERVICIO GLOBAL(AL IGUAL QUE IAM))
+~~~
+"convertir" el ip a un nombre de dominio ,route 53 cobra por el 
+Cree un registro CNAME que apunto al balanceador de carga 
+Politicas de direccionamiento ->  es el primer punto de contacto/entrada cuando queramos acceder a un recurso  / direccionamiento ponderado / de latencia / conmutaccion de error 
 **** LOAD BBALANCER balancea las cargas operativas de la instancias 
 **** ROUTE 53 balancea en funcion a politicas muhco mas amplias
-#### blue/green deploy : cuando tenemos 2 versiones de un sistema que queremos probar que la segunda version funcione bien , debemos implementar blue(version1) y green(version2) / ROUTE 53 balancea de apoco, enviando el 100% del trafico al sistema blue y gradualmente empieza a enviarlo al sistema greend
-#### Pruebas 
+-> blue/green deploy : cuando tenemos 2 versiones de un sistema y queremos probar que la segunda version funcione bien , debemos implementar blue(version1) y green(version2) , ROUTE 53 balancea de apoco, enviando el 100% del trafico al sistema blue y gradualmente empieza a enviarlo al sistema greend
+ 
+~~~
 
 #### Contenedores 
 ##### Elastic Container Registry (Amazon  ECR) / Elasticc Container Service (Amazon ECS) / Amazon Elastic Kubernetes (amazon EKS) / AWS Farget
