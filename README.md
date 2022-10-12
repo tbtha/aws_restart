@@ -142,6 +142,9 @@ insights : panel de informacion es una muestra de datosoperativos para cada recu
 ~~~
 Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
 CIDR   
+
+
+**Subnet publica sale a internet atraves de Internet Gateway
 ~~~
 
 #### BIBLIA CLI comandos 
@@ -287,13 +290,27 @@ Lambda le permite al codigo ejecutarse sin aprovisionamiento (tiene  de invocaci
 
 ### BASES DE DATOS
 ~~~
+
 dependiendo de lo que quiero es el servicio que elijo
 RDS (transacionales) para lecura y escritura (JOIN para hacer relaciones entre tablas )
 DinamoDB (transacioales)
-Redshif analizar datos de forma masiva / analisis de grandes volumenes de informacion 
+Redshif :analizar datos de forma masiva / analisis de grandes volumenes de informacion 
 Elastic Cahche ()
 Neptune : determinar relacion entre dos nodos que quieren conectarse (grafos)
 Aurora: 
+~~~
+
+#### Aamazon Relational Database Service (Amazon RDS) (transacional)
+~~~
+Facilita las tareas de configuración, operación y escalado de una base de datos relacional en la nube. Proporciona una capacidad rentable y de tamaño modificable, al mismo tiempo que permite gestionar las tareas de administración de base de datos que requieren mucho tiempo, lo que permite centrarse en las aplicaciones y el negocio. Amazon RDS le ofrece seis motores familiares de base de datos entre los que elegir: Amazon Aurora, Oracle, Microsoft SQL Server, PostgreSQL, MySQL y MariaDB.
+
+*creamos un grupo de seguridad para permitir que su servidor web acceda a la instancia de base de datos de RDS. El grupo de seguridad se utilizará al lanzar la instancia de base de datos.
+*creamos un grupo de subredes de base de datos que se emplea a fin de informar a RDS acerca de qué subredes se pueden utilizar para la base de datos. Cada grupo de subredes de base de datos requiere subredes en al menos dos zonas de disponibilidad.
+*Las implementaciones Multi-AZ de Amazon RDS proporcionan mejoras en la DISPONIBILIDAD y la DURABILIDAD de las instancias de base de datos, lo que las hace adecuadas para las cargas de trabajo de bases de datos de producción. Cuando aprovisiona una instancia Multi-AZ de base de datos, Amazon RDS crea automáticamente una instancia de base de datos principal y, de forma sincronizada, replica los datos a una instancia en espera en una zona de disponibilidad diferente.
+~~~
+#### DynamoDB (no relacional)
+~~~
+Tablas globales de amazon dynamoDB un beneficio de usar dynamo es que permite tener una repilicar enlas regiones que necesitamos , las ocupamos cuando necesitamos rendimiento en nuestras app
 ~~~
 
 #### Redshif : es una servicion de almacenamiento de datos administrado 
