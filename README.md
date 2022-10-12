@@ -195,46 +195,57 @@ curl 169.254.169.254/latest/user-data
 ##### como sabemos cuando hay que aumentar?, de eso se ocupa el elastic load balancing, puedo distribuir el trafico por paginas/tags(? en diferentes intancias /home / contacts /orders (se paga por el balanceador de carga dependiendo el tipo y por las instancias ocupadas )
 #### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre"/endpoint (elb-mybalancer.aws.com), el balanceador de carga pongo la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
 
-** ELB (elastic load balancing/Balanceador de carga) distribuye solicitudes entre intancias y aumenta la disponibilidad 
-#### casos de uso ? SEGURO, DESACOPLE , TOLERANCIA A ERRORES trabaja a nivel de la app en general( se encarga que las instancias estan "bien", si hay algun error en la instancias la elimina y crea otra igual, que me permite trabajar), EXPANSIVO aumenta la elasticidad y escalabilidad 
-#### Elastic Load Balancing distribuye automáticamente el tráfico entrante de aplicaciones entre varias instancias de Amazon EC2. Le permite lograr tolerancia a fallos en sus aplicaciones al proporcionar sin problemas la cantidad necesaria de capacidad de equilibrio de carga necesaria para enrutar el tráfico de aplicaciones.
 
-#### balanceador de carga de red, protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
-** si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
+#### AWS Elastic Load Balancing (ELB) 
+###### Balanceador de carga 
+~~~
+Distribuye solicitudes entre instancias y aumenta la disponibilidad 
+Beneficios:
+	SEGURO
+	DESACOPLE
+	TOLERANCIA A ERRORES (tabaja a nivel de la app en general( se encarga que las instancias estan "bien", si hay algun error en la instancias la elimina y crea otra igual, que me permite trabajar)
+	EXPANSIVO aumenta la elasticidad y escalabilidad
+	
+Elastic Load Balancing distribuye automáticamente el tráfico entrante de aplicaciones entre varias instancias de Amazon EC2. Le permite lograr tolerancia a fallos en sus aplicaciones al proporcionar sin problemas la cantidad necesaria de capacidad de equilibrio de carga necesaria para enrutar el tráfico de aplicaciones.
 
-#### balanceador de carga de aplicaciones, protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta(? que el de red 
-** direccionamiento basado en rutas y host /home / contact ( en un balanceador de carga hay agentes de escucha que clasifica grupos de destino  y  en esos grupos hay comprobacion de status  )
-#### balancador de carga clasico, esta deprecado 
-** habilitamos sesiones pegajosas(? para que el usuario que se le cayo en net, y queremos que vulva a conectarse a la misma instancia para que su carrito vuelva a tener la misma info
+TIPOS:
+	Balanceador de carga de RED, capa 4? protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
+		si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
+	Balanceador de carga de APLICACIONES, capa 7? protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta que el de red 
+		direccionamiento basado en rutas y host /home / contact
+	Balancador de carga clasico, esta deprecado 
+		habilitamos sesiones pegajosas(? para que el usuario que se le cayo en net, y queremos que vulva a conectarse a la misma instancia para que su carrito vuelva a tener la misma info
 
-#### Receptores/AGENTES DE ESCUCHA/listener dentro del balanceador de carga 
-##### proceso que define el puerto y protocolo con el que escucha el balanceador de carga 
-##### cada balanceador necesita al menos un agente de escucha para aceptar el trafico y hasta 50 
-##### las REGLAS de direccionamiento se definen en los agentes de escucha (una regla como minimo)
+ **en un balanceador de carga hay agentes de escucha que clasifica grupos de destino y  en esos grupos hay comprobacion de status
+Receptores/AGENTES DE ESCUCHA/listener dentro del balanceador de carga 
+proceso que define el puerto y protocolo con el que escucha el balanceador de carga 
+cada balanceador necesita al menos un agente de escucha para aceptar el trafico y hasta 50 
+las REGLAS de direccionamiento se definen en los agentes de escucha (una regla como minimo)
 
-##### crear balanceador de carga CLI :aws elbv2 create-load-balancer 
-##### crear grupo de destino para el balanceador de carga: aws elbv2 create-target-group
-##### registrar las instancias en el grupo de destino : aws elbv2 registre-target
-##### crear un agente de escucha y sus reglas: aws elbv2 create-listener 
-##### comprobar el estado : aws elbv2 describe-target-health
-
+~~~
 
 #### AMAZON EC2 Auto Scaling
-##### lanza o termina las inatncias de amazon Elastic Compute CLoud (amazon EC2) automaticamente, necesita una plantilla de lanzamiento(AMI, tipo de intancia,VPC, grupo de seguridad,almacenamiento, par de claves,datos de usuario ,tags), permite la configuracion de las politicas de escalado y tamao del grupo de instancias Ec2, no escala de forma infinita, hay que establecer el limite 
-##### Auto Scaling le ayuda a mantener la disponibilidad de las aplicaciones y le permite escalar su capacidad de Amazon EC2 hacia fuera o en función de las condiciones que defina. Puede utilizar Auto Scaling para asegurarse de que está ejecutando el número deseado de instancias de Amazon EC2. Auto Scaling también puede aumentar automáticamente el número de instancias de Amazon EC2 durante los picos de demanda para mantener el rendimiento y disminuir la capacidad durante las paradas para reducir los costes. Auto Scaling es adecuado para aplicaciones que tienen patrones de demanda estables o que experimentan variabilidad horaria, diaria o semanal en el uso.
+~~~
+Lanza o termina las inatncias de amazon Elastic Compute CLoud (amazon EC2) automaticamente
+Necesita una plantilla de lanzamiento(AMI, tipo de intancia,VPC, grupo de seguridad,almacenamiento, par de claves,datos de usuario ,tags)
+Permite la configuracion de las politicas de escalado y tamaño del grupo de instancias Ec2, no escala de forma infinita, hay que establecer el limite 
+->Auto Scaling le ayuda a mantener la DISPONIBILIDAD de las aplicaciones y le permite escalar su capacidad de Amazon EC2 hacia fuera o en función de las condiciones que defina. Podemos utilizar Auto Scaling para asegurarse de que está ejecutando el número deseado de instancias de Amazon EC2.
+->Auto Scaling también puede aumentar automáticamente el número de instancias de Amazon EC2 durante los picos de demanda para mantener el rendimiento y disminuir la capacidad durante las paradas para reducir los costes.
+->Auto Scaling es adecuado para aplicaciones que tienen patrones de demanda estables o que experimentan variabilidad horaria, diaria o semanal en el uso.
 ** Hay que establecer la misma VPC par autoScaling y las intancias 
 **Integracion con Elastic Load Balancing 
-##### politicas: como activar politicas? puedo configurar alarmas en CLoudWatch 
-##### como validamos que las instancias esten sanas ?, es saber si las intancias funcionan como corresponde  aws autoscaling set-intance-health 
-##### politicas de terminacion : define qe instancia se termina con el escalado descendentes /1.valancear las zonas de disponibilidad y lugo ya hay diferentes opciones 
-##### Creacion de un grupo de estado estable : configurar unn grupo de amazon Ec2 autoscaling con los mismos valores minimos, maximos y deseados 
-##### ** Escalado dinamico : Amazon EC2 /escalado de siguimiento de objetivo(aumenta o reduxca la capacidad en funcion de un valor en base a una metrica )/ escalado por pasos(aumenta o reduce la capacidad segun ciertos pasos if/else)/ escalado simple(aumente o reduzca la capacidad en funcion de un unico ajuste de escalado) 
-##### ** Escalado predictivo : Amazon EC2 / escala de forma automatica en base a predicciones de Ec2, tambien se establece un maximo de escalamiento 
+
+politicas: como activar politicas? puedo configurar alarmas en CLoudWatch 
+como validamos que las instancias esten sanas ?, es saber si las intancias funcionan como corresponde  aws autoscaling set-intance-health 
+politicas de terminacion : define qe instancia se termina con el escalado descendentes /1.balancear las zonas de disponibilidad y lugo ya hay diferentes opciones 
+Creacion de un grupo de estado estable : configurar unn grupo de amazon Ec2 autoscaling con los mismos valores minimos, maximos y deseados 
+** Escalado dinamico : Amazon EC2 /escalado de siguimiento de objetivo(aumenta o reduxca la capacidad en funcion de un valor en base a una metrica )/ escalado por pasos(aumenta o reduce la capacidad segun ciertos pasos if/else)/ escalado simple(aumente o reduzca la capacidad en funcion de un unico ajuste de escalado) 
+** Escalado predictivo : Amazon EC2 / escala de forma automatica en base a predicciones de Ec2, tambien se establece un maximo de escalamiento 
+
 ****** ALGO QUE FALLA UNICAMENTE AL CREAR UNA INTANCIA ES LA AMI, SI SE CREA Y FALLA DEBE SER OTRA COSA ******
 
+~~~
 
-**region :curl http://169.254.169.254/latest/dynamic/instance-identity/document |     grep region
-**
 
 
 #### AMAZON ROUTE 53 
@@ -249,7 +260,7 @@ Politicas de direccionamiento ->  es el primer punto de contacto/entrada cuando 
  
 ~~~
 
-#### Contenedores 
+#### CONTENEDORES  
 ##### Elastic Container Registry (Amazon  ECR) / Elasticc Container Service (Amazon ECS) / Amazon Elastic Kubernetes (amazon EKS) / AWS Farget
 ~~~
 Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
@@ -335,7 +346,7 @@ Casos de uso ? aurora podria reducir en un 90% ala vez mejora la fiabilidad y di
 ~~~
 
 #### AWS Database Migration Service (AWS DMS)
-##### AWS SCT(AWS Schema Conversion Tool
+##### AWS SCT(AWS Schema Conversion Tool)
 ~~~
 Permite migrar las bases de datos a AWS de manera rapida y segura 
 Con DMS  minimiza el tiempo de inactividad (con sct la migracion es mas acelerada) de la app que dependen de la base de datos , ya que su bd de origen funciona todo el tiempo 
