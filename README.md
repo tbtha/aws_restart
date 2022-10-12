@@ -247,20 +247,21 @@ curl 169.254.169.254/latest/user-data
 #### Pruebas 
 
 #### Contenedores 
+##### Elastic Container Registry (Amazon  ECR) / Elasticc Container Service (Amazon ECS) / Amazon Elastic Kubernetes (amazon EKS) / AWS Farget
 ~~~
-##### Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
-###### ECS, EKS, Fargate -> contenedores en AWS
+Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
+ECS, EKS, Fargate -> contenedores en AWS
 
-#### Como crear contenedores: 
-#### Docker es  una plataforma que nos permite crear (sofware empaquetado) , probar, implementar,ejecutar contenedores
+Como crear contenedores: 
+Docker es  una plataforma que nos permite crear (sofware empaquetado) , probar, implementar,ejecutar contenedores
 
-#### como se ve docker en AWS Amazon:
-#### Elastic Container Registry (Amazon  ECR) : registro de contenedores administrado que facilita (creacion de imagenes)()
-#### Elasticc Container Service (Amazon ECS) : servicio de contenedores altamanete escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
+como se ve docker en AWS Amazon:
+Elastic Container Registry (Amazon  ECR) : registro de contenedores administrado que facilita (creacion de imagenes)()
+Elasticc Container Service (Amazon ECS) : servicio de contenedores altamanete escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
 ** tareas son epecificas de ECS 
-#### kubernetes : software de codigo abierto para el aprovisionamiento y la administracion de contenedores  
-#### Amazon Elastic Kubernetes (amazon EKS) : (orquestador que contenedores) aprovisiona un cluster, tiene nodos de trabajo,
-#### AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
+kubernetes : software de codigo abierto para el aprovisionamiento y la administracion de contenedores  
+Amazon Elastic Kubernetes (amazon EKS) : (orquestador que contenedores) aprovisiona un cluster, tiene nodos de trabajo,
+AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
 
 ** contenedor es un pedazo del sitema operativo, podemos transportar a 
 ** maquina virutal es harward y tiene el sitema operativo completo visrtualizado. dentro de una intancia pueden haber varios contenedores 
