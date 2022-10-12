@@ -190,10 +190,19 @@ curl 169.254.169.254/latest/user-data
 
 
 #### Escalamiento VERTICAL/HORIZONTAL
-##### vetical, aumento de hadware / horizontal, misma caracteristicas mas aumento de instancia 
-#### Grupo de Amazon EC2 auto scaling, (escalamiento horizontal)permite crecer o aumentar la cantidad de instancias, y cuando no se necesite (cuando no hay tanta demanda quiero 2 instancias pero para un cyber necesito 15 instancias, cuando una instancia esta cargada, automaticamente se crean mas instancias ), si no ocupo auto scaling tendria que hacerlo manual , (en base a reglas por ej si se esta al 70% de la instancia, se crea otra instancia y asi sucesivamente )
+~~~
+ESCALABILIDAD:  los sistemas exitoso y en crecimiento a menudo ven un aumento en la demanda. Un sistema que es ESCALABLE puede adaptarse para cumplir con este nuevo nivel de demanda 
+ESCALABILIDAD VERTICAL : la capacidad de uns sitema para crecer aumentando rendimiento (hadware: RAM/CPU) a un servidor
+ESCALABILIDAD HORIZONTAL : la capacidad de un sistema para crecer agregando computadoras adicionales con las mismas caracteristicas 
+ELASTICIDAD : capacidad de adquirir recurso cuando los necesite y liberarlos cuando ya no los necesite , *automatizacion 
+
+
+####
 ##### como sabemos cuando hay que aumentar?, de eso se ocupa el elastic load balancing, puedo distribuir el trafico por paginas/tags(? en diferentes intancias /home / contacts /orders (se paga por el balanceador de carga dependiendo el tipo y por las instancias ocupadas )
-#### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre"/endpoint (elb-mybalancer.aws.com), el balanceador de carga pongo la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
+~~~
+
+
+#### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre"/endpoint (elb-mybalancer.aws.com), el balanceador de carga debe tener la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
 
 
 #### AWS Elastic Load Balancing (ELB) 
@@ -226,7 +235,8 @@ las REGLAS de direccionamiento se definen en los agentes de escucha (una regla c
 
 #### AMAZON EC2 Auto Scaling
 ~~~
-Lanza o termina las inatncias de amazon Elastic Compute CLoud (amazon EC2) automaticamente
+Grupo de Amazon EC2 auto scaling, (escalamiento horizontal) permite lanza o terminar una cantidad de instancias determinada cuando sea necesario (cuando no hay tanta demanda quiero 2 instancias pero para un cyber necesito 15 instancias, cuando una instancia esta sobrecargada, automaticamente se crean mas instancias ), si no ocupo auto scaling tendria que hacerlo manual , (en base a reglas por ej si se esta al 70% de la instancia, se crea otra instancia y asi sucesivamente )
+
 Necesita una plantilla de lanzamiento(AMI, tipo de intancia,VPC, grupo de seguridad,almacenamiento, par de claves,datos de usuario ,tags)
 Permite la configuracion de las politicas de escalado y tamaño del grupo de instancias Ec2, no escala de forma infinita, hay que establecer el limite 
 ->Auto Scaling le ayuda a mantener la DISPONIBILIDAD de las aplicaciones y le permite escalar su capacidad de Amazon EC2 hacia fuera o en función de las condiciones que defina. Podemos utilizar Auto Scaling para asegurarse de que está ejecutando el número deseado de instancias de Amazon EC2.
