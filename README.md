@@ -293,3 +293,56 @@ que es Redshif ? nos permite hacer analisis de grandes voluemntes de info, es ad
 como procesa los datos ? el procesamiento es paralelo, dos o mas microprocesadores separan programas y ejecutan tareas en forma simultanea
 cuando lo ocupamos ? situacione empresariales, big data, softare como servicio,
 ~~~ 
+
+
+#### Amazon Aurora
+~~~
+Motor de base de datos compatible con MySQL y PostresSQL
+Esta contruida para la nube y aprovecha todo los beneficios, tambien funciona con RDS
+Esta conformada por clusteres 
+Caracteristicas : Simple y compatible
+		  Pago por uso 
+		  Servicio gestionado, funciona con servicios como Database Services
+		  Tolerante a fallos, replica para copias de seguridad 2 veces dentro de 3 zona de disponibilidad  
+		  Alto rendimiento y escalabilidad de almacenamiento 
+		  Alta disponibilidad y durabilidad 
+Cuando crea una instancia Amazon Aurora, crea un cluster de base de datos 
+Un cluster de base de datos aurora se compone de una o varias instancias de base de datos y de un volumen de cluster que administra los datos para esas instancias db
+Un volumen de cluster es un volumen de almacenamientos d db virtual que abarca varias zonas de disponibilidad 
+Hay dos tipode cluster de db :
+	cada cluster tiene una instancia primaria de Amazon aurora (lectura y escritura )
+	cada cluster de db aurora puede tener hasta un max de 15 replicas de amazon aurora  (lectura)
+Si falla la instancia primaria, toma una replica como intancia primaria y cuando se solucionen los errores automaticmanete vuelve a ser la instacia primaria original 
+Se recupera en menos de 60 segundos en la mayoria de los casos se reincia la instancia, de esto se encarga aws(todo lo administra aws)
+Casos de uso ? aurora podria reducir en un 90% ala vez mejora la fiabilidad y disponibilidad de db , por que no migran aurora? porque requiere de una carga operativa alta 
+1.
+2.
+3.juegos web (alto rendimiento y gran escabilidad de almacenamiento)
+
+** https://www.youtube.com/watch?v=SnCWucCEFLw
+** puede estar en un VPC y acceder desde otra VPC (?
+~~~
+
+#### AWS Database Migration Service (AWS DMS)
+~~~
+Permite migrar las bases de datos a AWS de manera rapida y segura 
+Con DMS  minimiza el tiempo de inactividad (con sct la migracion es mas acelerada) de la app que dependen de la base de datos , ya que su bd de origen funciona todo el tiempo 
+Permite migracion homegeneas y heterogeneas( Oracle a Oracle / Microsoft SQL a Amazon Aurora)
+	La migracion homogeneas son de 1 solo paso cuando el esquema de origen y destino son compatibles
+	La migracion heteogenea son de 2 pasos ya que la estructura pueden ser muy diferentes,es necesario la transformacion de tipos de datos (AWS Schema Conversion Tool) y luego DMS para la migracion  
+ALTA DISPONIBILIDAD en AWS DMS : puede replicar datos de forma casi continua 
+AWS DMS puede migrar entre lenguajes de consulta estructurados SQL y noSQL
+
+AWS SCT(AWS Schema Conversion Tool): principalmente convierte el esquema de la base de datos de origen para la migracion de los datos mediante AWS DMS
+AWS DMS junto a AWS SCT, me permite convertir el codigo de diferentes motores de plantilla (heterogeneas)
+hay casos que son automaticas y otras que son necesarias ser manuales
+
+Replicacion casi continua de base de datos, desde su centro de datos a las bases de datos de aws o en sentido inverso 
+
+COnsolidacion de bases de datos, puedo consolidad varias bases de datos y unificar a solo una(tener en cuanta que puede ser necesario SCT)
+
+COmponenes de AWS DMs : Intancia de replicacion (instancias ec2 que contiene las tareas del dms)/ tareas / origen(es la que queremos traspasar) / destino(instancia de base de datos de la nube) 
+
+Con la implementacion Multi-AZ, una intancia de replicacion de AWS DMS tien un alta disponibilidad y admite la conmutacion por error(si falla la instancia principal, se remplaza) 
+aprovisiona y conserva de forma automatica una replica en espera sincronica de la instancias 
+~~~
