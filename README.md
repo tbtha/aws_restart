@@ -62,55 +62,42 @@ https://pdx.scorm.canvaslms.com/RusticiEngine/defaultui/player/modern.html?confi
 ##### *latencia -> si
 
 
-# AMAZON EC2
+###  Amazon Elastic Compute Cloud (AWS EC2) 
 ~~~
-#### Amazon EC2 proporciona servidores virtuales, también llamados instancias , que pueden hacer casi todo lo que puede hacer un servidor local. Cuando lanza una instancia EC2, dos parámetros que debe especificar son:
-1. Un tipo de instancia : este parámetro especifica las características de rendimiento de la CPU, la memoria, el almacenamiento y la red de la instancia. El tipo de instancia a menudo se denomina tamaño  de la instancia.
+Amazon EC2 proporciona servidores virtuales, también llamados instancias , que pueden hacer casi todo lo que puede hacer un servidor local. Cuando lanza una instancia EC2, dos parámetros que debe especificar son:
+1. Un tipo de instancia : este parámetro especifica las características de rendimiento de la CPU, la memoria, el almacenamiento y la red de la instancia. El tipo de instancia a menudo se denomina tamaño de la instancia.
 2. Una imagen de máquina de Amazon (AMI) : este parámetro define el software inicial y el sistema operativo (SO) para la instancia. Hay muchas opciones disponibles para sistemas operativos y software preinstalado.
 ** Si inicialmente elige un tipo de instancia que tiene poca o demasiada potencia para su aplicación, puede cambiar el tipo de instancia más fácilmente que cambiar un servidor local.
-###### Una instancia EC2 se puede comprar de cuatro maneras:
-1. Instancias bajo demanda : pague solo por lo que usa, sin compromisos.
-2. Instancias al contado: puje por instancias EC2 no utilizadas, sin compromisos. Puede ahorrar hasta un 90 por ciento en costos en comparación con las instancias bajo demanda.
-3. Instancias reservadas : Reserve una instancia EC2 por 1 año o 3 años, con varios niveles de ahorro. (Nota: si planea usar un servidor durante mucho tiempo, es decir, más de 1 año, este tipo de compra es la mejor opción).
-4. Host dedicado : ejecute instancias EC2 en hardware dedicado a un solo cliente
-~~~
+Una instancia EC2 se puede comprar de cuatro maneras:
+	1. Instancias bajo demanda : pague solo por lo que usa, sin compromisos.
+	2. Instancias al contado: pague por instancias EC2 no utilizadas, sin compromisos. Puede ahorrar hasta un 90% en costos en comparación con las instancias bajo demanda.
+	3. Instancias reservadas : Reserve una instancia EC2 por 1 año o 3 años, con varios niveles de ahorro. (Nota: si planea usar un servidor durante mucho tiempo, es decir, más de 1 año, este tipo de compra es la mejor opción).
+	4. Host dedicado : ejecute instancias EC2 en hardware dedicado a un solo cliente
+	
+** 169.254.169.254 -> para cada instancia se brinda un servicio de meta data en la sig direccion ip  169.254.169.254
+** si la intsnacia se reincia no cambia la ip, cuando apagamos y prendemos si 
+** almacenamiento de Ec2
+	Amazon Elastic Block Store (AWS EBS) -> persiste esta info , si se apaga y prende una instancia (EBS es un servicio de almacenamiento en bloque fácil de usar, escalable y de alto rendimiento)
+	Intance store -> se pierde la info si se apaga y prende una instancia (Instance store son ideales para almacenar datos temporales, especialmente si estos cambian frecuentemente)
+** las ip siempre son dinamicas, cuando ocupamos una ip elastica(estatica)?, cuando queremos apagar y prender una instancia y no queremos que se cambie la ip 
+* hibernacion de una instancia, el sistema op guarda toda la info en memoria (asignamos ip elastica), por la instancia hibernada no pagamos pero todo lo que almacena en el disco ebs si se cobra, requisistos para hibernar una instancia
+	1.habilitar la hibernacion en el moemnto del lanzamiento / tipo de instancia compatible3.
+	
+RE LANZAMIENTO DE UNA INSTANCIA
+Cuando hay mucho trafico en la red, cuando necesitamos una instancia mas pequeña, cuando el hadware necesita algun cambio,(para tamaño/ parches) vamos a necesitar lanzar una instancia desde 0, es imaportante diseñar instancias, todo lo que ira dentro en los user-script y la ami y asi no se pierde nignuna configuracion
+* cuando transicionamos a un nuevo tamaño de instancia , primero tenemos que apagarla para cambiar el tamaño
 
-**169.254.169.254 -> para cada instancia se brinda un servicio de matadas en la sig direccion ip  169.254.169.254
-aws e2 decribe-instances  --instances-id $INSTANCE_ID
-ej. curl http://169.254.169.254/latest/mata-data/public-hostname
-
-#### si la intsnacia se reincia no cambia la ip, cuando apagamos y prendemos si 
-#### tipos de almacenamiento 
-##### EBS -> persiste esta info , si se apaga y prende una instancia 
-##### intance store -> se pierde la info si se apaga y prende una instancia 
-
-##### las ip siempre son dinamicas 
-##### cuando ocupamos una ip elastica(estatica)?, cuando queremos apagar y prender una instancia y no queremos que se cambie la ip 
-
-#### hibernacion de una instancia, el sistema op guarda toda la info en memoria (asignamos ip elastica), por la instanci ahibernada no pagamos pero todo lo que almacena en el disco ebs si se cobra, requisistos para hibernar una instancia, 1.habilitar la hibernacion en el moemnto del lanzamiento / tipo de instancia compatible3.
-
-### RE LANZAMIENTO DE UNA INSTANCIA
-#### cuando hay muhco trafico en la red, cuando necesitamos una instancia mas pequeña, cuando el hadware necesita algun cambio,(para tamaño/ parches) vamos a necesitar lanzar una instancia desde 0, es imaportante diseñar instancias, todo lo que ira dentro en los user-script y la ami y asi no se pierde nignuna configuracion
-
-#### cuando transicionamos a un nuevo tamaño de instancia , primero tenemos que apagarla para cambiar el tamaño
-
-### AMI, y su obsolencia, amazon mantiene las que ya estan activas, pero ya no se puede crear mas instancias con esta ami (como buena practica se recomienda tener una misma ami para todas la instancias y asi tener la misma configuracion )
-
-### actualizacion de ejecuacion de EC2, Sistem manager permite manejar muchas instancias a la vez, ocupamos un solo comando para podr actualizar todas la instancias  
-
-
-###bastion host, como medida de "seguridad", sirve para que por ahi pase la info, y tenga salida a internet 
-
+** AMI, y su obsolencia, amazon mantiene las que ya estan en uso, pero ya no se puede crear mas instancias con esta ami (como buena practica se recomienda tener una misma ami para todas la instancias y asi tener la misma configuracion )
+* actualizacion de ejecuacion de EC2, Sistem manager permite manejar muchas instancias a la vez, ocupamos un solo comando para podr actualizar todas la instancias  
 
 Qué método debería usar?
 
 Lanzar desde la Management Console cuando necesite lanzar con rapidez una instancia temporal o única.
 Lanzar con un script cuando deba automatizar la creación de una instancia de forma repetida y confiable.
 Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
+~~~
 
 
-
-#### 
 
 
 #### Cloud adoption framework (AWS CAF)
