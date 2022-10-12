@@ -58,6 +58,19 @@ precios : por la forma de estuctura fiscal en brasil por ej. es mas caro
 
 ~~~
 
+#### Amazon Simple Storage Service (AWS S3)
+~~~
+Solucion administrada de almacenamiento en la nube
+Los datos se almacena como objetos en buckets
+diponibilidad y durabilidad
+
+Costos dependen de:
+	tipo de clase de almacenamiento
+	cantidad de almacenamiento (cantidad y tamaño de los objetos)
+	solicitudes (numero y tipo de solicitudes )
+	transferencia de datos (se cobran cargos por los datos salientes )	
+~~~
+
 
 ###  Amazon Elastic Compute Cloud (AWS EC2) 
 ~~~
