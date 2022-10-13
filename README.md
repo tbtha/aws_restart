@@ -112,13 +112,13 @@ ENRUTADOR : instancias dentro de distintas subredes se puede conectar gracias a 
 
 *VPC predetermina de la cuenta, no es recomendada para gestionar nuestras app
 
-Opciones de DNS para una VPC
+____Opciones de DNS para una VPC
 *cuando cramos VPC se le asigna un nombre de dominio por defecto, DNS proporcionado por aws(aws route 53 reolver)
 *si desabilito la opcion de DNS automatico, solo podre acceder a la web mediante la IP 
 *cuando habilito el DNS, desde zonas alojadas privada de aws route 53 proporciona dns a las instancias 
 *Servidor propio DNS
 
-Escenarios de conectividad VPC
+____Escenarios de conectividad VPC
 *conectar una subred privada a internet, ocupamos Gateway NAT (NAT instance deprecada)
 *conectar subnet publica que necesitamos que tenga salia a internet , Internet gateway
 *conectar VPC a VPC , VPC peering (Interconexion de VPC)
@@ -157,11 +157,19 @@ habilita que sitios remotos puedan conectarse a la VPC
 
 Endpoint VPC (private link) 
 
-
-
-
-
 ~~~
+
+##### Seguridad por capa Redes 
+~~~
+Defensa de red por niveles para las VPC
+(de afuera para adentro):
+1.Tablas de enrutamiento(obligatoria)
+2.ACL de subred: entrante o saliente(opcional)(stalen)
+3.Grupos de sefuridad de interfaz de red elastica o EC2(obligatoria)(stateful: con estado)
+4.Proteccion basada en host de terceros(antiwalmare,)
+~~~
+
+
 
 ##### Tabla de enrutamiento
 ~~~
@@ -173,15 +181,7 @@ Una tabla de enrutamiento contiene una serie de reglas, llamadas rutas, que se 
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
 ~~~
-##### Grupos de seguridad (obbligatorio)
-~~~
-Un grupo de seguridad es un firewall virtual con estado que controla el tráfico de red entrante y saliente hacia los recursos de AWS y las instancias EC2.
-*La VPC tiene un grupo de seguridad por defecto ,deniega todas las reglas entradas,acepta todas las salidas 
-*las reglas se evaluan antes de recibir trafico
-*con estado
 
-https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
-~~~
 ##### Lista de control de acceso de red (ACL de red ) opcionales,sin estado
 ~~~
 Una lista de control de acceso de red (ACL de red) es una capa de seguridad opcional para una VPC. Actúa como un firewall sin estado para controlar el tráfico entrante y saliente de una o más subredes.
@@ -193,6 +193,24 @@ Una lista de control de acceso de red (ACL de red) es una capa de seguridad opci
 *si el grupo de seguridad permite el trafico por el puerto 80, tambien tiene que definirlas en las ACL, sino sera denegado
 *las reglas con asterisco(*) son las ultimas en ser evaluadas 
 ~~~
+
+##### Grupos de seguridad (obbligatorio)
+~~~
+Un grupo de seguridad es un firewall virtual con estado que controla el tráfico de red entrante y saliente hacia los recursos de AWS y las instancias EC2.
+*La VPC tiene un grupo de seguridad por defecto ,deniega todas las reglas entradas,acepta todas las salidas 
+*las reglas se evaluan antes de recibir trafico
+*con estado
+
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
+~~~
+
+#### Host bastion 
+~~~
+Proporciona acceso de subred publica a subred privada (inicio de sesion en la instancia privada via bastion)
+Quien se conecte tiene la clave privadas, no almacenarla en el host bastion por seguridad!!
+*como buena practica renovar las claves constantemente 
+~~~
+
 
 #### GATEWAY privada virtual ?? 
 ~~~
