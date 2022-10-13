@@ -167,7 +167,9 @@ Endpoint VPC (private link)
 ~~~
 Una tabla de enrutamiento contiene una serie de reglas, llamadas rutas, que se utilizan para determinar la dirección del tráfico de red. Cada subred de una VPC debe estar asociada a una tabla de enrutamiento. La tabla controla el enrutamiento de la subred. La subred solo puede asociarse a una tabla de enrutamiento; 
 *no obstante, puede asociar varias subredes a la misma tabla de enrutamiento.
-* cuandoc reo mi subnet se crean tablas de enrutamiento por defecto, si quiero una subnet publica, debo definir una regla que establezca conexion al internet gateway
+* cuando creo mi subnet se crean tablas de enrutamiento por defecto, si quiero una subnet publica, debo definir una regla que establezca conexion al internet gateway
+*permiten el trafico GATEWAY (nat, internet,s3gateway)
+
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
 ~~~
@@ -180,13 +182,16 @@ Un grupo de seguridad es un firewall virtual con estado que controla el tráfico
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 ~~~
-##### Lista de control de acceso de red (ACL de red ) opcionales
+##### Lista de control de acceso de red (ACL de red ) opcionales,sin estado
 ~~~
 Una lista de control de acceso de red (ACL de red) es una capa de seguridad opcional para una VPC. Actúa como un firewall sin estado para controlar el tráfico entrante y saliente de una o más subredes.
 *estan ligadas solo a nivel de subred
 *se ejecutan en orden correlativo
 *las reglas que tienen mayor prioridad son las que deniega 
-*debo establecer si o si las reglas de salida y entrada 
+*debo establecer si o si las reglas de salida y entrada (predeterminadamente permite todo el trafico entrante y saliente)
+*definen o deniegan el trafico dentro y fuera de las subredes 
+*si el grupo de seguridad permite el trafico por el puerto 80, tambien tiene que definirlas en las ACL, sino sera denegado
+*las reglas con asterisco(*) son las ultimas en ser evaluadas 
 ~~~
 
 #### GATEWAY privada virtual ?? 
