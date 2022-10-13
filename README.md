@@ -210,10 +210,6 @@ Costos dependen de:
 	transferencia de datos (se cobran cargos por los datos salientes )	
 ~~~
 
-#### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
-
-
-
 
 #### Cloud adoption framework (AWS CAF)
 ~~~
@@ -252,7 +248,12 @@ insights : panel de informacion es una muestra de datosoperativos para cada recu
 ~~~
 permite establecer distribucion con baja latencia, gracias al almacenamineto en cache
 ~~~
+
 #### AWS Organizations
+#### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
+#### AWS Outpost
+####
+####
  
 
 ### Redes :
