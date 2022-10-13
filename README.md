@@ -305,20 +305,17 @@ maintenance windows : programar periodos para ejecutar tareas administrativas y 
 state manager : administrador de estados -> mantener una configuracion uniforme d elas instacias de amazon EC2 (documento json con acciones que esten definidas para controlar las inslacias , pasos y parametros definidos )
 inventory : recopila informacion acerca de las instancias y del software instalado en ellas 
 insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
-
 ~~~
 
 ### Redes :
 ~~~
 Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
 CIDR   
-
-
 **Subnet publica sale a internet atraves de Internet Gateway
 ~~~
 
 #### PROTOCOLOS networking
-~~~~
+~~~
 Protocolo Secure Shell (SSH) es un protocolo que abre una interfaz de línea de comandos (CLI) segura en una computadora remota Linux o Unix.
 Protocolo de transferencia de hipertexto HTTP es el protocolo que se utiliza para llegar a las páginas web. Una dirección HTTP completa se expresa como un localizador uniforme de recursos (URL).
 TCP/IP es un protocolo orientado a la conexión. Define cómo establecer y mantener las comunicaciones de red donde los programas de las aplicaciones pueden intercambiar datos. Los datos que se envían a través de este protocolo se dividen en fragmentos más pequeños denominados paquetes.
