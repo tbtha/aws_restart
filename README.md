@@ -118,6 +118,16 @@ Opciones de DNS para una VPC
 *cuando habilito el DNS, desde zonas alojadas privada de aws route 53 proporciona dns a las instancias 
 *Servidor propio DNS
 
+Escenarios de conectividad VPC
+*conectar una subred privada a internet, ocupamos Gateway NAT (NAT instance deprecada)
+*conectar subnet publica que necesitamos que tenga salia a internet , Internet gateway
+*conectar VPC a VPC , VPC peering (Interconexion de VPC)
+*conectar VPC a una red externa , VPN (red privada virtual), Direct Connect mas VPN ,VPN, CLoudHunb
+*conectar VPC a servicios de AWS sin dejar la red AWS, PrivateLink, 
+*conectar una VPC a varias VPC y a redes externas AWS Transit Gateway 
+
+NAT(traducciones de direcciones de red)
+Tengo una Subnet privada tiene que salir a internet pero esta protegido por el grupo de seguridad, para eso ocupamos NAT gateway, cuando sale a internet "cambia" tu IP y luego cuando vuelve a la instancia vuelve con la IP original (agrega un nivel de seguridad) 
 ~~~
 
 ##### Tabla de enrutamiento
@@ -144,7 +154,7 @@ Una lista de control de acceso de red (ACL de red) es una capa de seguridad opci
 *debo establecer si o si las reglas de salida y entrada 
 ~~~
 
-####GATEWAY privada virtual ??
+#### GATEWAY privada virtual ?? 
 ~~~
 para conexiones de VPN desde un centro de datos corporativo 
 se hace la conexion entre el gateway de cliente y gateway privada virtual
@@ -228,11 +238,6 @@ actores para definir los objetivos
 ~~~
 
 
-
-
-#### AWS Well-Architected Framework
-
-
 #### AWS systems Manager:  
 ~~~
 Es un conjunto de capacidades que ayudan a administrar las aplicaciones y la infraestructura que se ejecutan en la Nube
@@ -244,17 +249,6 @@ inventory : recopila informacion acerca de las instancias y del software instala
 insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
 
 ~~~
-#### AWS cloudfront
-~~~
-permite establecer distribucion con baja latencia, gracias al almacenamineto en cache
-~~~
-
-#### AWS Organizations
-#### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
-#### AWS Outpost
-####
-####
- 
 
 ### Redes :
 ~~~
@@ -507,6 +501,22 @@ COmponenes de AWS DMs : Intancia de replicacion (instancias ec2 que contiene las
 Con la implementacion Multi-AZ, una intancia de replicacion de AWS DMS tien un alta disponibilidad y admite la conmutacion por error(si falla la instancia principal, se remplaza) 
 aprovisiona y conserva de forma automatica una replica en espera sincronica de la instancias 
 ~~~
+
+#### AWS cloudfront
+~~~
+Servicio que brinda una manera fácil y rentable de distribuir contenido con baja latencia y altas velocidades de transferencia de datos ( gracias al almacenamineto en cache)
+Es una buena opción para la distribución de contenido estático de acceso frecuente
+alto nivel de transferencia de datos atendiendo solicitudes utilizando una red de ubicaciones de borde en todo el mundo.
+~~~
+
+#### AWS Organizations
+#### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
+#### AWS Outpost
+
+
+
+#### AWS Well-Architected Framework
+
 
 ##### STORAGE
 ~~~
