@@ -128,6 +128,39 @@ Escenarios de conectividad VPC
 
 NAT(traducciones de direcciones de red)
 Tengo una Subnet privada tiene que salir a internet pero esta protegido por el grupo de seguridad, para eso ocupamos NAT gateway, cuando sale a internet "cambia" tu IP y luego cuando vuelve a la instancia vuelve con la IP original (agrega un nivel de seguridad) 
+Nat gateway vive en la subnet publica en la misma zona de disponibilidad, pero 
+le decimos ala subnet privada que se conecte a ese nat gateway para tener salida
+a internet 
+
+VPC peering (interconexion de VPC)
+*conexion de VPC a VPC
+permite que el trafico fluya en diferentes direcciones
+como hcaemos la coneccion atraves de las tabla de enrutamiento,
+cada VPC tiene su tabla de enrutamiento 
+como creamos VPC peering, propietario vpc1 solicita y propietario vpc2 acepta,
+ambos propietarios agregan entradas a tabla de enrutamiento en ambas vpc participantes 
+* no es transcitivo, AyB estan conectado , si conecto ByC, C no tiene acceso a A   
+*las VPC tiene que ser de diferentes rango IP
+
+
+AWS Transit Gateway 
+conectar 3 o mas redes (VPC/VPN)
+
+AWS Direct connect mas VPC 
+Forma de conexion dedicada para el cliente, no sale a internet, literal es una servicio fisico,
+que comparte con compañias como telefonica/movistar, la conexion es por fibra optica desde el 
+centro de datos corportivo 
+
+AWS VPN CloudHub
+para conectar VPC con varias VPN 
+habilita que sitios remotos puedan conectarse a la VPC  
+
+Endpoint VPC (private link) 
+
+
+
+
+
 ~~~
 
 ##### Tabla de enrutamiento
@@ -138,9 +171,11 @@ Una tabla de enrutamiento contiene una serie de reglas, llamadas rutas, que se 
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
 ~~~
-##### Grupos de seguridad 
+##### Grupos de seguridad (obbligatorio)
 ~~~
 Un grupo de seguridad es un firewall virtual con estado que controla el tráfico de red entrante y saliente hacia los recursos de AWS y las instancias EC2.
+*La VPC tiene un grupo de seguridad por defecto ,deniega todas las reglas entradas,acepta todas las salidas 
+*las reglas se evaluan antes de recibir trafico
 *con estado
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
