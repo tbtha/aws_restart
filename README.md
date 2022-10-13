@@ -159,7 +159,7 @@ Endpoint VPC (private link)
 
 ~~~
 
-##### Seguridad por capa Redes 
+#### Seguridad por capa Redes 
 ~~~
 Defensa de red por niveles para las VPC
 (de afuera para adentro):
