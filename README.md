@@ -595,6 +595,13 @@ alto nivel de transferencia de datos atendiendo solicitudes utilizando una red d
 ~~~
 
 #### AWS Organizations
+~~~
+Ayuda a administrar y controlar su entorno de manera centralizada a medida que crece y escala sus recursos de AWS.
+El uso de un entorno de múltiples cuentas es una mejor práctica recomendada al escalar su entorno de nube.
+**está disponible para todos los clientes de AWS sin cargo adicional.
+~~~
+
+
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
 #### AWS Outpost
 
