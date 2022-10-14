@@ -473,12 +473,12 @@ Como crear contenedores:
 Docker es  una plataforma que nos permite crear (sofware empaquetado) , probar, implementar,ejecutar contenedores
 
 como se ve docker en AWS Amazon:
-Elastic Container Registry (Amazon  ECR) : registro de contenedores administrado que facilita (creacion de imagenes)()
+Elastic Container Registry (Amazon  ECR) : registro de contenedores ADMINISTRADO que facilita (creacion de IMAGENES)()
 Elasticc Container Service (Amazon ECS) : servicio de contenedores altamanete escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
 ** tareas son epecificas de ECS 
 kubernetes : software de codigo abierto para el aprovisionamiento y la administracion de contenedores  
 Amazon Elastic Kubernetes (amazon EKS) : (orquestador que contenedores) aprovisiona un cluster, tiene nodos de trabajo,
-AWS Farget : tecnologia que permite ejecutar contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
+AWS Farget : tecnologia que permite EJECUTAR contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
 
 ** contenedor es un pedazo del sitema operativo, podemos transportar a 
 ** maquina virutal es harward y tiene el sitema operativo completo visrtualizado. dentro de una intancia pueden haber varios contenedores 
