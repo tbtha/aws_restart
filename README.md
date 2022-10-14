@@ -61,7 +61,7 @@ precios : por la forma de estuctura fiscal en brasil por ej. es mas caro
 ~~~
 
 
-### AMAZON VP 
+### AMAZON VPC
 ~~~
 Amazon Virtual Private Cloud (Amazon VPC) es un servicio que puede utilizar para aprovisionar una sección de la nube de AWS aislada lógicamente, que sedenomina nube virtual privada o VPC
 podemos crear una red definida de forma personalizada en la nube de AWS 
@@ -156,6 +156,16 @@ para conectar VPC con varias VPN
 habilita que sitios remotos puedan conectarse a la VPC  
 
 Endpoint VPC (private link) 
+
+
+-LAB Configuaracio de VPC
+creacion VPC
+creacion subredes(habilitar la autoasiganacion de direccio IPV4 publicas)
+creacion internet gateway 
+internet gateway attach to VPC(La subred pública ahora tiene conexión a Internet.Sin embargo, para dirigir el tráfico a Internet, también debe configurar la route table (tabla de enrutamiento) de la subred pública de modo de que use la puerta de enlace de Internet.)
+
+
+
 
 ~~~
 
