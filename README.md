@@ -639,3 +639,8 @@ AWS Security Hub
 AWS Shield
 AWS WAF
 ~~~
+
+
+~~~
+CLI regio de la instancia en cuestion : curl http://169.254.169.254/latest/dynamic/instance-identity/document | grep region 
+~~~~
