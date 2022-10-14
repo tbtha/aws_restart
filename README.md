@@ -112,6 +112,12 @@ ENRUTADOR : instancias dentro de distintas subredes se puede conectar gracias a 
 
 *VPC predetermina de la cuenta, no es recomendada para gestionar nuestras app
 
+SUBNET PRIVADA 
+Los recursos de una private subnet (subred privada) no tienen conectividad a Internet. Esto se hace a propósito porque, de esta manera, se protegen los recursos para que no sean accesibles desde Internet.
+Sin embargo, a veces es necesario que los recursos de una subred privada se comuniquen con Internet para descargar actualizaciones de software y servicios de acceso a Internet. Por lo tanto, se recomienda otorgar los recursos de outbound connectivity (conectividad de salida) a Internet a la vez que los protege de los accesos inbound (entrantes).
+Esto se puede lograr con una Gateway NAT (puerta de enlace de traducción de direcciones de red) que se lanza en la subred pública 
+
+
 ____Opciones de DNS para una VPC
 *cuando cramos VPC se le asigna un nombre de dominio por defecto, DNS proporcionado por aws(aws route 53 reolver)
 *si desabilito la opcion de DNS automatico, solo podre acceder a la web mediante la IP 
@@ -158,11 +164,22 @@ habilita que sitios remotos puedan conectarse a la VPC
 Endpoint VPC (private link) 
 
 
--LAB Configuaracio de VPC
+-LAB Configuaracio de VPC : dar acceso a internet a una instancia en una subred privada con NAT gateway y una instancia bastion
 creacion VPC
 creacion subredes(habilitar la autoasiganacion de direccio IPV4 publicas)
 creacion internet gateway 
 internet gateway attach to VPC(La subred pública ahora tiene conexión a Internet.Sin embargo, para dirigir el tráfico a Internet, también debe configurar la route table (tabla de enrutamiento) de la subred pública de modo de que use la puerta de enlace de Internet.)
+añadir la tabla de enrutamiento prederminada para la subnet privada
+crear una tabla de enrutamiento para la subnet publica, que tenga una ruta para dirigir el trafico de internet al internet Gateway
+asociar la tabla a la subnet publica 
+lanzar instancia BASTION en la subnet publica
+crear NAT gateway enla subnet publica 
+agregar ruta a NAT gateway en la tabla de enrutamiento de la subnet privada
+crear instancia LABInstance en la subred privada 
+acceder mediante ssh a instancia BASTION
+acceder a LABInstance desde BASTION con ssh PRIVATE-IP (copiar la ip privada de LABinstance)
+
+
 
 
 
@@ -187,6 +204,8 @@ Una tabla de enrutamiento contiene una serie de reglas, llamadas rutas, que se 
 *no obstante, puede asociar varias subredes a la misma tabla de enrutamiento.
 * cuando creo mi subnet se crean tablas de enrutamiento por defecto, si quiero una subnet publica, debo definir una regla que establezca conexion al internet gateway
 *permiten el trafico GATEWAY (nat, internet,s3gateway)
+
+*Para usar Internet Gateway, la tabla de enrutamiento de la subred debe contener una ruta/regla que dirija el tráfico de Internet a la puerta de enlace de Internet. Si una subred está asociada a una tabla de enrutamiento que tiene una ruta hacia una puerta de enlace de Internet, se la conoce como public subnet (subred pública).
 
 
 https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html
@@ -219,6 +238,7 @@ https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html
 Proporciona acceso de subred publica a subred privada (inicio de sesion en la instancia privada via bastion)
 Quien se conecte tiene la clave privadas, no almacenarla en el host bastion por seguridad!!
 *como buena practica renovar las claves constantemente 
+Un servidor bastión (también conocido como Jump Box) es una instancia de Amazon EC2 en una subred pública que se configura de forma segura para brindar acceso a los recursos de una subred privada. Los operadores de sistemas se pueden conectar al servidor bastión y, luego, jump into (pasar a) los recursos de la subred privada.
 ~~~
 
 
