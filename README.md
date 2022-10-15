@@ -606,7 +606,9 @@ Proporciona volumenes de almacenamiento persistente
 Cada volumen , se replica automaticamente dentro de su misma zona de disponibilidad 
 Ofrece almacenamiento a nivel de bloques 
 Puede utilizar EBS para crear volumenes de almacenamiento individuales y adjuntarlos a una instancias de EC2
-
+TIPOS DE VOLUMENES 
+IOPS aprovisionadas(SSD)
+se cobra por el importe que aprovisione enIOPS (porcentaje del dia o mes que se utiliza )
 ~~~
 
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
