@@ -600,7 +600,14 @@ Ayuda a administrar y controlar su entorno de manera centralizada a medida que c
 El uso de un entorno de múltiples cuentas es una mejor práctica recomendada al escalar su entorno de nube.
 **está disponible para todos los clientes de AWS sin cargo adicional.
 ~~~
+####AMazon EBS
+~~~
+Proporciona volumenes de almacenamiento persistente
+Cada volumen , se replica automaticamente dentro de su misma zona de disponibilidad 
+Ofrece almacenamiento a nivel de bloques 
+Puede utilizar EBS para crear volumenes de almacenamiento individuales y adjuntarlos a una instancias de EC2
 
+~~~
 
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
 #### AWS Outpost
