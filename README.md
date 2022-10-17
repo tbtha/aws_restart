@@ -600,17 +600,30 @@ Ayuda a administrar y controlar su entorno de manera centralizada a medida que c
 El uso de un entorno de múltiples cuentas es una mejor práctica recomendada al escalar su entorno de nube.
 **está disponible para todos los clientes de AWS sin cargo adicional.
 ~~~
-####AMazon EBS
+
+#### Amazon Elastic Block Store EBS (almacenamiento en bloques)
 ~~~
 Proporciona volumenes de almacenamiento persistente
+Es un mecanismo de almacenamiento subyacente clave para las instancias de Amazon EC2
 Cada volumen , se replica automaticamente dentro de su misma zona de disponibilidad 
 Ofrece almacenamiento a nivel de bloques 
 Puede utilizar EBS para crear volumenes de almacenamiento individuales y adjuntarlos a una instancias de EC2
+* Necesitamos almacenamiento ebs para hibernar las instancias
+*Intantaneas /Snapshotp,  imagen que le saca al almacenamiento (permite capturar estados/datos para luego restaurarlo)
 TIPOS DE VOLUMENES 
+Unidad estado solido 
+unidad disco duro
+
 IOPS aprovisionadas(SSD)
 se cobra por el importe que aprovisione enIOPS (porcentaje del dia o mes que se utiliza )
+
 ~~~
 
+#### Amazon S3 ()
+~~~
+
+
+~~~
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
 #### AWS Outpost
 
