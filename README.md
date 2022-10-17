@@ -623,6 +623,16 @@ Amazon Elastic Block Store (Amazon EBS) ofrece almacenamiento persistente para l
 Cuando se utilizan como particiones de arranque, las instancias de Amazon EC2 pueden detenerse y, posteriormente, reiniciarse, lo que le permite pagar solo por los recursos de almacenamiento utilizados al mismo tiempo que conserva el estado de la instancia. Los volúmenes de Amazon EBS tienen una durabilidad mucho mayor que la de los almacenes de instancias de Amazon EC2 locales porque se replican automáticamente en el backend (en una única zona de disponibilidad).
 
 Sin embargo, si se quiere aún más durabilidad, con Amazon EBS es posible crear instantáneas uniformes puntuales de los volúmenes, que luego se almacenan en Amazon Simple Storage Service (Amazon S3) y se replican automáticamente en varias zonas de disponibilidad. Estas instantáneas se pueden utilizar como punto de partida para nuevos volúmenes de Amazon EBS y permiten proteger la durabilidad de sus datos a largo plazo. También puede compartirlas fácilmente con colegas y otros desarrolladores de AWS.
+Los volúmenes de Amazon EBS tienen las siguientes características:
+
+Almacenamiento persistente: la vida útil de los volúmenes es independiente de cualquier instancia de Amazon EC2.
+De uso general: los volúmenes de Amazon EBS son dispositivos de bloques sin formato y sin procesar que se pueden utilizar en cualquier sistema operativo.
+Alto rendimiento: los volúmenes de Amazon EBS son iguales o mejores que las unidades locales de Amazon EC2.
+Alto nivel de fiabilidad: los volúmenes de Amazon EBS tienen redundancia incorporada dentro de una zona de disponibilidad.
+Diseñados para ofrecer resiliencia: la tasa anual de errores (AFR) de Amazon EBS oscila entre un 0,1 % y 1 %.
+Tamaño variable: los tamaños de los volúmenes varían de 1 GB a 16 TB.
+Fáciles de usar: los volúmenes de Amazon EBS se pueden crear, adjuntar, almacenar en copias de seguridad, restaurar y eliminar fácilmente.
+ 
 
 ~~~
 
