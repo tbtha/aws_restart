@@ -617,6 +617,13 @@ unidad disco duro
 IOPS aprovisionadas(SSD)
 se cobra por el importe que aprovisione enIOPS (porcentaje del dia o mes que se utiliza )
 
+lab
+Amazon Elastic Block Store (Amazon EBS) ofrece almacenamiento persistente para las instancias de Amazon EC2. Los volúmenes de Amazon EBS están adjuntos a la red y su duración es independiente de la vida de una instancia. Los volúmenes de Amazon EBS tienen un alto nivel de disponibilidad y de confianza, y pueden utilizarse como particiones de arranque de instancias de Amazon EC2 o adjuntarse a una instancia de Amazon EC2 en ejecución como dispositivos de bloques estándar.
+
+Cuando se utilizan como particiones de arranque, las instancias de Amazon EC2 pueden detenerse y, posteriormente, reiniciarse, lo que le permite pagar solo por los recursos de almacenamiento utilizados al mismo tiempo que conserva el estado de la instancia. Los volúmenes de Amazon EBS tienen una durabilidad mucho mayor que la de los almacenes de instancias de Amazon EC2 locales porque se replican automáticamente en el backend (en una única zona de disponibilidad).
+
+Sin embargo, si se quiere aún más durabilidad, con Amazon EBS es posible crear instantáneas uniformes puntuales de los volúmenes, que luego se almacenan en Amazon Simple Storage Service (Amazon S3) y se replican automáticamente en varias zonas de disponibilidad. Estas instantáneas se pueden utilizar como punto de partida para nuevos volúmenes de Amazon EBS y permiten proteger la durabilidad de sus datos a largo plazo. También puede compartirlas fácilmente con colegas y otros desarrolladores de AWS.
+
 ~~~
 
 #### Amazon S3 ()
