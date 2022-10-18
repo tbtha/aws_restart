@@ -681,6 +681,10 @@ Configuracion:
 	concetar lla instancia EC2 al destino de montaje
 	
 *una "carpeta" que las instancias comparten 
+
+*creamos un grupo de seguridad  con una regla 
+TCP 2049 que le de permisos al grupo de seguridad (*igual que load balance)
+
 ~~~
 
 #### Amazon Simple Store Service Glacier
