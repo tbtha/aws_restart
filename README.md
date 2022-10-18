@@ -683,6 +683,50 @@ Configuracion:
 *una "carpeta" que las instancias comparten 
 ~~~
 
+#### Amazon Simple Store Service Glacier
+~~~
+Es una clase de almacenamiento de S3, duradero, economico para archivar datos
+y realizar copias de seguridad a largo plazo
+Cada archivo tiene su identificado y descripcion
+URI:
+Conceptos Claves=
+Politicas de acceso al almacen: permiso de acceso a vaults(bobeda), quien puede y no puede acceder
+Trabajo/Talks: pueden realizar una consulta en un archivo, iniciamos un talk que proporciona una consulta
+sql y una lista de objetos que estan en este almacen 
+
+IMPORTANTE:
+Diseñado para 11 9s de durabilidad para objetos
+Admite SSl / TLS de datos en transito y reposo
+
+Acceso a Amazon S3 Glacier:
+Servicios web REST 
+Kits de desarrollo de software (SDK) java o .net
+Amazon  S3 con politicas de ciclo de vida  (se accede a los archivos archivados a traves de conola de S)
+	(por ejemplo segun politicas , si tenemos un objeto y pasan 30 podemos moverlos o eliminarlos )
+
+
+Opciones de traer/recuperacion de archivos
+	urgente 1-5min
+	estandar 2-5 horas
+	masiva 5-12 horas 
+*costos diferentes , mientras mas urgente mas alto el valor 
+* si se quiere traer archivos mas seguido es mejor ocupar otro servicio que sea mas economico
+
+
+como se almacena los datos : ARCHIVOS 
+
+*Por defecto glacier se encriptan los objetos 
+*En el caso de S3 el cifrado es opcional en estado estatico(en transporte siemore estan cifrados par mas seguridad  )(opciones: claves de s3, kms, claves de cifrado)
+
+*controlar el acceso con IAM, es full administrado por aws, nosotros solo le mandamos la data y la retiramos 
+
+*Mas economico pero demora mas tiempo de devolver la info 
+*costo 0 de entrada , costos de salida depende 
+*replicacion automatica en S3 y s3 glacier
+
+~~~
+
+
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
 #### AWS Outpost
 
