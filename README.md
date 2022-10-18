@@ -640,6 +640,45 @@ df -h -> consulta el almacenamiento disponible d ela instancia
 ~~~
 
 
+
+
+Control de versiones Amazon S3
+protege los objetos en caso de sobreescritura y eliminacion accidentales, 
+para eso habilitamos el control de versiones y tendremos varias versiones 
+de un archivo en con mismo nombre
+S3 Intelligent-Tiering (optimiza y disminuye costos )
+Nos permite mover objt de forma automatica a nivel de acceso mas rentable 
+*se almacena los obj en dos capas, una de acceso fecuente y otra capa para los datos en reposo
+
+
+*Por defecto todo los archivos estan bloqueados para acceder,
+Configuracion Amazon s3 block public Access,
+Hay cuatro reglas 
+	bloquear ACL
+	--
+	--
+	--
+
+Amazon S3 Objct Look
+Permite almacena objetos, mediante el modelo de escritura unica y lecturas mutiples (write once ready many)
+*Habilitarlo en el momento que se crea
+Cuando necesitamos asegurar que los objetos que almacnamos no sea modificaddo ocupamos object look
+
+**Podemos crear notificaciones de evento de S3 y ocupar otros servicio como lambda, sns
+
+crear un bucket en CLI
+aws s3 mb 
+
+en la cli s3 funciona bien prar tareas simples, para las mas compleja ocupamos s3api
+
+
+Caracteristicas
+	administracion del ciclo de vida de los objetos
+	URL del objeto prefirmada
+	uso compartido de recuros entre origenes (CORS), (pregunta si tiene acceso a otro bucket y accede a los datos )
+ 
+
+
 ~~~
 
 #### Amazon Instance Store (almacenamiento instancia) 
@@ -769,6 +808,15 @@ AWS Shield
 AWS WAF
 ~~~
 
+
+~~~
+Lightsail??
+si hay una aplicacion desarrollada y queremos trasladarla a la nube,
+para app medianas 
+Beanstalk ??* costo mas bajos
+como remplazo de heroku
+mediano/grande
+~~~
 
 ~~~
 CLI regio de la instancia en cuestion : curl http://169.254.169.254/latest/dynamic/instance-identity/document | grep region 
