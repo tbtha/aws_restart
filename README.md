@@ -633,7 +633,7 @@ Diseñados para ofrecer resiliencia: la tasa anual de errores (AFR) de Amazon EB
 Tamaño variable: los tamaños de los volúmenes varían de 1 GB a 16 TB.
 Fáciles de usar: los volúmenes de Amazon EBS se pueden crear, adjuntar, almacenar en copias de seguridad, restaurar y eliminar fácilmente.
  
-
+df -h -> consulta el almacenamiento disponible d ela instancia 
 ~~~
 
 #### Amazon S3 ()
@@ -641,6 +641,46 @@ Fáciles de usar: los volúmenes de Amazon EBS se pueden crear, adjuntar, almace
 
 
 ~~~
+
+#### Amazon Instance Store (almacenamiento instancia) 
+~~~
+Ofrece un almacenamieno temporal a nivel de bloque para la instancias, este almacenamiento se encuentra en discos que estan conectados fisicamente al equipo host
+El alamcenamiento no es persistenete: los datos se pierden cuando se termina la instancia
+Es un almacen rapido  de baja latencia 
+Los volumenes de los almacenes se especifican mediante la funcion de asignacion de dispositivos de bloques de la API de EC2 y la consola 
+Utilice para almacenar informacion que no necesite conservar mas allla del cilco de vida de una instancia
+
+~~~
+#### Amazon Elastic File System (Amazon EFS)
+~~~
+Es una almacenamiento de sitema de archivos de red NFS elasstico, escalable, totalmente administrado para utilizarlo con los servicios en la nube de AWS y los recursos locales
+Caracteristicas:
+	De baja latencia a escala petabytes
+	Elasticidad (0 tiempo de inactividad)
+	Compatible con todas las AMI basada en LINUX para EC2
+	
+Beneficios:
+	Elastico : escalable  elastico
+	Elasticidad dinamica : crece y se reduce automaticamente a medida que agrega y elimina archivos
+	Gestion completa : por aws
+	
+Atributos de rendieminto: 
+	modo de desempeño : uso general | E/S max (entrada/salida)
+	(si no elijo, por defecto toma el uso general/ una vez seleccionado no podemos cambiar de opcion )
+	clases de almacenameinto : estandar | aceso poco frecuente
+	modo de rendimiento : rendimiento en rafaga | rendimiento aprovisionado
+	(rafaga->crece a medida que aumenta xd , aprovisionado-> permite crecer un poco mas (streamer/big data))
+
+**En todas las zonas de disponibilidad(suficiente una subred) debe establecer destino de montaje que debe tener una nic asosciada, ese nic me permitira establecer conexion a EFS
+*GB por mes y por transferencia de salida, dependiendo por la region 
+
+Configuracion:
+	creear EFS
+	crear un destino de montaje en la VPC de la instancia 
+	monte el sietema de archivos en el destino de montaje
+	concetar lla instancia EC2 al destino de montaje
+~~~
+
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
 #### AWS Outpost
 
