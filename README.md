@@ -679,6 +679,8 @@ Configuracion:
 	crear un destino de montaje en la VPC de la instancia 
 	monte el sietema de archivos en el destino de montaje
 	concetar lla instancia EC2 al destino de montaje
+	
+*una "carpeta" que las instancias comparten 
 ~~~
 
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
