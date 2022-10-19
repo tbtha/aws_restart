@@ -768,6 +768,27 @@ como se almacena los datos : ARCHIVOS
 *replicacion automatica en S3 y s3 glacier
 
 ~~~
+#### Amazon Storage Gateway
+~~~
+Almacenamiento hibrido, queme permite que suus aplicaciones locales utilicen el almacenamiento en la nube .Podemos ocuparlos para copias de seguridad y archivaado, recuperacion ante desastre, procesamiento de datos en la nube, migraciones 
+Concepto PUENTE: conexion entre la aplicacion en la instalaciones(VM, NFS,SMB,ISCSI) y la nube a traves de AWS Storage Gateway
+
+*La gateway se conecta a servicios storage S3, S3glacier,EBS
+
+Proporciona tres tipos de soluciones/almacenamiento en AWS 	
+	Archivo/volumen/cintas
+
+Casos de uso ?
+	tres casos practicos clave de nube hibrida 
+	-mueva copias de seguridad y archivos a la nube
+	-Reduzca el almacenamiento local con recursos compartidos de archivos respaldados por la nube
+	-da a al app en las instalaciones acceso de baja latencia a los datos almacenados en aws
+	
+Sttorage Gateway se configura ne las instalacion y lo vinculo el entorno local a la nube de aws 
+
+
+
+~~~
 
 
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
