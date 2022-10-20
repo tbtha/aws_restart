@@ -789,6 +789,11 @@ Sttorage Gateway se configura ne las instalacion y lo vinculo el entorno local a
 
 
 ~~~
+##### Amazon S3 Intelligent-Tiering
+ Unidad de estado sólido de uso general (SSD)
+ IOPS aprovisionadas (SSD)
+ Unidad de disco duro (HDD) optimizada para rendimiento
+ Disco duro frío (HDD)
 
 
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
