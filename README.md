@@ -802,6 +802,9 @@ Sttorage Gateway se configura ne las instalacion y lo vinculo el entorno local a
 
 
 #### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
+~~~~
+**IAM Access Analyzer le ayuda a identificar los recursos de su organización y sus cuentas, como buckets de Amazon S3 o roles de IAM, que se comparten con una entidad externa. Esto le permite identificar el acceso no deseado a sus recursos y datos, lo que constituye un riesgo para la seguridad.
+~~~~
 #### AWS Outpost
 
 
