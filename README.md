@@ -599,6 +599,11 @@ alto nivel de transferencia de datos atendiendo solicitudes utilizando una red d
 Ayuda a administrar y controlar su entorno de manera centralizada a medida que crece y escala sus recursos de AWS.
 El uso de un entorno de múltiples cuentas es una mejor práctica recomendada al escalar su entorno de nube.
 **está disponible para todos los clientes de AWS sin cargo adicional.
+ Beneficios de una facturacion consolidada, Consolidated billing for AWS Organizations
+ 	Una factura : obtiene una factura para varias cuentas.
+	Fácil seguimiento : puede realizar un seguimiento de los cargos en varias cuentas y descargar los datos combinados de costo y uso.
+	Uso combinado : puede combinar el uso en todas las cuentas de la organización para compartir los descuentos de precios por volumen, los descuentos de instancias reservadas y los planes de ahorro. Esto puede resultar en un cargo más bajo para su proyecto, departamento o empresa que con cuentas independientes individuales. Para obtener más información, consulte Descuentos por volumen .
+	Sin cargo adicional : la facturación consolidada se ofrece sin costo adicional.
 ~~~
 
 #### Amazon Elastic Block Store EBS (almacenamiento en bloques)
@@ -802,6 +807,16 @@ Sttorage Gateway se configura ne las instalacion y lo vinculo el entorno local a
 
 
 #### AWS Well-Architected Framework
+~~~
+AWS Well-Architected Framework describe los conceptos clave, los principios de diseño y las prácticas recomendadas de arquitectura para diseñar y ejecutar cargas de trabajo en la nube. 
+	Excelencia operativa:El pilar de la excelencia operativa se concentra en ejecutar y monitorear los sistemas y en mejorar constantemente los procesos y los procedimientos. Entre los temas clave se incluyen la AUTOMATIZACION de cambios, la respuesta a eventos y la definición de estándares para administrar las operaciones diarias.
+	Seguridad : El pilar de la seguridad se concentra en proteger la información y los sistemas. Entre los temas clave se incluyen la CONFIDENCIALIDAD y la INTEGRIDAD DE LOS DATOS , la administración de los permisos de usuarios y el establecimiento de controles para detectar eventos de seguridad.
+	Fiabilidad : El pilar de fiabilidad se centra en las cargas de trabajo que realizan las funciones previstas y en cómo recuperarse rápidamente de los errores para cumplir con las demandas. Entre los temas clave se incluyen el diseño de sistemas distribuidos, la planificación de la recuperación y cómo adaptarse a los requisitos cambiantes.
+	Eficiencia/eficacia del rendimiento: El pilar de eficacia del rendimiento se centra en la asignación estructurada y simplificada de TI y en los recursos informáticos. Entre los temas clave se incluyen la selección de los tipos y tamaños de recursos optimizados para los requisitos de la carga de trabajo, la supervisión del rendimiento y el mantenimiento de la eficacia a medida que evolucionan las necesidades de la empresa.
+	Optimización de costos: El pilar de optimización de costos se centra en evitar gastos innecesarios. Entre los temas clave se incluyen la comprensión del tiempo dedicado y el control de la asignación de fondos, la selección de recursos para el tipo y la cantidad adecuados y el escalado para cumplir con las necesidades de la empresa sin gastos excesivos.
+	Sostenibilidad: El pilar de sostenibilidad se centra en minimizar los impactos ambientales de ejecutar cargas de trabajo en la nube. Entre los temas clave se incluyen un modelo de responsabilidad compartida para la sostenibilidad, la comprensión del impacto y la maximización del uso para minimizar los recursos necesarios y reducir los impactos posteriores. 
+
+~~~
 
 
 ##### STORAGE
