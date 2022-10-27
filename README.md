@@ -9,6 +9,320 @@ Es una aplicación informática (Software) que proporciona servicios integrales 
 IDE de AWS  es Cloud9
 ~~~
 
+### MODULO 1 : INTRODUCCION A AWS 
+
+#### CLIENTE-SERVIDOR
+~~~
+Un CLIENTE puede ser un navegador web o una app de escritorio, con la que interactua una persona para realizar
+	solicitudes a los servidores de computo un cliente solicita un articulo de noticias, puntuacion de un juego,etc
+Un SERVIDOR puede ser un servicio como Amazon Elastic Compute Cloud (Amazon EC2), un tipo de servidor virtual.
+	el servidor evalua los detalles de la solicitud y la cumple al devolver la informacion del cliente
+		*Es un aparato informático que almacena, distribuye y suministra información
+~~~
+
+#### CLOUD : La computación en la nube es la entrega  bajo demanda de recursos de TI en línea, con precios de pago por uso
+~~~
+*Recursos TI (software y hadware utilizados para : almacenamiento, cómputo, redes,
+bases de datos, analítica, machine learning, Internet de las cosas, seguridad,
+desarrollo, entre otras
+	-cargas pesadas de TI sin diferenciador (tareas administrativas, son tareas comunes en las 
+	que aws se ocupa para que el cliente se ocupe de tareas que realmente importen, como diferenciadores para su negocio )	
+*A traves de Internet en la consola, CLI, SDK 
+*Entrega bajo demanda (puede acceder a la capacidad que necesite, esto no es posible en on-premises) 
+*Solo paga por lo que utiliza (analogia de empleado de cafeteria )
+	-paga por lo que necesita
+
+**La entrega a pedido de recursos TI a traves de internet con precios de pago por uso 
+
+
+IMPLEMENTACION CLOUD
+
+>Basada en la nube 
+	Puede crear esas aplicaciones en una infraestructura de bajo nivel que requiere que el personal de TI las administre.
+	De forma alternativa, puede crearlas mediante servicios de nivel superior que reducen los requisitos de administración,
+		 arquitectura y escalado de la infraestructura principal.
+	*Por ejemplo, una empresa podría crear una aplicación compuesta por servidores virtuales, bases de datos
+		 y componentes de red totalmente basados en la nube.
+>En las instalaciones / nube privada / on premises 
+	Los recursos se implementan en las instalaciones locales mediante herramientas de virtualización y administración de recursos.
+	*Por ejemplo, es posible que tenga aplicaciones que se ejecutan con tecnología que se almacena por completo 
+		en su centro de datos local.
+>Hibrida 
+	Conecte los recursos basados en la nube a la infraestructura en las instalaciones locales.
+	*Por ejemplo con una implementación híbrida, la empresa podría mantener las aplicaciones heredadas en las 
+		instalaciones y beneficiarse de los servicios de datos y análisis que se ejecutan en la nube.
+
+BENEFICIOS 
+>cambiar gastos iniciales por gastos variables 
+	gastos iniciales = centro de datos, servidores fisicos y otros recursos en los que tendria que invertir antes de utilizarlos 
+	gatos variables = solo paga por los recurso de computo que consume 
+
+>Deja de gastar dinero en la ejecucion y el mantenimiento de centro de datos
+	los centro de datos requierer que mas gato y tiempo en administrar la infraestructura y los servidores
+	la idea es centrarse mas en las aplicaciones y los clientes 
+
+>Deja de adivinar la capacidad 
+	no tiene que predecir cuánta capacidad de infraestructura necesitará antes de implementar una aplicación, 
+		puede aumentar o disminuir la capacidad de computo en minutos de acuerdo a la demanda 
+
+> Aprovechar las enormes economias de escala 
+	El uso agregado de la nube por parte de un gran número de clientes se traduce en menores precios de pago por uso.
+
+>Aumentar la velocidad y la agilidad
+	El cómputo en la nube le permite acceder a nuevos recursos y disponibilidad en cuestión de minutos
+		 en un centro de datos fisico esto seria en cuestion de semanas 
+	La flexibilidad facilita el desarrolo y la implementacion de app
+
+> Globalizarse en minutos 
+	Le permite implementar rápidamente aplicaciones a clientes de todo el mundo, a la vez que les proporciona una
+		 latencia baja utilizando la infraestructura global 
+~~~
+
+### MODULO 2 : COMPUTO EN LA NUBE
+#### EC2 / AutoScaling / Elastic Load Balancing / Lambda / Elastic Container Registry (Amazon ECR) / 
+Elasticc Container Service (Amazon ECS) / Amazon Elastic Kubernetes (amazon EKS) / AWS Farget
+~~~
+>>>>>>>>>> AWS Elastic Compute Cloud EC2 (Computo como servicio)
+Proporciona capacidad de cómputo segura y de tamaño modificable en la nube como instancias de Amazon EC2. 
+Servicio de computo de Servidores Virtuales
+AWS maneja una gran cantidad de computo
+
+muy flexible, rentable,rapido en comparacion de un datacenter local
+
+EC2 se ejecuta en los equipos HOST administrados por AWS mediante tecnologia de virtualizacion, cuando se pone
+	en marcha una maquina virtual comparte el host con varias instancias , el hypervisor es el resposable de
+	compartir los recursos fisicos y de aislar dichas instancias, esto significa que son seguras e independiente 
+	aunque compartan recursos, no  tiene conocimiento entre si 
+	Multitenancy: compartir el hadware subyacente entre maquinas virtuales 
+
+Son muy flexibles 
+Tiene completo control de la instancias
+Escalamiento vertical -> puede dar mas memoria y CPU, puede ampliar o disminuir las instancias cuanto lo necesite 
+Usted controla el aspecto de red de EC2, que tipo de solicitudes pueden llegar al servidor y si se puede acceder de
+	 manera publica o privada 
+/Solo paga por lo que utiliza, instancias que estan en ejecucion
+
+TIPOS DE INSTANCIAS
+(Analogia de la cafeteria: asi como cada empleado tiene habilidades diferente cada instancias tiene caracteristicas diferente)
+Los tipos de instancias se agrupan bajo una familia de instancias que estan optimizadas para distintas tareas 
+Ofrecen diferentes capacidad de procesamiento, memoria ram, alamcenamiento y red
+
+>Uso general : Equilibran los recursos informaticos de memoria, procesamiento y de redes 
+		Adecuadas para diversas cargas de trabajo 
+		*servidore web,servidores de app, repositorios, base de datos pequeñas y medianas 
+
+>Optimizadas para procesamientos/informaticas/computacion: 
+		Procesadore de alto rendimiento 
+		Adecuadas para app que requieren gran cantidad de recursos informaticos 
+		*servidores web de alto rendimiento, servidores de juegos, High performance computing(HPC), modelador de datos cientificos 
+		*para cargas de trabajo de procesamiento por lotes que requieren procesar muchas transacciones en un solo grupo.
+		*para una carga de trabajo de procesamiento por lotes.
+
+>Optimizadas para memoria :
+		Para cargas de trabajo de uso intensivo de memoria 
+		Adecuadas para las base de datos de alto rendimiento
+		*para carga de trabajo que requiere que se carguen previamente grandes cantidades de datos antes de ejecutar una aplicación.
+
+>Informatica acelerada / computo acelerado: 
+		Utilizan aceleradores de hadware para agilizar el procesamiento de datos 		
+		Ideales para calculos numericos de punto flotante, procesamiento de graficos y motores de busqueda 
+
+>Optimizadas para almacenamiento :
+		 Alto rendimiento para los datos almacenados localmente
+		Ofrecen baja latencia y gran cantidad de operaciones dde entrada y salida por segundo (IOPS,metrica
+			que mide el rendimiento de almacenamiento, indica cuantas operaciones de salida/entrada puede realizar
+			un dispositivo en un segundo )
+		Adecuadas para cargas d etrabajo como sistemas de archivos distribuidos y las aplicaciones de almacenamineto de datos 
+
+**analogia-> cajero/optimizada para memoria baristas/optimizadas para procesamientos dibujosenelcafe/ informatica acelerada
+
+PRECIOS
+
+>Bajo demanda/ on demand :
+	Solo se paga por el tiempo que exista la instancia 
+	LINUX x segundos / WINDOWS x hora 
+	No se aplican cosotos iniciales ni contratos minimos 
+	*Ideales para cargas de trabajo irregulares de corto plazo 
+		
+>Planes de ahorro/Savings Plans:
+	Precios bajos a cambio de un compromiso de una cantidad constante de recursos USD x hora 
+	Require compromiso de 1 a 3 años 
+	ahorros del 72%, sin importar la familia,el tamaño, la region
+
+>Intancias Reservada:
+	Para cargas de trabajo estables y de uso predecible 
+	75% de dcto frente a precio bajo demanda 
+	descuentos por compromiso de 1 a 3 años (pago total, pago inicial o sin pago inicial)
+
+>Instancias Spot:
+	Aws puede recuperar estas instancias, da 2 minutos de advertencias para recuperar el trabajo y guardar el estado
+	Ideal para cargas de trabajo que puedan ser INTERRUMPIDAS o que tengan tiempo de inicio y finalizacion flexibles 
+	90%dcto frente bajo demanda 
+	
+>Host Dedicado:
+	Servidores fisico dedicados solo a tus instancias 
+	Utilizados para cumplir requisitos de conformidad
+	Opcion mas costosa 
+
+
+>>>Escalabilidad / scalability
+Implica comenzar solo con los recursos necesario y diseñar una arquitectura para responder
+automaticamente a la DEMANDA cambiante mediante el escalado o reduccion horizontal
+
+ESCALABILIDAD HORIZONTAL : la capacidad de un sistema para crecer agregando computadoras adicionales con las mismas caracteristicas
+
+para que el proceso de escalado se realice automaticamente utilizamos :
+>>>>>>>>>> Amazon EC2 Auto Scaling <<<<<<<<<<
+(si accede a un sitio web que no carga o se agota el tiempo de espera, es probable que haya recibido mas solicitudes
+de las que puede gestionar )
+(analogia -> larga fila en la cafeteria y hay solo una cajera para recibir pedidos, gracias a autoscaling podemos aumentar
+el n de cajeras para que disminuya las solicitudes a la cajera original )
+
+Amazon EC2 Auto Scaling le permite AÑADIR o ELIMINAR AUTOMATICAMENTE instancias en respuesta a la DEMANDA
+cambiante de las aplicaciones y asi tener una mayor DISPONIBILIDAD de las apps
+	El escalado DINAMICO responde a la demanda cambiante.
+	El escalado PREDICTIVO programa automáticamente el número correcto de instancias de Amazon EC2 en
+		función de la demanda prevista.
+
+
+GRUPO DE AUTOSCALING
+	Establecer la capacidad MIN, que quiere decir que en todo momento debe habel al menos una instancia en ejecucion 
+	Establecer la capacidad DESEADA, 
+		*si no la establece, de forma predeterminada tomara el valor del min
+	Establecer la capacidad MAX, 
+
+**Arquitectura rentable y automatica, solo paga por las instancias que utliza asi reduce gastos y proporciona
+	 la mejor experiencia al cliente  
+
+
+>>>>>>>>>> Elastic Load Balancing ELB <<<<<<< 
+Dirigiendo el trafico con el balanceador de carga (servicio administrado )
+(analogia -> en el cafe integramos a un anfitrion que recibe en la puerta a las personas y las distribuye en las
+	diferentes filas de cajeras, asi no se acoplan en una sola fila y el trafico fluye bien )
+Misma idea con las instancias, cuando ingresa una solicitud y hay varias instancias con el mismo software, como
+sabe esa solicitud a que instancia debe dirigirse, para eso ocupamos el balanceador de carga, es quien RECIBE las
+solicitudes y las distribuye a las instancias 
+
+Un equilibrador de carga DISTRIBUYE AUTOMATICAMENTE EL TRAFICO entrante de aplicaciones entre varias instancias de Amazon EC2
+	Actúa como un único punto de contacto para todo el tráfico web entrante de su grupo de Auto Scaling.
+	Funciona para el trafico externo e interno (comunicacion de instancias frontend y backend)
+	Aunque Elastic Load Balancing y Amazon EC2 Auto Scaling son servicios independientes, funcionan conjuntamente
+		para garantizar que las aplicaciones que se ejecutan en Amazon EC2 puedan ofrecer un 
+		ALTO RENDIMIENTO y DISPONIBILIDAD .
+
+Beneficios:
+	SEGURO
+	DESACOPLE distribuye el trafico 
+	TOLERANCIA A ERRORES si hay algun error en la instancias la elimina y crea otra, que permite trabajar
+	EXPANSIVO aumenta la elasticidad y escalabilidad
+
+TIPOS: ?????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+	Balanceador de carga de RED, capa 4? protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
+		si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
+	Balanceador de carga de APLICACIONES, capa 7? protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta que el de red 
+		direccionamiento basado en rutas y host /home / contact
+	Balancador de carga clasico, esta deprecado 
+		habilitamos 
+
+
+MENSAJERIA Y COLAS/BUFFER
+(analogia -> buffer para la comunicacion entre la cajera y el barista  )
+xxArquitectura estrechamente acopladasxx
+	*si un componente falla/cambia genera problema a otro componentes 
+	*appA envia msje a appB, si appB falla deja de recibir los msjes, se van perdiendo y appA tambien 
+		empieza a fallar 
+
+!!Arquitectura con bajo/debil acoplamiento / LLOSELY COUPLED -> ARQUITECTURA CONFIABLE (DISPONIBILIDAD)
+	*si un componente falla, esta aislado y un solo error no causara errores en cascada en todo el sistema
+	* Entre la appA y la appB establecemos un buffer(cola de mensajes) para que en caso de que appB falle ,
+		los mensajes sigan llegando a ese buffer y no interrumpa a la appA y cuando se restablezca la 
+		appB los procese  
+
+>>>>>>>>>> Amazon Simple Queue Service (AMAZON SQS)<<<<<<<<<< aws administra la insfraestructura
+Permite a los componentes de software enviar, almacenaar y recibir mensajes en cualquier volumen, esto elimina
+el riegos de perder msjes y no necesita que otro servicio este disponible 
+	CARGAS: Datos contenido en un mensaje
+	COLAS DE SQS : donde estan los mensjes hasta que se procesan 
+
+
+>>>>>>>>>> Amazon Simple Notification Service (AMAZON SNS)<<<<<<<<<<
+Canal para enviar mensajes entre servicios y tambien a los usuario finales
+Modelo de publicacion y suscripcion (los msje se publican en topicos y usuarios suscritos reciben en msje)
+	TEMA/TOPIC DE SNS: canal para la entrega de msjes
+	SUSCRIPTORES DE ESE TEMA/TOPIC: pueden ser servicios como colas de SQS, funciones lambda, enlaces
+		web HTTP/HTTPS y correos electronicos 
+
+Tambien podemos utilizarlo para distribuir notificaciones a los usuarios finales mediantes msjes de texto
+o correo electronico 
+
+>>>SERVICIOS INFORMATICO ADICIONALES
+EC2 flexible/confiable/escalable
+Require que configure y administre su flota de instancias, el cliente es responsable de aplicar parches
+a las instancias cuando se lanzan nuevos paquetes de software, configurar el escalamiento y asegurar disponibilidad 
+
+SERVERLES : No se puede ver ni acceder a la infraestructura, ni a a las intancias que estan alojando la aplicacion
+*AWS es responsable de la administracion, provisionamiento, escalamiento, alta disponibilidad y mantenimiento 
+
+COMPUTO SERVERLES 
+>>>>>>>>>> AWS Lambda <<<<<<<<<< 
+Servicio que permite ejecutar código sin necesidad de aprovisionar ni administrar servidores. 
+Permite cargar codigo en una FUNCIONA LAMBDA, se configura un desencadenador, el servicio espera ese
+aviso y ejecuta el codigo  
+*tiempo de ejecucion de 15min 
+*solo paga por el timepo de computo que consume/ejecutan
+EJ: una función Lambda sencilla podría implicar cambiar automáticamente el tamaño de las imágenes
+cargadas en la nube de AWS. En este caso, la función se activa cuando se carga una nueva imagen.
+
+
+
+
+>>>CONTENEDORES 
+eficacia y portabilidad 
+
+CONTENEDORES :Proporcionan una forma estándar de empaquetar el código y las dependencias de su aplicación en un solo objeto. 
+	Los contenedores solo necesitan de la unidad logica y por debajo un orquestador que nos manejan estos conetenedores
+Contenedor de Docker -> plataforma que utiliza la virtualizacion a nivel operativo 
+	para entregar software en contenedores
+	CONTENEDOR: paquete para su codigo donde pone codigo y dependencias o cualquier configuracion
+	Estos contenedores se ejecutan en instancias y funcionan independientes
+	Cuando se utiliza contenedores necesita procesos para inicializar/deternerlos/reinciciarlo y 
+		monitorearlo 
+	CLUSTER: conjunto de contendores/nodos
+	Proceso de realizar estas tareas se denomina ORQUESTACION
+
+Herramientas de orquestacion de contenedores 
+>>>>>>>>>> Amazon Amazon Elastic Container Service (Amazon ECS)<<<<<<<<<<
+Es un sistema de administración de contenedores altamente escalable y de alto rendimiento que le permite
+	ejecutar y escalar aplicaciones en contenedores en AWS. 
+Con Amazon ECS, puede utilizar las llamadas a la API para lanzar y detener aplicaciones habilitadas para Docker.
+*servicio altamente escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
+*contenedores en instacias
+
+>>>>>>>>>> Amazon Elastic Kubernetes Service (Amazon EKS)
+Es un servicio totalmente administrado que puede utilizar para ejecutar Kubernetes en AWS. 
+Kubernetes es un software de código abierto que le permite implementar y administrar aplicaciones en contenedores 
+*(orquestador de contenedores) aprovisiona un cluster, tiene nodos de trabajo
+*contenedores en instacias
+
+>>>>>>>>>> AWS Fargate <<<<<<<<<<<<
+Motor de computo serverless para contenedores.Funciona con ECS o EKS
+Tecnologia que permite EJECUTAR contenedores sin tener que administrar servidores ni cluster 
+*solo necesitamos saber que imagen queremos lanzar 
+
+
+>>>>>>>>>>Amazon Elastic Container Registry (Amazon ECR) <<<<<<<<<<
+Registro de contenedores ADMINISTRADO que facilita la creacion de IMAGENES
+
+
+***dentro de una intancia pueden haber varios contenedores***
+
+~~~
+
+______________________________________________________________________________________________________________________________________________________-
+
+
+
+
 #### CLOUD
 ~~~
 ¿Qué es la computación en la nube? 
