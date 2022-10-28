@@ -1,3 +1,6 @@
+<img width="840" alt="Virtual Private Gateway" src="https://user-images.githubusercontent.com/89615984/198515167-eddd21bc-6615-4ce6-83e8-f77404851e9d.png">
+<img width="840" alt="Intert Gateway" src="https://user-images.githubusercontent.com/89615984/198515174-02d87ff6-c91b-4490-8c1c-4904accb4c80.png">
+<img width="542" alt="Elastic Load Balancing" src="https://user-images.githubusercontent.com/89615984/198515176-28d980fd-64db-4eec-801c-ecd144a3557a.png">
 * apuntes pablo 
 * https://pablo-dev.notion.site/pablo-dev/c483bcdd69194cec9b7619596844be98?v=cad8574c8ae3499286c9d27097b038f5
 
