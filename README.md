@@ -37,46 +37,9 @@ Tres modelos de computación en la nube
 
 ### AMAZON VPC
 ~~~
-Amazon Virtual Private Cloud (Amazon VPC) es un servicio que puede utilizar para aprovisionar una sección de la nube de AWS aislada lógicamente, que sedenomina nube virtual privada o VPC
-podemos crear una red definida de forma personalizada en la nube de AWS 
-Amazon VPC es un servicio básico de AWS comprender e implementar permitira hacer uso con muchos servicios de AWS.
-Una VPC:
-	Está dedicada a una cuenta de AWS
-	Pertenece a una sola región de AWS
-	Puede abarcan varias zonas de disponibilidad
-	Está aislada lógicamente de otras VPC
-Puede crear varias VPC en una cuenta de AWS para separar los entornos de redes
-Puede crear subredes en una VPC
-EL intervalos de direccion IP de un VPC se define mediante un bloque CIDR
-SUBRED 
-	Una subred es un segmento de un intervalo de direcciones de VPC. Puede lanzar servicios de AWS en una subred
-	*Se puede acceder a una subred pública desde la VPC y desde Internet.
-	*Solo se puede acceder a una subred privada desde la VPC y no se puede acceder a ella desde Internet
-	*la subnet permite dividir la VPC y debe pertenecer unicamente a una zona de disponibilidad, una subred publica su principal caracteristica es que esta conectada a internet gateway
-	*si no especifico un grupo de seguridad al momento de lanzar la intancia, aws le asocia el grupo de seguridad de la vpc
-	*grupos de seguridad funcionan a nivel de computo
-	*
+
 	
-______VPC
-VPC es una red suministrada en una seccion aislada logicamente de aws 
-Cuando creamos VPC definimos un bloque de IP con notacion CIDR(podemos tener un bloque de direcciones IP primario y 4 segundario )
-Cuando utilizamo IPV6, amazon proporciona las direcciones IP
 
-aws ec2 create-vpc --cidr-block 10.0.0.0/16
-
-Direcciones IP reservadas de amazon VPC: (10.0.0.0/16)
-primera direccion -> direccionamiento 
-10.0.0.1 -> reservada por aws para direccion de enrutador de VPC
-10.0.0.2->
-10.0.0-3 -> reservada para futura utilizacionn de aws
-10.0.0.255 -> direccion de difusion de red 
-
-____SUBREDES Y TABLAS DE RUTEO EN VPC
-creo subredes para separar logica(? (desarollo/producion/etc) hasta 200 subredes por VPC
-bloques de direccione IP 
-minimo /28
-maximo /16
-IPV6 -> puedo segmentar mi red /64
 
 ENRUTADOR : instancias dentro de distintas subredes se puede conectar gracias a las reglas de las tablas de enturtamiento
 
@@ -84,7 +47,6 @@ ENRUTADOR : instancias dentro de distintas subredes se puede conectar gracias a 
 
 *cuanndo creo una instanciaaa tengo una nic primaria siempre (tambien puedo tener asociada nic2 y nic3)( nic -> interfaz de red elastica)
 
-*VPC predetermina de la cuenta, no es recomendada para gestionar nuestras app
 
 SUBNET PRIVADA 
 Los recursos de una private subnet (subred privada) no tienen conectividad a Internet. Esto se hace a propósito porque, de esta manera, se protegen los recursos para que no sean accesibles desde Internet.
