@@ -1,6 +1,4 @@
-<img width="840" alt="Virtual Private Gateway" src="https://user-images.githubusercontent.com/89615984/198515167-eddd21bc-6615-4ce6-83e8-f77404851e9d.png">
-<img width="840" alt="Intert Gateway" src="https://user-images.githubusercontent.com/89615984/198515174-02d87ff6-c91b-4490-8c1c-4904accb4c80.png">
-<img width="542" alt="Elastic Load Balancing" src="https://user-images.githubusercontent.com/89615984/198515176-28d980fd-64db-4eec-801c-ecd144a3557a.png">
+
 * apuntes pablo 
 * https://pablo-dev.notion.site/pablo-dev/c483bcdd69194cec9b7619596844be98?v=cad8574c8ae3499286c9d27097b038f5
 
@@ -231,19 +229,6 @@ Lanzar con CloudFormation cuando desee lanzar recursos relacionados en conjunto.
 ~~~
 
 
-#### Amazon Simple Storage Service (AWS S3)
-~~~
-Solucion administrada de almacenamiento en la nube
-Los datos se almacena como objetos en buckets
-diponibilidad y durabilidad
-
-Costos dependen de:
-	tipo de clase de almacenamiento
-	cantidad de almacenamiento (cantidad y tamaño de los objetos)
-	solicitudes (numero y tipo de solicitudes )
-	transferencia de datos (se cobran cargos por los datos salientes )	
-~~~
-
 
 #### Cloud adoption framework (AWS CAF)
 ~~~
@@ -273,12 +258,7 @@ inventory : recopila informacion acerca de las instancias y del software instala
 insights : panel de informacion es una muestra de datosoperativos para cada recurso (Cloudwatch Dashboard)
 ~~~
 
-### Redes :
-~~~
-Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red local (identificador que permite enviar info entre dispositivos en una red) 
-CIDR   
-**Subnet publica sale a internet atraves de Internet Gateway
-~~~
+
 
 #### PROTOCOLOS networking
 ~~~
@@ -305,19 +285,6 @@ ingresar con ec2-user
 ** CONEXIONES, si no puede hacer la conexion por ssh verfique que el grupo de seguridad tenga habilitada una regla de entrada el puerto 22 (ssh) , lo mismo si quiere sacarlo a la web, debe habilitar el puerto 80 (htttp)
 ~~~
 
-curl 169.254.169.254/latest/user-data
-
-
-
-
-
-
-#### Elastic Beanstalk (Servicio de computo (PaaS)) (computo)
-~~~
-Permite implemetar, escalar y administrar aplicaciones web con rapidez, tomar codigo, cargarlo y elastic se encarga de desplegar el codigo, mantiene el control de todos los recursos de mi app
-compatible con go, java SE, node js, php, python y demases
-elastic es gratuito, solo se paga por lo servicios subyacentes como ec2, rds, balanceador de carga, etc
-~~~
 
 
 
@@ -330,109 +297,6 @@ ESCALABILIDAD HORIZONTAL : la capacidad de un sistema para crecer agregando comp
 ELASTICIDAD : capacidad de adquirir recurso cuando los necesite y liberarlos cuando ya no los necesite , *automatizacion 
 ~~~
 
-
-#### AMAZON ROUTE 53, convierte tu ip(del balanceador) en un "nombre"/endpoint (elb-mybalancer.aws.com), el balanceador de carga debe tener la ip publica y se conecta a las instacias que deben estar privadas(route53 envia una peticion a "elb-mybalancer.aws.com" a elastic load y asi se conecta a las intancias y envia la peticion a la instancias que corresponda )
-
-
-#### AWS Elastic Load Balancing (ELB) 
-###### Balanceador de carga 
-~~~
-Distribuye solicitudes entre instancias y aumenta la disponibilidad 
-Beneficios:
-	SEGURO
-	DESACOPLE
-	TOLERANCIA A ERRORES (tabaja a nivel de la app en general( se encarga que las instancias estan "bien", si hay algun error en la instancias la elimina y crea otra igual, que me permite trabajar)
-	EXPANSIVO aumenta la elasticidad y escalabilidad
-	
-Elastic Load Balancing distribuye automáticamente el tráfico entrante de aplicaciones entre varias instancias de Amazon EC2. Le permite lograr tolerancia a fallos en sus aplicaciones al proporcionar sin problemas la cantidad necesaria de capacidad de equilibrio de carga necesaria para enrutar el tráfico de aplicaciones.
-
-TIPOS:
-	Balanceador de carga de RED, capa 4? protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
-		si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
-	Balanceador de carga de APLICACIONES, capa 7? protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta que el de red 
-		direccionamiento basado en rutas y host /home / contact
-	Balancador de carga clasico, esta deprecado 
-		habilitamos sesiones pegajosas(? para que el usuario que se le cayo en net, y queremos que vulva a conectarse a la misma instancia para que su carrito vuelva a tener la misma info
-
- **en un balanceador de carga hay agentes de escucha que clasifica grupos de destino y  en esos grupos hay comprobacion de status
-Receptores/AGENTES DE ESCUCHA/listener dentro del balanceador de carga 
-proceso que define el puerto y protocolo con el que escucha el balanceador de carga 
-cada balanceador necesita al menos un agente de escucha para aceptar el trafico y hasta 50 
-las REGLAS de direccionamiento se definen en los agentes de escucha (una regla como minimo)
-
-~~~
-
-#### AMAZON EC2 Auto Scaling
-~~~
-Grupo de Amazon EC2 auto scaling, (escalamiento horizontal) permite lanza o terminar una cantidad de instancias determinada cuando sea necesario (cuando no hay tanta demanda quiero 2 instancias pero para un cyber necesito 15 instancias, cuando una instancia esta sobrecargada, automaticamente se crean mas instancias ), si no ocupo auto scaling tendria que hacerlo manual , (en base a reglas por ej si se esta al 70% de la instancia, se crea otra instancia y asi sucesivamente )
-
-Necesita una plantilla de lanzamiento(AMI, tipo de intancia,VPC, grupo de seguridad,almacenamiento, par de claves,datos de usuario ,tags)
-Permite la configuracion de las politicas de escalado y tamaño del grupo de instancias Ec2, no escala de forma infinita, hay que establecer el limite 
-->Auto Scaling le ayuda a mantener la DISPONIBILIDAD de las aplicaciones y le permite escalar su capacidad de Amazon EC2 hacia fuera o en función de las condiciones que defina. Podemos utilizar Auto Scaling para asegurarse de que está ejecutando el número deseado de instancias de Amazon EC2.
-->Auto Scaling también puede aumentar automáticamente el número de instancias de Amazon EC2 durante los picos de demanda para mantener el rendimiento y disminuir la capacidad durante las paradas para reducir los costes.
-->Auto Scaling es adecuado para aplicaciones que tienen patrones de demanda estables o que experimentan variabilidad horaria, diaria o semanal en el uso.
-** Hay que establecer la misma VPC par autoScaling y las intancias 
-**Integracion con Elastic Load Balancing 
-
-politicas: como activar politicas? puedo configurar alarmas en CLoudWatch 
-como validamos que las instancias esten sanas ?, es saber si las intancias funcionan como corresponde  aws autoscaling set-intance-health 
-politicas de terminacion : define qe instancia se termina con el escalado descendentes /1.balancear las zonas de disponibilidad y lugo ya hay diferentes opciones 
-Creacion de un grupo de estado estable : configurar unn grupo de amazon Ec2 autoscaling con los mismos valores minimos, maximos y deseados 
-** Escalado dinamico : Amazon EC2 /escalado de siguimiento de objetivo(aumenta o reduxca la capacidad en funcion de un valor en base a una metrica )/ escalado por pasos(aumenta o reduce la capacidad segun ciertos pasos if/else)/ escalado simple(aumente o reduzca la capacidad en funcion de un unico ajuste de escalado) 
-** Escalado predictivo : Amazon EC2 / escala de forma automatica en base a predicciones de Ec2, tambien se establece un maximo de escalamiento 
-
-****** ALGO QUE FALLA UNICAMENTE AL CREAR UNA INTANCIA ES LA AMI, SI SE CREA Y FALLA DEBE SER OTRA COSA ******
-
-~~~
-
-
-
-#### AMAZON ROUTE 53 
-##### (SERVICIO GLOBAL(AL IGUAL QUE IAM))
-~~~
-"convertir" el ip a un nombre de dominio ,route 53 cobra por el 
-Cree un registro CNAME que apunto al balanceador de carga 
-Politicas de direccionamiento ->  es el primer punto de contacto/entrada cuando queramos acceder a un recurso  / direccionamiento ponderado / de latencia / conmutaccion de error 
-**** LOAD BBALANCER balancea las cargas operativas de la instancias 
-**** ROUTE 53 balancea en funcion a politicas muhco mas amplias
--> blue/green deploy : cuando tenemos 2 versiones de un sistema y queremos probar que la segunda version funcione bien , debemos implementar blue(version1) y green(version2) , ROUTE 53 balancea de apoco, enviando el 100% del trafico al sistema blue y gradualmente empieza a enviarlo al sistema greend
- 
-~~~
-
-#### CONTENEDORES  
-##### Elastic Container Registry (Amazon  ECR) / Elasticc Container Service (Amazon ECS) / Amazon Elastic Kubernetes (amazon EKS) / AWS Farget
-~~~
-Docker contenedores / administrar infrestructura, https://kodekloud.com/courses/docker-for-the-absolute-beginner/
-ECS, EKS, Fargate -> contenedores en AWS
-
-Como crear contenedores: 
-Docker es  una plataforma que nos permite crear (sofware empaquetado) , probar, implementar,ejecutar contenedores
-
-como se ve docker en AWS Amazon:
-Elastic Container Registry (Amazon  ECR) : registro de contenedores ADMINISTRADO que facilita (creacion de IMAGENES)()
-Elasticc Container Service (Amazon ECS) : servicio de contenedores altamanete escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
-** tareas son epecificas de ECS 
-kubernetes : software de codigo abierto para el aprovisionamiento y la administracion de contenedores  
-Amazon Elastic Kubernetes (amazon EKS) : (orquestador que contenedores) aprovisiona un cluster, tiene nodos de trabajo,
-AWS Farget : tecnologia que permite EJECUTAR contenedores sin tener que administrar servidores ni cluster (no hay que administrar infraestuctura)(administrador de contenedores serverless) 
-
-** contenedor es un pedazo del sitema operativo, podemos transportar a 
-** maquina virutal es harward y tiene el sitema operativo completo visrtualizado. dentro de una intancia pueden haber varios contenedores 
-
-** cluster : conjunto de contendores
-~~~
-
-
-#### Lambda AWS(computo)
-~~~
-para que utilizamos lamba? para tareas especificas que no requiere estar activa todo el timepo, cada vez que se invoca una funcion es que se ejecuta 
-servicio administrado de AWS / invocacion basada en eventos / el timepo de ejecucion de una funcion se limita a un maximo de 15min / admite varios lenguajes 
-Lambda le permite al codigo ejecutarse sin aprovisionamiento (tiene  de invocaciones gratuitas)
-*** TODO LO SERVERLESS SE PAGA POR LO QUE SE USA SOLAMENTE
-~~~
-
-
-#### APIS
 
 ### BASES DE DATOS
 ~~~
@@ -530,185 +394,7 @@ Es una buena opción para la distribución de contenido estático de acceso frec
 alto nivel de transferencia de datos atendiendo solicitudes utilizando una red de ubicaciones de borde en todo el mundo.
 ~~~
 
-#### AWS Organizations
-~~~
-Ayuda a administrar y controlar su entorno de manera centralizada a medida que crece y escala sus recursos de AWS.
-El uso de un entorno de múltiples cuentas es una mejor práctica recomendada al escalar su entorno de nube.
-**está disponible para todos los clientes de AWS sin cargo adicional.
- Beneficios de una facturacion consolidada, Consolidated billing for AWS Organizations
- 	Una factura : obtiene una factura para varias cuentas.
-	Fácil seguimiento : puede realizar un seguimiento de los cargos en varias cuentas y descargar los datos combinados de costo y uso.
-	Uso combinado : puede combinar el uso en todas las cuentas de la organización para compartir los descuentos de precios por volumen, los descuentos de instancias reservadas y los planes de ahorro. Esto puede resultar en un cargo más bajo para su proyecto, departamento o empresa que con cuentas independientes individuales. Para obtener más información, consulte Descuentos por volumen .
-	Sin cargo adicional : la facturación consolidada se ofrece sin costo adicional.
-~~~
 
-#### Amazon Elastic Block Store EBS (almacenamiento en bloques)
-~~~
-Proporciona volumenes de almacenamiento persistente
-Es un mecanismo de almacenamiento subyacente clave para las instancias de Amazon EC2
-Cada volumen , se replica automaticamente dentro de su misma zona de disponibilidad 
-Ofrece almacenamiento a nivel de bloques 
-Puede utilizar EBS para crear volumenes de almacenamiento individuales y adjuntarlos a una instancias de EC2
-* Necesitamos almacenamiento ebs para hibernar las instancias
-*Intantaneas /Snapshotp,  imagen que le saca al almacenamiento (permite capturar estados/datos para luego restaurarlo)
-TIPOS DE VOLUMENES 
-Unidad estado solido 
-unidad disco duro
-
-IOPS aprovisionadas(SSD)
-se cobra por el importe que aprovisione enIOPS (porcentaje del dia o mes que se utiliza )
-
-lab
-Amazon Elastic Block Store (Amazon EBS) ofrece almacenamiento persistente para las instancias de Amazon EC2. Los volúmenes de Amazon EBS están adjuntos a la red y su duración es independiente de la vida de una instancia. Los volúmenes de Amazon EBS tienen un alto nivel de disponibilidad y de confianza, y pueden utilizarse como particiones de arranque de instancias de Amazon EC2 o adjuntarse a una instancia de Amazon EC2 en ejecución como dispositivos de bloques estándar.
-
-Cuando se utilizan como particiones de arranque, las instancias de Amazon EC2 pueden detenerse y, posteriormente, reiniciarse, lo que le permite pagar solo por los recursos de almacenamiento utilizados al mismo tiempo que conserva el estado de la instancia. Los volúmenes de Amazon EBS tienen una durabilidad mucho mayor que la de los almacenes de instancias de Amazon EC2 locales porque se replican automáticamente en el backend (en una única zona de disponibilidad).
-
-Sin embargo, si se quiere aún más durabilidad, con Amazon EBS es posible crear instantáneas uniformes puntuales de los volúmenes, que luego se almacenan en Amazon Simple Storage Service (Amazon S3) y se replican automáticamente en varias zonas de disponibilidad. Estas instantáneas se pueden utilizar como punto de partida para nuevos volúmenes de Amazon EBS y permiten proteger la durabilidad de sus datos a largo plazo. También puede compartirlas fácilmente con colegas y otros desarrolladores de AWS.
-Los volúmenes de Amazon EBS tienen las siguientes características:
-
-Almacenamiento persistente: la vida útil de los volúmenes es independiente de cualquier instancia de Amazon EC2.
-De uso general: los volúmenes de Amazon EBS son dispositivos de bloques sin formato y sin procesar que se pueden utilizar en cualquier sistema operativo.
-Alto rendimiento: los volúmenes de Amazon EBS son iguales o mejores que las unidades locales de Amazon EC2.
-Alto nivel de fiabilidad: los volúmenes de Amazon EBS tienen redundancia incorporada dentro de una zona de disponibilidad.
-Diseñados para ofrecer resiliencia: la tasa anual de errores (AFR) de Amazon EBS oscila entre un 0,1 % y 1 %.
-Tamaño variable: los tamaños de los volúmenes varían de 1 GB a 16 TB.
-Fáciles de usar: los volúmenes de Amazon EBS se pueden crear, adjuntar, almacenar en copias de seguridad, restaurar y eliminar fácilmente.
- 
-df -h -> consulta el almacenamiento disponible d ela instancia 
-~~~
-
-#### Amazon S3 ()
-~~~
-
-
-
-
-Control de versiones Amazon S3
-protege los objetos en caso de sobreescritura y eliminacion accidentales, 
-para eso habilitamos el control de versiones y tendremos varias versiones 
-de un archivo en con mismo nombre
-S3 Intelligent-Tiering (optimiza y disminuye costos )
-Nos permite mover objt de forma automatica a nivel de acceso mas rentable 
-*se almacena los obj en dos capas, una de acceso fecuente y otra capa para los datos en reposo
-
-
-*Por defecto todo los archivos estan bloqueados para acceder,
-Configuracion Amazon s3 block public Access,
-Hay cuatro reglas 
-	bloquear ACL
-	--
-	--
-	--
-
-Amazon S3 Objct Look
-Permite almacena objetos, mediante el modelo de escritura unica y lecturas mutiples (write once ready many)
-*Habilitarlo en el momento que se crea
-Cuando necesitamos asegurar que los objetos que almacnamos no sea modificaddo ocupamos object look
-
-**Podemos crear notificaciones de evento de S3 y ocupar otros servicio como lambda, sns
-
-crear un bucket en CLI
-aws s3 mb 
-
-en la cli s3 funciona bien prar tareas simples, para las mas compleja ocupamos s3api
-
-
-Caracteristicas
-	administracion del ciclo de vida de los objetos
-	URL del objeto prefirmada
-	uso compartido de recuros entre origenes (CORS), (pregunta si tiene acceso a otro bucket y accede a los datos )
- 
-
-
-~~~
-
-#### Amazon Instance Store (almacenamiento instancia) 
-~~~
-Ofrece un almacenamieno temporal a nivel de bloque para la instancias, este almacenamiento se encuentra en discos que estan conectados fisicamente al equipo host
-El alamcenamiento no es persistenete: los datos se pierden cuando se termina la instancia
-Es un almacen rapido  de baja latencia 
-Los volumenes de los almacenes se especifican mediante la funcion de asignacion de dispositivos de bloques de la API de EC2 y la consola 
-Utilice para almacenar informacion que no necesite conservar mas allla del cilco de vida de una instancia
-
-~~~
-#### Amazon Elastic File System (Amazon EFS)
-~~~
-Es una almacenamiento de sitema de archivos de red NFS elasstico, escalable, totalmente administrado para utilizarlo con los servicios en la nube de AWS y los recursos locales
-Caracteristicas:
-	De baja latencia a escala petabytes
-	Elasticidad (0 tiempo de inactividad)
-	Compatible con todas las AMI basada en LINUX para EC2
-	
-Beneficios:
-	Elastico : escalable  elastico
-	Elasticidad dinamica : crece y se reduce automaticamente a medida que agrega y elimina archivos
-	Gestion completa : por aws
-	
-Atributos de rendieminto: 
-	modo de desempeño : uso general | E/S max (entrada/salida)
-	(si no elijo, por defecto toma el uso general/ una vez seleccionado no podemos cambiar de opcion )
-	clases de almacenameinto : estandar | aceso poco frecuente
-	modo de rendimiento : rendimiento en rafaga | rendimiento aprovisionado
-	(rafaga->crece a medida que aumenta xd , aprovisionado-> permite crecer un poco mas (streamer/big data))
-
-**En todas las zonas de disponibilidad(suficiente una subred) debe establecer destino de montaje que debe tener una nic asosciada, ese nic me permitira establecer conexion a EFS
-*GB por mes y por transferencia de salida, dependiendo por la region 
-
-Configuracion:
-	creear EFS
-	crear un destino de montaje en la VPC de la instancia 
-	monte el sietema de archivos en el destino de montaje
-	concetar lla instancia EC2 al destino de montaje
-	
-*una "carpeta" que las instancias comparten 
-
-*creamos un grupo de seguridad  con una regla 
-TCP 2049 que le de permisos al grupo de seguridad (*igual que load balance)
-
-~~~
-
-#### Amazon Simple Store Service Glacier
-~~~
-Es una clase de almacenamiento de S3, duradero, economico para archivar datos
-y realizar copias de seguridad a largo plazo
-Cada archivo tiene su identificado y descripcion
-URI:
-Conceptos Claves=
-Politicas de acceso al almacen: permiso de acceso a vaults(bobeda), quien puede y no puede acceder
-Trabajo/Talks: pueden realizar una consulta en un archivo, iniciamos un talk que proporciona una consulta
-sql y una lista de objetos que estan en este almacen 
-
-IMPORTANTE:
-Diseñado para 11 9s de durabilidad para objetos
-Admite SSl / TLS de datos en transito y reposo
-
-Acceso a Amazon S3 Glacier:
-Servicios web REST 
-Kits de desarrollo de software (SDK) java o .net
-Amazon  S3 con politicas de ciclo de vida  (se accede a los archivos archivados a traves de conola de S)
-	(por ejemplo segun politicas , si tenemos un objeto y pasan 30 podemos moverlos o eliminarlos )
-
-
-Opciones de traer/recuperacion de archivos
-	urgente 1-5min
-	estandar 2-5 horas
-	masiva 5-12 horas 
-*costos diferentes , mientras mas urgente mas alto el valor 
-* si se quiere traer archivos mas seguido es mejor ocupar otro servicio que sea mas economico
-
-
-como se almacena los datos : ARCHIVOS 
-
-*Por defecto glacier se encriptan los objetos 
-*En el caso de S3 el cifrado es opcional en estado estatico(en transporte siemore estan cifrados par mas seguridad  )(opciones: claves de s3, kms, claves de cifrado)
-
-*controlar el acceso con IAM, es full administrado por aws, nosotros solo le mandamos la data y la retiramos 
-
-*Mas economico pero demora mas tiempo de devolver la info 
-*costo 0 de entrada , costos de salida depende 
-*replicacion automatica en S3 y s3 glacier
-
-~~~
 #### Amazon Storage Gateway
 ~~~
 Almacenamiento hibrido, queme permite que suus aplicaciones locales utilicen el almacenamiento en la nube .Podemos ocuparlos para copias de seguridad y archivaado, recuperacion ante desastre, procesamiento de datos en la nube, migraciones 
@@ -730,19 +416,6 @@ Sttorage Gateway se configura ne las instalacion y lo vinculo el entorno local a
 
 
 ~~~
-##### Amazon S3 Intelligent-Tiering
- Unidad de estado sólido de uso general (SSD)
- IOPS aprovisionadas (SSD)
- Unidad de disco duro (HDD) optimizada para rendimiento
- Disco duro frío (HDD)
-
-
-#### AWS Identify and Acess Management (IAM)(SERVICIO GLOBAL)
-~~~~
-**IAM Access Analyzer le ayuda a identificar los recursos de su organización y sus cuentas, como buckets de Amazon S3 o roles de IAM, que se comparten con una entidad externa. Esto le permite identificar el acceso no deseado a sus recursos y datos, lo que constituye un riesgo para la seguridad.
-~~~~
-#### AWS Outpost
-
 
 
 #### AWS Well-Architected Framework
@@ -757,36 +430,6 @@ AWS Well-Architected Framework describe los conceptos clave, los principios de d
 
 ~~~
 
-
-##### STORAGE
-~~~
-+S3
-+EBS
-+EFS
-backup
-storage gateway
-~~~
-##### SECURITY,IDENTIFY & COMPLIANCE
-~~~
-AWS Identity and Access Management (IAM)
-AWS Artifact
-AWS Audit Manager
-Amazon Cognito
-Amazon Detective
-AWS Directory Service
-AWS Firewall Manager
-Amazon Cloud Directory
-Amazon GuardDuty: se puede utilizar para detectar actividades maliciosas y ayuda a proteger la cuenta 
-AWS IAM Identity Center (successor to AWS Single Sign-On)
-Amazon Inspector
-Amazon Macie
-AWS Network Firewall
-AWS Resource Access Manager (AWS RAM)
-AWS Secrets Manager
-AWS Security Hub
-AWS Shield
-AWS WAF
-~~~
 
 
 ~~~
