@@ -300,76 +300,16 @@ ELASTICIDAD : capacidad de adquirir recurso cuando los necesite y liberarlos cua
 
 ### BASES DE DATOS
 ~~~
-
-dependiendo de lo que quiero es el servicio que elijo
-RDS (transacionales) para lecura y escritura (JOIN para hacer relaciones entre tablas )
-DinamoDB (transacioales)
-Redshif :analizar datos de forma masiva / analisis de grandes volumenes de informacion 
 Elastic Cahche ()
 Neptune : determinar relacion entre dos nodos que quieren conectarse (grafos)
-Aurora: 
-~~~
 
-#### Aamazon Relational Database Service (Amazon RDS) (transacional)
-~~~
-Facilita las tareas de configuración, operación y escalado de una base de datos relacional en la nube. Proporciona una capacidad rentable y de tamaño modificable, al mismo tiempo que permite gestionar las tareas de administración de base de datos que requieren mucho tiempo, lo que permite centrarse en las aplicaciones y el negocio. Amazon RDS le ofrece seis motores familiares de base de datos entre los que elegir: Amazon Aurora, Oracle, Microsoft SQL Server, PostgreSQL, MySQL y MariaDB.
-
-*creamos un grupo de seguridad para permitir que su servidor web acceda a la instancia de base de datos de RDS. El grupo de seguridad se utilizará al lanzar la instancia de base de datos.
-*creamos un grupo de subredes de base de datos que se emplea a fin de informar a RDS acerca de qué subredes se pueden utilizar para la base de datos. Cada grupo de subredes de base de datos requiere subredes en al menos dos zonas de disponibilidad.
-*Las implementaciones Multi-AZ de Amazon RDS proporcionan mejoras en la DISPONIBILIDAD y la DURABILIDAD de las instancias de base de datos, lo que las hace adecuadas para las cargas de trabajo de bases de datos de producción. Cuando aprovisiona una instancia Multi-AZ de base de datos, Amazon RDS crea automáticamente una instancia de base de datos principal y, de forma sincronizada, replica los datos a una instancia en espera en una zona de disponibilidad diferente.
-~~~
-#### DynamoDB (no relacional)
-~~~
-Tablas globales de amazon dynamoDB un beneficio de usar dynamo es que permite tener una repilicar enlas regiones que necesitamos , las ocupamos cuando necesitamos rendimiento en nuestras app
-~~~
-
-#### Redshif : es una servicion de almacenamiento de datos administrado 
-~~~
-que es una almacen de datos? 
-como funciona ? puede contener varias bases de datos, y se pueden eoganizar las tablas en esquemas
-como esta compueto ? la arquitetcura esta compuesta por 3 niveles base de datos en si, analisis, y frontend que presenta los resultados
-que es Redshif ? nos permite hacer analisis de grandes voluemntes de info, es administrado por aws
-como procesa los datos ? el procesamiento es paralelo, dos o mas microprocesadores separan programas y ejecutan tareas en forma simultanea
-cuando lo ocupamos ? situacione empresariales, big data, softare como servicio,
-~~~ 
-
-
-#### Amazon Aurora
-~~~
-Motor de base de datos compatible con MySQL y PostresSQL
-Esta contruida para la nube y aprovecha todo los beneficios, tambien funciona con RDS
-Esta conformada por clusteres 
-Caracteristicas : Simple y compatible
-		  Pago por uso 
-		  Servicio gestionado, funciona con servicios como Database Services
-		  Tolerante a fallos, replica para copias de seguridad 2 veces dentro de 3 zona de disponibilidad  
-		  Alto rendimiento y escalabilidad de almacenamiento 
-		  Alta disponibilidad y durabilidad 
-Cuando crea una instancia Amazon Aurora, crea un cluster de base de datos 
-Un cluster de base de datos aurora se compone de una o varias instancias de base de datos y de un volumen de cluster que administra los datos para esas instancias db
-Un volumen de cluster es un volumen de almacenamientos d db virtual que abarca varias zonas de disponibilidad 
-Hay dos tipode cluster de db :
-	cada cluster tiene una instancia primaria de Amazon aurora (lectura y escritura )
-	cada cluster de db aurora puede tener hasta un max de 15 replicas de amazon aurora  (lectura)
-Si falla la instancia primaria, toma una replica como intancia primaria y cuando se solucionen los errores automaticmanete vuelve a ser la instacia primaria original 
-Se recupera en menos de 60 segundos en la mayoria de los casos se reincia la instancia, de esto se encarga aws(todo lo administra aws)
-Casos de uso ? aurora podria reducir en un 90% ala vez mejora la fiabilidad y disponibilidad de db , por que no migran aurora? porque requiere de una carga operativa alta 
-1.
-2.
-3.juegos web (alto rendimiento y gran escabilidad de almacenamiento)
-
-** https://www.youtube.com/watch?v=SnCWucCEFLw
-** puede estar en un VPC y acceder desde otra VPC (?
 ~~~
 
 #### AWS Database Migration Service (AWS DMS)
 ##### AWS SCT(AWS Schema Conversion Tool)
 ~~~
-Permite migrar las bases de datos a AWS de manera rapida y segura 
-Con DMS  minimiza el tiempo de inactividad (con sct la migracion es mas acelerada) de la app que dependen de la base de datos , ya que su bd de origen funciona todo el tiempo 
-Permite migracion homegeneas y heterogeneas( Oracle a Oracle / Microsoft SQL a Amazon Aurora)
-	La migracion homogeneas son de 1 solo paso cuando el esquema de origen y destino son compatibles
-	La migracion heteogenea son de 2 pasos ya que la estructura pueden ser muy diferentes,es necesario la transformacion de tipos de datos (AWS Schema Conversion Tool) y luego DMS para la migracion  
+
+
 ALTA DISPONIBILIDAD en AWS DMS : puede replicar datos de forma casi continua 
 AWS DMS puede migrar entre lenguajes de consulta estructurados SQL y noSQL
 
