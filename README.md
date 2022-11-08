@@ -86,6 +86,7 @@ BENEFICIOS / VENTAJAS
 ### MODULO 2 : COMPUTO EN LA NUBE
 #### EC2 / AutoScaling / Elastic Load Balancing / Lambda / Elastic Container Registry (Amazon ECR) / 
 Elasticc Container Service (Amazon ECS) / Amazon Elastic Kubernetes (amazon EKS) / AWS Farget
+####  Amazon Simple Notification Service (AMAZON SNS Amazon Simple Queue Service (AMAZON SQS)
 ~~~
 >>>>>>>>>> AWS Elastic Compute Cloud EC2 (Computo como servicio)
 Proporciona capacidad de cómputo segura y de tamaño modificable en la nube como instancias de Amazon EC2. 
@@ -178,7 +179,7 @@ automaticamente a la DEMANDA cambiante mediante el escalado o reduccion horizont
 
 ESCALABILIDAD HORIZONTAL : la capacidad de un sistema para crecer agregando computadoras adicionales con las mismas caracteristicas
 
-para que el proceso de escalado se realice automaticamente utilizamos :
+	para que el proceso de escalado se realice automaticamente utilizamos :
 >>>>>>>>>> Amazon EC2 Auto Scaling <<<<<<<<<<
 (si accede a un sitio web que no carga o se agota el tiempo de espera, es probable que haya recibido mas solicitudes
 de las que puede gestionar )
@@ -287,7 +288,7 @@ aviso y ejecuta el codigo
 *solo paga por el timepo de computo que consume/ejecutan
 EJ: una función Lambda sencilla podría implicar cambiar automáticamente el tamaño de las imágenes
 cargadas en la nube de AWS. En este caso, la función se activa cuando se carga una nueva imagen.
-
+*AWS LAMBDA PERMITE 1 MILLON DE INVOCACIONES GRATUITAS POR MES 
 
 
 
@@ -456,6 +457,7 @@ Puede crear varias VPC en una cuenta de AWS para separar los entornos de redes
 *VPC predetermina de la cuenta, no es recomendada para gestionar nuestras app
 Cuando creamos VPC definimos un bloque de IP con notacion CIDR(podemos tener un bloque de direcciones IP primario y 4 segundario )
 Cuando utilizamo IPV6, amazon proporciona las direcciones IP
+*5 VPC limite regional 
 
 Direccione IP : direccion unica que identifica un dispositivo o rcurso en internet o dentro de una red
 	local (identificador que permite enviar info entre dispositivos en una red) 
@@ -544,6 +546,7 @@ Tamaños  de volumenes desde 1GB hasta 16TiB
 Volumen de EBS almacena los datos en una unica zona de disponibilidad, tiene redundancia sobre la misma 
 Para asociar un instancia y volumn EBS deben estar en la misma ZA
 * Necesitamos almacenamiento ebs para hibernar las instancias
+*Almacenan los datos en una sola zona de disponibilidad 
 
 >>>>> Amazon Simple Storage Service (Amazon S3) <<<<< almacenamiento como objetos
 Almacenamiento y recuperacion de una cantidad ilimitada de datos
@@ -561,7 +564,7 @@ Costos dependen de:
 	cantidad de almacenamiento (cantidad y tamaño de los objetos)
 	solicitudes (numero y tipo de solicitudes )
 	transferencia de datos (se cobran cargos por los datos salientes )	
-
+*AMAZON S3 ES GRATIS 1 AÑO PARA HASTA 5GB DE ALMACENAMINEOT 
 
 Capas de datos / clases
 	>>>Ammazon S3 Standard
@@ -618,8 +621,9 @@ Permite tener multiples instacias que puedan acceder a los datos de EFS al mismo
 Escala automaticamente ascendiente y descentiendo, sin que nosotros hagamos algo
 Sistema de archivos para linux
 Servicio regional, almacena datos en varias zonas de disponibilidad 
-El alamcenamiento duplicado permite acceder a los datos simultaneamente desde todas las ZA 
+El alamcenamiento duplicado permite acceder a los datos simultaneamente desde todas las ZA (almacena datos en mas de una zona de disponibilidad )
 *Servidores locales pueden acceder a EFS mediante direct connect 
+
 
 
 			DATABASE
@@ -683,8 +687,6 @@ https://aws.amazon.com/es/neptune/
 Servicio que añade capas de almacenamiento en caché a las bases de datos para ayudar a mejorar los tiempos
 	de lectura de las solicitudes comunes. 
 https://aws.amazon.com/es/elasticache/
-
-
 
 
 >>>>>>>>>>>>AWS Database Migration Service DMS<<<<<<<<<<<
@@ -780,7 +782,8 @@ Caracteristicas:
 		pueden acceder los usuarios o roles en cada cuenta de la organizacion )
 	*Las politicas decontrol de servicios se aplican a una cuenta miembro individual o a una unidad organizativa 
 **está disponible para todos los clientes de AWS sin cargo adicional.
-
+** El número máximo predeterminado de cuentas permitidas para una organización es de 4, pero puede ponerse en contacto
+	con AWS Support para aumentar la cuota, si es necesario.
 
 >>>>> Conformidad
 Cada industria tiene estandares que deben cumplirse, se realizan auditorias para validar que se cumplieron los estandes 
@@ -926,6 +929,362 @@ https://aws.amazon.com/es/products/security/
 https://aws.amazon.com/es/compliance/
 
 ~~~
+
+### MODULO 7 : MONITOREO Y ANALISIS
+#### Amazon CLoudWatch / Amazon CloudTrail / AWS Trusted Advisor
+~~~~
+Podemos utilizar metricas para ver que tal funcionan los sistemas y procesos 
+
+MONITOREO: Sistema de observacion, recoleccion de metricas y luego uso de datos para tomar decisiones 
+
+>>>>>>>>>> Amazon CLoudWatch <<<<<<<<<<
+Para visibilidad/monitoreo del estado de los servicios 
+Permite monitorear infraestructura de aws y las app que se ejecutan en tiempo real, opera mediante el 
+	siguimiento y monitoreo de metricas
+Metricas:variables vinculadas a sus recursos (la utilizacion de CPU de una instancia )
+
+>>ALARMAS DE CLOUDWATCH
+	Podemos establecer un umbral de una metrica personalizada y cuando se alcanza ese umbral, CLOUDWATCH genera una
+		alerta y puede descencadenar una accion
+	Las alarmas estan integradas a SNS, podemos enviar mje de texto para avisar algo 
+	*Podemos crear diferentes tipos de alarmas de cloudwatch para diferentes recurso
+
+>>DASHBOARD DE CLOUDWATCH / panel de cloudwatch 
+Panel que muestra todas las metricas casi en tiempo real, se van actualizando automaticamente
+*Ponedos crear un panel que agrupe todas la metricas de las instancias  
+
+Beneficios de CLOUDWATCH
+	Acceso central de todas las metricas 
+	Visibilidad de todas las app, infraestructura y servicion(info de los recursos distribuidos )
+	Reducir el MTTR, tiempo medio de resolucion 
+	Mejorar el TCO, costo total de propiedad 
+	Manipular informacion de las metricas 
+
+
+>>>>>>>>>> Amazon CloudTrail <<<<<<<<<<<
+Servicio de auditoria de llamadas a la APIs de la cuenta 
+Cada solicitud realizada a aws (lanzar instancia, insertar datos a una DB) se registra en el motor de CLOUDTRAIL
+Se registra QUIEN hizo la solicitud, CUANDO, IP, TIPO DE RECURSO y RESPUESTA de la API
+*Puede guardas esos registro/historial indefinidamente en un bucket de S3 
+*Por lo general los eventos se acualizan en 15minutos despues de la llamada a la APi 
+*Podemos filtrar la busqueta por usuario, recurso, fecha, etc 
+*Ayuda a los usuarios a habilitar la gobernanza, la conformidad y la auditoría operativa y de riesgos en sus cuentas de AWS
+
+>>> CLOUDTRAIL Insights 
+Puede habilitarlo y permite detectar automaticamente actividades de API inusuales
+
+
+>>>>>>>>>> AWS Trusted Advisor <<<<<<<<<<<
+Asesor automatizado *BUENAS PRACTICAS* 
+Servicio que asesora/aconseja/valora/inspecciona el entorno de AWS 
+En tiempo real ejecuta comprobaciones/chequeos para cada pilar segun la practicas recomendadas 
+
+5 Pilares/Categorias:  
+	Optimizacion de costos 
+	Rendimiento
+	Seguridad
+	Toleracia a fallos
+	Limites de servicio
+
+*Algunas comprobaciones son gratuitas y estan incluidas, y otras dependen del plan de soporte 
+Trusted Advisor ofrece una lista de acciones recomendadas y recursos adicionales para obtener más información
+	sobre las prácticas recomendadas de AWS. 
+Tipos de iconos/niveles/acciones en el panel 
+	NO SE DETECTARON PLOBLEMAS/INVESTIGACION RECOMENDADA/ ACCION RECOMENDADA
+*Puede configurar alertas de correo para contactos
+*Asegurese de que este activo en su cuenta 
+*Ubicado en la seccion de Management Tools Herramientas de administracion en la consola 
+
+
+https://aws.amazon.com/es/products/management-and-governance/use-cases/monitoring-and-observability/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&blog-posts-cards.sort-by=item.additionalFields.createdDate&blog-posts-cards.sort-order=desc
+https://aws.amazon.com/es/products/management-and-governance/use-cases/configuration-compliance-and-auditing/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&blog-posts-cards.sort-by=item.additionalFields.createdDate&blog-posts-cards.sort-order=desc
+config 
+systems manager 
+CodeGuru 
+~~~~
+
+### MODULO 8 : PRECIOS Y SOPORTE
+#### Calculadora de precios(AWS Pricing Calculator) / Panel de facturacion(Billing dashboard) / AWS Budgets / AWS Cost Explorer
+#### AWS Support (Basic, Developer, Bussines, Enterprisse)
+~~~
+Podriamos tener una aproximacion de cuanto cuesta por mes y hacer una estimacion de los otros meses
+>CAPA GRATUITA/ AWS FREE TIE 
+	Gratuito para siempre
+	12 meses de uso gratuito
+	Pruebas 
+*Lambda tiene 1 millos de invocaciones gratuitas por mes
+*S3 es gratis 1 año para hasta 5GB de almacenamiento 
+*AWS Lightsail ofrece prueba de 1 mes de hasta 750 horas de uso 
+*SageMaker, Comprehend Medical, DynamoDB, SNS, Cognito mas de 60 servicios 
+https://aws.amazon.com/es/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all
+https://aws.amazon.com/es/pricing/?aws-products-pricing.sort-by=item.additionalFields.productNameLowercase&aws-products-pricing.sort-order=asc&awsf.Free%20Tier%20Type=*all&awsf.tech-category=*all
+
+>>>>>>>>>> Calculadora de precios de AWS  <<<<<<<<<<
+Permite explorar los servicios de AWS y crear una estimación del costo de sus casos de uso 
+
+*Cuando haya creado un presupuesto, puede guardarlo y generar un enlace para compartirlo con otras personas.
+EJ: Una empresa quiere utilizar EC2 pero no está seguro de qué región o tipo de instancia de AWS sería la más
+	rentable para su caso de uso., mediate la calculadora puede hacer una comparacion estimada 
+
+
+>>>>>>>>>> Panel de facturacion/ Billing dashboard <<<<<<<<<< FACTURACION 
+Como va la facturacion de la cuenta ?
+>>> Bills :
+	Acceso a los servicios que estamos pagando (Facturacion)
+Gasto mensual hasta la fecha y los servicios utilizados 
+Grafico con montos de mes anterior, actuales y previstos del mes sig 
+Tabla con uso actual de la capa gratuita 
+*Para pagar la factura de AWS, monitorear el uso y analizar y controlar los costos.
+https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html
+
+>>>Billing Consolidado:  AWS Organization 
+	Beneficios de usar AWS Organization es la facturacion consolidada, al final del mes puede unir 
+		la facturacion al propietario de la organizacion 
+	Simplifica el proceso de facturacion 
+	Compartir ahorros entre cuentas (descuentos por volumen)
+	Funcion billing gratuita 
+
+	>>>>>>>>>> AWS Budgets <<<<<<<<<<<	PRESUPUESTOS PERSONALIZADOS PARA ESCENARIOS COSTO/USO 
+Presupuesto personalizados para escenarios de costos y uso
+Recibe notificacion de forma anticipada si va exceder el monto presupuestado de ese recurso 
+Puede crear presupuestos para planificar el uso del servicio, los costos de los servicios y las reservas de instancias.
+*Para personalizar un budgets debe establacer un monto y especificar un umbral por ej cuando se llegue a ocupa
+	el 80% y añadimos un email para que llegue la notificacion  
+
+>>>>>>>>>> Cost Explorer <<<<<<<<<<<< OBSERVAR Y ANALIZAR COSTOS A LO LARGO DEL TIEMPO 
+Permite observar y analizar como gasta su dinero en aws a lo largo del tiempo
+*12 meses de gastos historicos para analizar y hacer seguimiento de los gastos (puedo agrupar por
+	 atributos, las etiquetas son utiles para filtrar )
+AWS Cost Explorer incluye un informe predeterminado de los costos y el uso de los cinco servicios de AWS de mayor costo acumulados. 
+*Puede crear  informes personalizados de costos y guardarlos para volver a revisarlos 
+
+https://aws.amazon.com/es/aws-cost-management/aws-cost-explorer/
+
+
+>>>>>>>>>>> Planes de AWS Support <<<<<<<<<<<
+Soporte para todos lo clientes dependiendo de sus necesidades
+
+<<< BASIC SUPPORT :
+	Servicio de atencio al cliente 24/7
+	Documentacion y documentos tecnicos
+	Foros de soporte
+	AWS Trusted Advisor
+	AWS Personal Health Dashboard, vista personalizada del estado de los servicios de aws  
+	**GRATUITO y para todos los clientes
+
+<<< DEVELOPER SUPPORT:
+	Basic Support
+	Orientación de prácticas recomendadas
+	Acceso en horario comercial por CORREO al soporte tecnico 
+	TIEMPO DE RESPUESTA 
+		24h sobre cualquier pregunta
+		12h en caso de que su sistema tenga falla 
+
+<<< BUSINESS SUPPORT 
+	Basic support 
+	Trusted advisor, con todo el conjunto de comprobaciones 
+	Acceso TELEFONICO directo a ing de soporte 
+	TIEMPO DE RESPUESTA 
+		4h si su sistema tiene fallas
+		1h si su sistema esta detenido 
+	Acceso a la admi de eventos de infraestructura
+
+<<< ENTERPRISE SUPPORT 
+	*cargas de trabajo criticas
+	Incluye Basic support
+	Director Tecnico de Cuentas Dedicado (TAM): 	
+		Punto de contacto especializado con aws, parte del equipo de soporte , se especializa en el monitoreo proactivo de su entorno y apoyo 
+		con optimizaciones, tambien proporciona adm de eventos de infrestructura, revision de well arcchitec
+
+	TIEMPO DE RESPUESTA 
+		de 15 minutos para carga de trabajo criticas 
+	
+*tienen precio de pago mensual y no requiere contratos 
+https://aws.amazon.com/es/premiumsupport/plans/
+
+>>>>>>>>>>> Well Architec <<<<<<<<<<< ???????????????????????????????????????????????????????????????????????????????????????
+
+
+
+>>>>>>>>>>> AWS Marketplace <<<<<<<<<<
+Catalogo digital, para buscar, implementar, administrar software de terceros que se ejecuten en su adquitectura
+Implementacion rapida y segura de soluciones +Implementacion con un solo clic
+Puede acceder a información detallada sobre opciones de precios, soporte disponible y opiniones de otros clientes
+Caracteristicas
+	+precios personalizados, acuerdo de licencias personalizados  +Opciones de pago por uso 
+	+mercado privado
+	+integracion dentro de su sistema de adquisiciones
+	+herramientas de administracion de costos 	
+https://aws.amazon.com/marketplace
+~~~
+
+### MODULO 9 : MIGRACION E INNOVACION 
+#### AWS Snow Family
+~~~
+Si ya tiene immplementacion en on-premiss puede migrar hacia la nube :
+
+>>>>>>>>> AWS Cloud Adoption Framework (AWS CAF) <<<<<<<<<<
+Marco de adopcion de la nube de aws 
+AWS CSF Existe para accesosar a la empresa para posibilitar una migracion sin problemas a aws 
+Organiza la orientacion en seis areas de interes denomidad PERSPECTIVAS 	
+	Negocios / Personas / Gobernanza se centran en las capacidades empresariales 
+	Plataforma / Seguridad / Operaciones se centran en las capacidades tecnicas 
+Plan de accion AWS CAF  
+	Orientar a la administracion de cambios de la organizacion mientras realiza su traspaso a la nube 
+
+**Tener un plan de accion que tenga sentido para la e, puede ayudarlo a mantenerlo en camino 
+
+>>Estrategias de migracion 
+	
+.......
+6R
+	Como mover cantidades masivas de datos sin pasar por la red: 
+>>>>>>>>>> AWS Snow Family <<<<<<<<<<
+
+Conjunto de dispositivos FISICOS que ayudan a transportar físicamente hasta exabytes de datos dentro y fuera de AWS. 
+Seguros y resistente a manipulaciones 
+Firmado criptograficamente / datos cifrados 
+https://aws.amazon.com/es/snow/
+
+AWS Snowcone
+	Dispositivo pequeño robusto y seguro
+	Puede contener 8TB de datos, puede incluir capacidad de computo 
+	Pedido mediante la consola y se envia fisicamente 
+	AWS copia todos los datos a un bucket de s3 a tu cuenta 
+	**Gerenalmente para datos de analitica, copias de seguridad
+
+AWS Snowball Edge 
+Adecuados para migraciones de datos a gran escala y flujos de trabajo de transferencias recurrentes
+	AWS Snowball Egde compute optimized 42TB 
+	AWS Snowball Egde storage optimized 80TB 
+
+AWS Snowmobile 
+	Alojado en un contenedor de transporte arrastrado por un camion
+	Para trasportar hasta 100PTB de datos 
+	**Ideal para migraciones grandes 
+
+
+>>INNOVACION 
+
+VMWARE Cloud en AWS
+Inteligencia artificial / Machine Learnning
+Amazon SageMaker
+	Desarrolle, entrene e implemente modelo de machine learning agran escala
+Amazon Augmented AI 
+	maching learnign 
+Amazon Lex
+	Servicio de Machine Learning que extrae automáticamente texto y datos de documentos
+	 escaneadosAyuda a crear box de chat interactivo
+Amozn Textract
+	Extraccion de textos y datos de documentos 
+AWS DeepRacer 
+	maching learning , oportunidad para aprender
+AWS Groun Station 
+	tiempo de pago en satelite 
+Amazon Transcribe
+	convierte voz en texto
+Amazon comprehend 
+	Descubrir patrones en texto
+
+>>>>>>>>>> AWS Well-Architected Framework <<<<<<<<<<<
+Herramienta para evaluar la excelencia de la arquitectura 
+Describe los conceptos clave, los principios de diseño y las prácticas recomendadas de arquitectura para diseñar y ejecutar cargas de trabajo en la nube. 
+	
+>>Excelencia operativa / Operational excellence:
+	*Se centra en ejecutar y monitorear los sistemas y en MEJORAR CONSTANTEMENTE los procesos y los procedimientos. 
+	*la clave es la AUTOMATIZACION de cambios, la respuesta a eventos y la definición de estándares para administrar las operaciones diarias.
+	
+>>Seguridad :
+	Proteger la información y los sistemas.
+	*La clave es la CONFIDENCIALIDAD y la INTEGRIDAD DE LOS DATOS , la administración de los permisos de usuarios y el establecimiento de controles para detectar eventos de seguridad.
+	
+>>Fiabilidad/ CONFIABILIDAD /. Reliability :
+	Planificacion de la recuperacion 
+	*Se centra en las cargas de trabajo que realizan las funciones previstas y en cómo recuperarse rápidamente de los errores para cumplir con las demandas. 
+	La clave se incluyen el diseño de sistemas distribuidos, la planificación de la recuperación y cómo adaptarse a los requisitos cambiantes.
+	
+>>Eficiencia/eficacia del rendimiento /Performance eciency:
+
+	*Se centra en la ASIGNACION ESTRUCTURADA Y SIMPLIFICADA de TI y en los recursos informáticos. 
+	*La selección de los tipos y tamaños de recursos optimizados para los requisitos de la carga de trabajo, la supervisión del rendimiento y el mantenimiento de la eficacia a medida que evolucionan las necesidades de la empresa.
+	
+>>Optimización de costos / Reliability: 
+	El pilar de optimización de costos se centra en evitar gastos innecesarios. Entre los temas clave se incluyen la comprensión del tiempo dedicado y el control de la asignación de fondos, la selección de recursos para el tipo y la cantidad adecuados y el escalado para cumplir con las necesidades de la empresa sin gastos excesivos.
+	
+>>Sostenibilidad:
+ El pilar de sostenibilidad se centra en minimizar los impactos ambientales de ejecutar cargas de trabajo en la nube. Entre los temas clave se incluyen un modelo de responsabilidad compartida para la sostenibilidad, la comprensión del impacto y la maximización del uso para minimizar los recursos necesarios y reducir los impactos posteriores. 
+
+
+~~~
+
+mejor tamaññññññññññññññññññño 
+politicas de terminacion : define qe instancia se termina con el escalado descendentes /1.balancear las zona???????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AWS X-RAY , es un servicio que recopila datos sobre las solicitudes que atiende su aplicacion y proporciona
+herramientas que puede usar para ver, filtrar y obtener info sobre los datos para IDENTIFICAR PROBLEMAS 
+https://aws.amazon.com/es/xray/
+
+https://aws.amazon.com/es/cloudwatch/
+https://aws.amazon.com/es/about-aws/whats-new/2018/11/s3-intelligent-tiering/
+https://aws.amazon.com/es/cloudtrail/
+
+Reliability: refiere a la capacidad de un sistema para recuperarse de las interrupciones de la infraestructura o del servicio y
+adquirir dinámicamente recursos informáticos para satisfacer la demanda
+
+Performance efficiency : Una empresa está planeando reemplazar sus servidores informáticos locales físicos con servicios informáticos sin servidor de AWS. La empresa quiere poder
+para aprovechar las tecnologías avanzadas rápidamente después de la migración.
+
+Cost Explorer : Una empresa desea revisar sus costos mensuales de uso de Amazon EC2 y Amazon RDS durante el último año.
+
+. AWS Consulting Partners : empresa desea migrar sus cargas de trabajo a AWS, pero carece de experiencia en computación en la nube de AWS.
+
+
+Agility: A company's on-premises application deployment cycle was 3-4 weeks. After migrating to the AWS Cloud, the company can deploy the application
+in 2-3 days.
+
+
+
+
+
+
+
+
 
 ______________________________________________________________________________________________________________________________________________________-
 
