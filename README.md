@@ -72,7 +72,7 @@ BENEFICIOS / VENTAJAS
 	El uso agregado de la nube por parte de un gran número de clientes se traduce en menores precios de pago por uso.
 	 AWS le transfiere ahorros a medida que los clientes aumentan.
 
->Velocidad y la agilidad
+>Aumentar la velocidad y la agilidad
 	Aprovisione recursos de forma rápida y bajo demanda.
 	El cómputo en la nube le permite acceder a nuevos recursos y disponibilidad en cuestión de minutos
 		 en un centro de datos fisico esto seria en cuestion de semanas 
@@ -1187,16 +1187,19 @@ Amazon comprehend
 	Descubrir patrones en texto
 
 >>>>>>>>>> AWS Well-Architected Framework <<<<<<<<<<<
+Le ayuda a comprender cómo diseñar y operar sistemas fiables, seguros, eficientes y rentables en la nube de AWS.
 Herramienta para evaluar la excelencia de la arquitectura 
 Describe los conceptos clave, los principios de diseño y las prácticas recomendadas de arquitectura para diseñar y ejecutar cargas de trabajo en la nube. 
 	
 >>Excelencia operativa / Operational excellence:
+	Mejora constante y automatizacion 
 	*Se centra en ejecutar y monitorear los sistemas y en MEJORAR CONSTANTEMENTE los procesos y los procedimientos. 
 	*la clave es la AUTOMATIZACION de cambios, la respuesta a eventos y la definición de estándares para administrar las operaciones diarias.
 	
 >>Seguridad :
 	Proteger la información y los sistemas.
-	*La clave es la CONFIDENCIALIDAD y la INTEGRIDAD DE LOS DATOS , la administración de los permisos de usuarios y el establecimiento de controles para detectar eventos de seguridad.
+	*La clave es la CONFIDENCIALIDAD y la INTEGRIDAD DE LOS DATOS , la administración de los permisos de usuarios y el establecimiento
+	de controles para detectar eventos de seguridad.
 	
 >>Fiabilidad/ CONFIABILIDAD /. Reliability :
 	Planificacion de la recuperacion 
@@ -1204,15 +1207,27 @@ Describe los conceptos clave, los principios de diseño y las prácticas recomen
 	La clave se incluyen el diseño de sistemas distribuidos, la planificación de la recuperación y cómo adaptarse a los requisitos cambiantes.
 	
 >>Eficiencia/eficacia del rendimiento /Performance eciency:
-
+	Utilizar los recurso informaticos de forma eficiente
 	*Se centra en la ASIGNACION ESTRUCTURADA Y SIMPLIFICADA de TI y en los recursos informáticos. 
-	*La selección de los tipos y tamaños de recursos optimizados para los requisitos de la carga de trabajo, la supervisión del rendimiento y el mantenimiento de la eficacia a medida que evolucionan las necesidades de la empresa.
+	*La selección de los tipos y tamaños de recursos optimizados para los requisitos de la carga de
+	trabajo, la supervisión del rendimiento y el mantenimiento de la eficacia a medida que evolucionan las necesidades de la empresa.
 	
 >>Optimización de costos / Reliability: 
-	El pilar de optimización de costos se centra en evitar gastos innecesarios. Entre los temas clave se incluyen la comprensión del tiempo dedicado y el control de la asignación de fondos, la selección de recursos para el tipo y la cantidad adecuados y el escalado para cumplir con las necesidades de la empresa sin gastos excesivos.
+	Se centra en evitar gastos innecesarios.
+	*Entre los temas clave se incluyen la comprensión del tiempo dedicado y el control de la asignación de
+	fondos, la selección de recursos para el tipo y la cantidad adecuados y el escalado para cumplir con las necesidades de la
+	empresa sin gastos excesivos.
 	
 >>Sostenibilidad:
- El pilar de sostenibilidad se centra en minimizar los impactos ambientales de ejecutar cargas de trabajo en la nube. Entre los temas clave se incluyen un modelo de responsabilidad compartida para la sostenibilidad, la comprensión del impacto y la maximización del uso para minimizar los recursos necesarios y reducir los impactos posteriores. 
+	Se centra en minimizar los impactos ambientales de ejecutar cargas de trabajo en la nube.
+	*Entre los temas clave se incluyen un modelo de responsabilidad compartida para la sostenibilidad, la
+		comprensión del impacto y la maximización del uso para minimizar los recursos necesarios y 
+		reducir los impactos posteriores. 
+
+<<<<< AWS Well-Architected Tool>>>>>
+Herramienta de autoservicio para simular cargas de trabajo y ver aspectos de mejora en los diferentes aspectos, y 
+entrega presenta un plan de como diseñar la infraestructura con las practicas recomendadas 
+
 
 
 ~~~
@@ -1277,6 +1292,23 @@ Cost Explorer : Una empresa desea revisar sus costos mensuales de uso de Amazon 
 
 Agility: A company's on-premises application deployment cycle was 3-4 weeks. After migrating to the AWS Cloud, the company can deploy the application
 in 2-3 days.
+
+
+
+Amazon Athena
+ Amazon Kinesis
+ Amazon QuickSight
+AWS Batch
+Amazon Lightsail
+ Amazon WorkSpaces
+ AWS CodeBuild
+ AWS CodeCommit
+ AWS CodeDeploy
+ AWS CodePipeline
+ AWS CodeStar
+
+
+
 
 
 
