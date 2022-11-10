@@ -242,9 +242,9 @@ Beneficios:
 	EXPANSIVO aumenta la elasticidad y escalabilidad
 
 TIPOS:  ??????????????????????????????????????????????
-	Balanceador de carga de RED, capa 4? protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
+	Balanceador de carga de RED, capa 4, protocolo tcp, en los dispositivio IOT, sensores que trasmiten informacion 
 		si necesito un app que tenga un rendimiento extremo, maneja solucitudes repentinas a gran velocidad 
-	Balanceador de carga de APLICACIONES, capa 7? protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta que el de red 
+	Balanceador de carga de APLICACIONES, capa 7 protocolo HTTP permite trabaja a nivel de app web, tiene la capacidad de recepcion mas lenta que el de red 
 		direccionamiento basado en rutas y host /home / contact
 	Balancador de carga clasico, esta deprecado 
 		habilitamos sesiones pegajosas(? para que el usuario que se le cayo en net, y queremos que vulva a conectarse a la misma instancia para que su carrito vuelva a tener la misma info
