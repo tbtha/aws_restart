@@ -109,6 +109,9 @@ Usted controla el aspecto de red de EC2, que tipo de solicitudes pueden llegar a
 /Solo paga por lo que utiliza, instancias que estan en ejecucion
 *Al lanzar una instancias de EC2, se lanza una maquina virtual en un hadware fisico instalado en una zona de disponibilidad 
 ****** ALGO QUE FALLA UNICAMENTE AL CREAR UNA INTANCIA ES LA AMI, SI SE CREA Y FALLA DEBE SER OTRA COSA ******
+*Los datos de usuario están limitados a 16 KB.
+*Los datos de usuario y los metadatos no están encriptados.
+*Los metadatos de la instancia están disponibles en http://169.254.169.254/latest/meta-data.
 
 TIPOS DE INSTANCIAS
 (Analogia de la cafeteria: asi como cada empleado tiene habilidades diferente cada instancias tiene caracteristicas diferente)
@@ -146,34 +149,47 @@ Ofrecen diferentes capacidad de procesamiento, memoria ram, alamcenamiento y red
 
 PRECIOS
 
->Bajo demanda/ on demand :
+>>>Bajo demanda/ on demand :
 	Solo se paga por el tiempo que exista la instancia 
 	LINUX x segundos / WINDOWS x hora 
 	No se aplican cosotos iniciales ni contratos minimos 
 	*Ideales para cargas de trabajo irregulares de corto plazo 
 		
->Planes de ahorro/Savings Plans:
+>>>Planes de ahorro/Savings Plans:
 	Precios bajos a cambio de un compromiso de una cantidad constante de recursos USD x hora 
 	Require compromiso de 1 a 3 años 
 	ahorros del 72%, sin importar la familia,el tamaño, la region
 
->Intancias Reservada:
+>>>Intancias Reservada:
 	Para cargas de trabajo estables y de uso predecible 
-	75% de dcto frente a precio bajo demanda 
 	descuentos por compromiso de 1 a 3 años (pago total, pago inicial o sin pago inicial)
-
->Instancias Spot:
+		Instancias reservadas standar (RI) :
+			75% de dcto frente a precio bajo demanda 
+		Instancias reversvadas convertible 
+			hasta un 54 % de descuento en el precio bajo demanda
+			 ofrece la capacidad de cambiar los atributos de la instancia reservada si el intercambio da como resultado instancias igual o mayor valor.
+		Instancias reservadas programadas
+			Las instancias reservadas programadas están disponibles para iniciarse dentro del período de tiempo que reserve, hacen coincidir con un cronograma que solo requiere una fraccion de dia, una semana o un mes 
+			
+>>>Instancias Spot:
 	Aws puede recuperar estas instancias, da 2 minutos de advertencias para recuperar el trabajo y guardar el estado
 	Ideal para cargas de trabajo que puedan ser INTERRUMPIDAS o que tengan tiempo de inicio y finalizacion flexibles 
 	90%dcto frente bajo demanda 
 	
->Host Dedicado:
+>>>Host Dedicado:
 	Servidores fisico dedicados solo a tus instancias 
+	Disponible como On-Demand o con reserva de host dedicado.
 	Utilizados para cumplir requisitos de conformidad
-	Opcion mas costosa 
+	Opcion mas costosa
+	La facturacion es por host
+	
+>>> Instancias dedicadas 
+	Instancias virtualizadas en hardware solo para usted.
+	Puede compartir hardware con otras instancias no dedicadas en la misma cuenta.
+	La facturacion es por instancias, Costo adicional de $2 por hora por región.
+	
 
-
->>>Escalabilidad / scalability
+>>>>>>>>>Escalabilidad / scalability
 Implica comenzar solo con los recursos necesario y diseñar una arquitectura para responder
 automaticamente a la DEMANDA cambiante mediante el escalado o reduccion horizontal
 
@@ -306,13 +322,19 @@ Contenedor de Docker -> plataforma que utiliza la virtualizacion a nivel operati
 	CLUSTER: conjunto de contendores/nodos
 	Proceso de realizar estas tareas se denomina ORQUESTACION
 
-Herramientas de orquestacion de contenedores 
+	Herramientas de orquestacion de contenedores 
 >>>>>>>>>> Amazon Amazon Elastic Container Service (Amazon ECS)<<<<<<<<<<
 Es un sistema de administración de contenedores altamente escalable y de alto rendimiento que le permite
-	ejecutar y escalar aplicaciones en contenedores en AWS. 
+	ejecutar y escalar aplicaciones en un cluster administrado de instancias amazon ec2 o fargate 
 Con Amazon ECS, puede utilizar las llamadas a la API para lanzar y detener aplicaciones habilitadas para Docker.
 *servicio altamente escalable y de gra rendimiento (es compatible con los contenedores de docker, puedo ocupar una imagen alojada ahi )
 *contenedores en instacias
+*no hay cargo adicional, solo paga por los recursos que utilice como instanicas o volumenes de EBS
+ECR esta integrado con ECS
+>>>>>>>>>>Amazon Elastic Container Registry (Amazon ECR) <<<<<<<<<<
+Registro de contenedores ADMINISTRADO para almacenar, administrar e implementar imagenes docker
+*no hay tarifas ni compromisos inicuale, paga por la cantidad de datos que alamcena y los datos tranferidos a internet 
+
 
 >>>>>>>>>> Amazon Elastic Kubernetes Service (Amazon EKS)
 Es un servicio totalmente administrado que puede utilizar para ejecutar Kubernetes en AWS. 
@@ -326,8 +348,6 @@ Tecnologia que permite EJECUTAR contenedores sin tener que administrar servidore
 *solo necesitamos saber que imagen queremos lanzar 
 
 
->>>>>>>>>>Amazon Elastic Container Registry (Amazon ECR) <<<<<<<<<<
-Registro de contenedores ADMINISTRADO que facilita la creacion de IMAGENES
 
 
 ***dentro de una intancia pueden haber varios contenedores***
