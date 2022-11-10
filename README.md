@@ -306,6 +306,12 @@ EJ: una función Lambda sencilla podría implicar cambiar automáticamente el ta
 cargadas en la nube de AWS. En este caso, la función se activa cuando se carga una nueva imagen.
 *AWS LAMBDA PERMITE 1 MILLON DE INVOCACIONES GRATUITAS POR MES 
 
+>>>>>>>>>> AWS Batch <<<<<<<<<<
+Administra toda la  configuracion por usted, evitando el aprovisionamineto , la administracion y el escalado de los trabajos informaticos por LOTES 
+
+>>>>>>>>>> AWS Lightsail <<<<<<<<<<
+Proporciona aplicaciones o servidores privado virtuales preconfigurados que incluye todo lo necesario para comenzar su sitio web
+Ideal para personas que no manejan aws
 
 
 >>>CONTENEDORES 
