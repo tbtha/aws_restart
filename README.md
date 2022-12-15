@@ -787,6 +787,25 @@ A los usuarios o grupos podemos asignarles documentos JSON que son "politicas", 
 
 >>> Politicas de IAM -> es un documento JSON que describe que llamadas a la API un usuario puede o no hacer 
 			documento que permite o deniega permisos para los servicios y recursos de AWS 
+	ej1:
+	"Version": "2012-10-17", (version de la politica)
+	"Id": "S3-Account-Permissions", (identificador de la politica)
+	"Statement":[  (declaraciones)
+		"Sid": "1" (id),
+		"Effect" :"Allow" / "Deny"  (le da acceso o deniega el permiso)
+	]	"Principal":{
+			"AWS": ["arn:aws:iam::123456789012:root/*"] (  a que cuenta, usuario o rol se aplicara esta politica )
+			}
+		"Action":[   (lista de llamadas a la APi que se denegaran o permitiran segun el efecto )
+			"s3:GetObject",
+			"s3:PutObject"
+		],
+		"Resource":  (lista de recursos a los que se aplicaran las acciones )
+			["arn:aws:s3:::mybucket/*"]
+		
+	
+	
+	ej2:
 	Effect : "Allow" / "Deny" 
 	Action : "s3:ListObject" (cualquier llamada ala aAPi de AWS )
 	Resource : "arn:aws:s3:::coffee_shop_reports" (para que recurso de AWS se llama a la API )
