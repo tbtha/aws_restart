@@ -775,11 +775,15 @@ Tareas que requieren el uso de credenciales de usuario ROOT
 	Eliminar cuentas de AWs 
 
 		Para controlar el acceso a la cuenta:
->>>>>>>>>> AWS Identify and Access Management AWS IAM <<<<<<<<<<<
-Autenticacion y autorizacion como servicio, permite administrar el acceso a los servicios y recursos de AWS de forma segura.
-Podemos crear USUARIOS de IAM, de forma predeterminada se deniegan todos los permiso, explicitamente hay que
-	darle permisos para que puedan acceder a los recursos
-PRINCIPIO DE MENOR PRIVILEGIO: un usuario solo tiene acceso a lo que necesita 
+>>>>>>>>>> AWS Identify and Access Management AWS IAM <<<<<<<<<<< SERVICIO GLOBAL
+IAM -> Autenticacion y autorizacion como servicio, permite administrar el acceso a los servicios y recursos de AWS de forma segura.
+
+*Root , se crea por defecto, debe ocupar root solo para fines especificos 
+*Users, son personas parte de la organizacion , estas se pueden organizar en grupos
+*Gruops, conjunto de usuarios, solo contiene users , no otros grupos(sirve para facilitar la administracion)
+POR QUE CREAMOS USUARIOS/GRUPOS? 
+A los usuarios o grupos podemos asignarles documentos JSON que son "politicas", estas politicas definen los permisosque tendran esos users, de forma predeterminada se deniegan todos los permiso, explicitamente hay que
+	darle permisos para que puedan acceder a los recursos (PRINCIPIO DE MENOR PRIVILEGIO: un usuario solo tiene acceso a lo que realmente necesita)
 
 >>> Politicas de IAM -> es un documento JSON que describe que llamadas a la API un usuario puede o no hacer 
 			documento que permite o deniega permisos para los servicios y recursos de AWS 
@@ -788,11 +792,9 @@ PRINCIPIO DE MENOR PRIVILEGIO: un usuario solo tiene acceso a lo que necesita
 	Resource : "arn:aws:s3:::coffee_shop_reports" (para que recurso de AWS se llama a la API )
 	*En este ejemplo de política de IAM se concede permiso para acceder a los objetos del bucket
 
-*Asociamos politicas de IAM a un usuario de IAM 
-*Para facilitar la administracion de los usuario creamos GRUPOS de IAM que es un conjunto de usuarios
 *Podemos asociar una politica a un grupo y asi todos los usuarios de ese grupo tienen los mismo permisos 
 *Roles : Podemos crear ROLES que tienen permisos asociados que permiten o deniegan acciones especificas, estos
- 	los asumen durante un periodo te tiempo corto, no tienen nombre de usuario ni contraseña 
+ 	los asumen durante un periodo te tiempo limitado, no tienen nombre de usuario ni contraseña 
 
 >>>>>>>>>> AWS Organizations <<<<<<<<<<
 AWS Organizations crea automáticamente una raíz, que es el contenedor principal de todas las cuentas de su organización. 
