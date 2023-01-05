@@ -37,6 +37,7 @@ desarrollo, entre otras
 		
 Para utilizar la CLI b: "install AWS CLI in windows" descargar de la pag, aceptar los terminos y verificar si se instalo correctamente revisando la version con aws --version 
 *Para actualizar es necesario volver a descargar el AWS CLI MSI y volver a ejecutar 
+	-indicaciones de uso en el modulo 6 IAM
 	
 
 IMPLEMENTACION CLOUD
@@ -833,7 +834,19 @@ protejamos a los user y groups IAM
 	3.Hardware key Fob MFA Device  , Provided by Gemalto
 	4.Hadware key fob MFA Device for AWS GovCloud(US), Provided by surepassId
 	
-	
+USERS: 
+(una vez instalamos la AWS CLI)
+Para poder acceder a la AWS CLI necestamos nuestras claves de acceso (Access key Id / Secret access key)
+	-las claves de acceso se pueden crear al momento de crear el usuario 
+	-tambien podemos crearlas despues de creado el user 
+1ER PASO es configurar el uso de aws, ingresar en la linea de comando 
+	aws configure
+en el que hay que ingresar los sig datos 
+	Access key ID
+	Secret access key
+	Default region name 
+	Default out format 
+
 >>>>>>>>>> AWS Organizations <<<<<<<<<<
 AWS Organizations crea automáticamente una raíz, que es el contenedor principal de todas las cuentas de su organización. 
 Una forma de tener orden y hacer cumplir permisos para ciertas funciones en determinadas cuentas 
