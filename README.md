@@ -806,7 +806,7 @@ A los usuarios o grupos podemos asignarles documentos JSON que son "politicas", 
 	
 
 	ej2:
-	Effect : "Allow" / "Deny" 
+	Effect : "Allow"
 	Action : "s3:ListObject"
 	Resource : "arn:aws:s3:::coffee_shop_reports" 
 	*En este ejemplo de política de IAM se concede permiso para acceder a los objetos del bucket
@@ -823,12 +823,14 @@ protejamos a los user y groups IAM
 
 2-> Multi Factor Authenticatio - MFA
 	Deseamos proteger lo mas posibles nuestras cuentas ya que tienen autorizacion para acceder a los recursos/servicios, como lo protejemos ? con un dispositivo  MFA 
-	MFA utiliza la combinacion de una constraseña que suted conoce y un dispositivo de segurirdad que usted posea, si pierde suc ontraseña o es hackeada, tendra qeu tener si o si el dispositivo fisico para entrar a la cuenta 
+	MFA utiliza la combinacion de una constraseña que uested conoce y un dispositivo de segurirdad que usted posea, si pierde su ontraseña o es hackeada, tendra que tener si o si el dispositivo fisico para entrar a la cuenta 
 	cuales son estos dispositivos ? 
 	1.Dispositivo Virtual MFA (google authenticator-solo telefono /Authy-multidispositivo) .Soporte para multiples tokens en un solo dispositivo
 	2.Universal 2nd Factor (U2F) Security Key , es un dispositivo fisico usb? Yubikey by Yubokey, admite multiples users root y iam que usen una sola security key  
 	3.Hardware key Fob MFA Device  , Provided by Gemalto
 	4.Hadware key fob MFA Device for AWS GovCloud(US), Provided by surepassId
+	
+	
 >>>>>>>>>> AWS Organizations <<<<<<<<<<
 AWS Organizations crea automáticamente una raíz, que es el contenedor principal de todas las cuentas de su organización. 
 Una forma de tener orden y hacer cumplir permisos para ciertas funciones en determinadas cuentas 
