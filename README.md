@@ -848,6 +848,12 @@ en el que hay que ingresar los sig datos
 	Default out format 
 Probamos funcionamiento con "aws iam list-users"
 
+Rol de IAM, 
+algunos servicios deberan realizar acciones en nustro nombre, por lo tanto deberan tener permisos y para eso creamos un rol de AIM que seran utilizados unicamente por los servicios de IAm, Algunos roles comunes : 
+	-EC2 Instance Roles 
+	-Lambda Function Roles
+	-Roles for CloudFormation 
+
 >>>>>>>>>> AWS Organizations <<<<<<<<<<
 AWS Organizations crea automáticamente una raíz, que es el contenedor principal de todas las cuentas de su organización. 
 Una forma de tener orden y hacer cumplir permisos para ciertas funciones en determinadas cuentas 
