@@ -35,6 +35,8 @@ desarrollo, entre otras
 		-Access Key ID
 		-Secret Access Key 
 		
+Para utilizar la CLI b: "install AWS CLI in windows" descargar de la pag, aceptar los terminos y verificar si se instalo correctamente revisando la version con aws --version 
+*Para actualizar es necesario volver a descargar el AWS CLI MSI y volver a ejecutar 
 	
 
 IMPLEMENTACION CLOUD
