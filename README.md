@@ -23,18 +23,19 @@ Un SERVIDOR puede ser un servicio como Amazon Elastic Compute Cloud (Amazon EC2)
 
 #### CLOUD 
 ~~~
-*Recursos TI (software y hadware utilizados para : almacenamiento, cómputo, redes,
+***Recursos TI : software y hadware utilizados para : almacenamiento, cómputo, redes,
 bases de datos, analítica, machine learning, Internet de las cosas, seguridad,
 desarrollo, entre otras
-	-cargas pesadas de TI sin diferenciador (tareas administrativas, son tareas comunes en las 
-	que aws se ocupa para que el cliente se ocupe de tareas que realmente importen, como diferenciadores para su negocio )	
-*A traves de Internet en la consola, CLI, SDK 
-*Entrega bajo demanda (puede acceder a la capacidad que necesite, esto no es posible en on-premises) 
-*Solo paga por lo que utiliza (analogia de empleado de cafeteria )
-	-paga por lo que necesita
-
-**La entrega a pedido de recursos TI a traves de internet con precios de pago por uso 
-
+	
+*Como usuario podemos acceder a AWS x :
+	-AWS Management Console (protected by password + MFA)
+	-AWS Command Line Intefaces (CLI): protected by access keys (herramienta que permite interactuar con los servicios de AWs mediante comandos en una shell de linea de comandos )
+	-AWS Software Developer Kit (SDK): for code : protected by acces keys (para llamar a las API de AWS desde el cod de su app)
+	Estos estan protegidos por la misma clave de acceso, generamos las claves de acceso en la consola de administracion recordar mantener secreta su 
+		-Access Key ID
+		-Secret Access Key 
+		
+	
 
 IMPLEMENTACION CLOUD
 
