@@ -37,7 +37,7 @@ desarrollo, entre otras
 		
 Para utilizar la CLI b: "install AWS CLI in windows" descargar de la pag, aceptar los terminos y verificar si se instalo correctamente revisando la version con aws --version 
 *Para actualizar es necesario volver a descargar el AWS CLI MSI y volver a ejecutar 
-	-indicaciones de uso en el modulo 6 IAM
+	-indicaciones de configuracion y de uso en el modulo 6 IAM
 	
 
 IMPLEMENTACION CLOUD
@@ -846,6 +846,7 @@ en el que hay que ingresar los sig datos
 	Secret access key
 	Default region name 
 	Default out format 
+Probamos funcionamiento con "aws iam list-users"
 
 >>>>>>>>>> AWS Organizations <<<<<<<<<<
 AWS Organizations crea automáticamente una raíz, que es el contenedor principal de todas las cuentas de su organización. 
